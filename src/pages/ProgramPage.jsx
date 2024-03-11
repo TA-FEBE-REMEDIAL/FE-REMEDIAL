@@ -1,5 +1,7 @@
-const ProgramPage = () => {
-  return <div>Program Page</div>;
-};
+import React from "react";
+
+function ProgramPage() {
+  return <div></div>;
+}
 
 export default ProgramPage;

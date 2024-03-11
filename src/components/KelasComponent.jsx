@@ -1,9 +1,9 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import img1kelas from "../assets/img/kelas/1.png";
 import img2kelas from "../assets/img/kelas/2.png";
 import img3kelas from "../assets/img/kelas/3.png";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 function KelasComponent(props) {
   return (
@@ -13,7 +13,7 @@ function KelasComponent(props) {
           <Col>
             <div className="d-flex justify-content-between">
               <div>
-                <h1 className="fw-bold">Kelas Remedial</h1>
+                <h1 className="fw-bold">{props.title}</h1>
                 <p>{props.desc}</p>
               </div>
               <div className={`btn-kelas mt-3 ${props.hidden}`}>
@@ -36,11 +36,13 @@ function KelasComponent(props) {
             </div>
             <div className="mb-5 px-3">
               <p className="m-0 text-secondary fw-bold">Gratis</p>
-              <div className="d-grid gap-2">
-                <button className="btn btn-outline-danger rounded-1 m-2">
-                  Lihat Detail
-                </button>
-              </div>
+              <Link to={"/kelaspage/detail"}>
+                <div className="d-grid gap-2">
+                  <button className="btn btn-outline-danger rounded-1 m-2">
+                    Lihat Detail
+                  </button>
+                </div>
+              </Link>
             </div>
           </Col>
           <Col>
@@ -51,11 +53,13 @@ function KelasComponent(props) {
             </div>
             <div className="mb-5 px-3">
               <p className="m-0 text-secondary fw-bold">Gratis</p>
-              <div className="d-grid gap-2">
-                <button className="btn btn-outline-danger rounded-1 m-2">
-                  Lihat Detail
-                </button>
-              </div>
+              <Link to={"/kelaspage/detail"}>
+                <div className="d-grid gap-2">
+                  <button className="btn btn-outline-danger rounded-1 m-2">
+                    Lihat Detail
+                  </button>
+                </div>
+              </Link>
             </div>
           </Col>
           <Col>
@@ -66,11 +70,13 @@ function KelasComponent(props) {
             </div>
             <div className="mb-5 px-3">
               <p className="m-0 text-secondary fw-bold">Gratis</p>
-              <div className="d-grid gap-2">
-                <button className="btn btn-outline-danger rounded-1 m-2">
-                  Lihat Detail
-                </button>
-              </div>
+              <Link to={"/kelaspage/detail"}>
+                <div className="d-grid gap-2">
+                  <button className="btn btn-outline-danger rounded-1 m-2">
+                    Lihat Detail
+                  </button>
+                </div>
+              </Link>
             </div>
           </Col>
         </Row>

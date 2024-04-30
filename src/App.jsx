@@ -11,6 +11,7 @@ import KaryaPage from "./pages/KaryaPage";
 import TentangKamiPage from "./pages/TentangKamiPage";
 import KelasPage from "./pages/KelasPage";
 import DetailKelasPage from "./pages/DetailKelasPage";
+import DetailKaryaPage from "./pages/DetailKaryaPage";
 
 function App() {
   return (
@@ -23,7 +24,8 @@ function App() {
         <Route path="/program" Component={ProgramPage} />
         <Route path="/artikel" Component={ArtikelPage} />
         <Route path="/karya-siswa" Component={KaryaPage} />
-        <Route path="/tentangkami" Component={TentangKamiPage} />
+        <Route path="/karya-siswa/detail" Component={DetailKaryaPage} />
+        <Route path="/tentang-kami" Component={TentangKamiPage} />
         <Route path="/kelaspage" Component={KelasPage} />
         <Route path="/kelaspage/detail" Component={DetailKelasPage} />
       </Routes>

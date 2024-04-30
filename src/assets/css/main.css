@@ -273,6 +273,26 @@ header {
   text-transform: uppercase;
   border-radius: 50px;
 }
+.card-img-overlay {
+  color: #ffff;
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 100%;
+}
+.card-img-overlay:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 250px;
+  color: #e1e1e1;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+#detail-karya .img-center {
+  text-align: center;
+}
+#detail-karya {
+  margin: auto 15% auto 15%;
+}
+
 /*  ======= end karya siswa ======*/
 
 /*--------------------------------------------------------------
@@ -335,6 +355,16 @@ header {
 }
 
 /* END SECTION-TITLE */
+/* ------------------- ABOUT US ------------------------- */
+.aboutflek {
+  display: flex !important;
+  justify-content: space-between !important;
+}
+.text-about p {
+  font-size: 15px !important;
+  text-align: justify;
+}
+/* --------------- END ABOUT US -------------------------- */
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/

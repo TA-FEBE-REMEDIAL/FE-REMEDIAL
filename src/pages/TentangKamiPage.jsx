@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
 import img1about from "../assets/img/about/about1.png";
 import img2about from "../assets/img/about/about2.png";

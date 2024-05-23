@@ -12,6 +12,8 @@
   --background-topik: #f5f5f5;
   --background-kelas: #fafafa;
   --background-title: #ececec;
+  --background-dasar: #f7f9fc;
+  --background-artikel: #212529;
 }
 
 /* STYLE NAVBAR */
@@ -111,7 +113,7 @@ header {
   padding-top: 7rem;
 }
 .homepage .kelas {
-  background-color: var(--background-kelas);
+  background-color: var(--background-dasar);
   padding-bottom: 100px;
 }
 
@@ -250,12 +252,46 @@ header {
   transform: translateY(-50%);
 }
 
+.carousel-caption {
+  padding-bottom: 4.5rem !important;
+}
+
 @media (min-width: 768px) {
   .card-program img {
     height: 11em;
   }
 }
 /*------------------- end program -------------------------------- */
+/* ======================= coba program =========================== */
+/* src/Tabs.css */
+
+.titlepro h2 {
+  color: var(--color-text);
+}
+.tab-header {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+}
+
+.tab-item {
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #333;
+}
+
+.tab-item.active {
+  border-bottom: 2px solid var(--secondary-color);
+  color: var(--secondary-color);
+}
+
+.tab-content {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+/* ================= end coba program ================================== */
 
 /*  ======= karya siswa ======*/
 #karya-siswa {
@@ -277,6 +313,7 @@ header {
   color: #ffff;
   background-color: rgba(0, 0, 0, 0.3);
   width: 100%;
+  padding: 0%;
 }
 .card-img-overlay:hover {
   background-color: rgba(0, 0, 0, 0.4);
@@ -286,15 +323,140 @@ header {
   cursor: pointer;
 }
 
+.wrap-content {
+  padding: 130px 0 0 25px;
+}
+
 #detail-karya .img-center {
   text-align: center;
 }
 #detail-karya {
   margin: auto 15% auto 15%;
 }
+/* Karya Category */
 
 /*  ======= end karya siswa ======*/
 
+/* -====================== link karya ============= */
+.file-link-container {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  width: fit-content;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.file-icon {
+  margin-right: 10px;
+}
+
+.file-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.file-name {
+  font-weight: bold;
+}
+
+.file-type {
+  color: #757575;
+}
+
+/* -============== end link karya =============== */
+/*--------------------------------------------------------------
+# Breadcrumbs
+--------------------------------------------------------------*/
+.breadcrumbs {
+  padding: 15px 0;
+  background: #f7f8f8;
+  min-height: 40px;
+  margin-top: -60px;
+}
+
+@media (max-width: 992px) {
+  .breadcrumbs {
+    margin-top: 60px;
+  }
+}
+
+.breadcrumbs h2 {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0 0 10px 0;
+  margin: 0;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.breadcrumbs ol li + li {
+  padding-left: 10px;
+}
+
+.breadcrumbs ol li + li::before {
+  display: inline-block;
+  padding-right: 10px;
+  color: #505a63;
+  content: "/";
+}
+
+/* ------------------------------------------------------------
+#Fundamental
+--------------------------------------------------------------*/
+.fundamental .fundamental-item {
+  box-sizing: content-box;
+  padding: 10px;
+  /* box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.08); */
+  position: relative;
+}
+
+.fundamental .fundamental-item .fundamental-img {
+  width: 90px;
+  border-radius: 10px;
+  /* border: 6px solid #fff; */
+  float: left;
+  margin: 0 10px 0 0;
+}
+
+.fundamental .fundamental-item h3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 10px 0 5px 0;
+  color: #394047;
+  align-items: center;
+}
+
+.fundamental .fundamental-item a {
+  color: #394047;
+}
+
+.fundamental .fundamental-item .quote-icon-left,
+.fundamental .fundamental-item .quote-icon-right {
+  color: #b9d4ec;
+  font-size: 26px;
+}
+
+.fundamental .fundamental-item .quote-icon-left {
+  display: inline-block;
+  left: -5px;
+  position: relative;
+}
+
+.fundamental .fundamental-item .quote-icon-right {
+  display: inline-block;
+  right: -5px;
+  position: relative;
+  top: 10px;
+}
+/* ------------------------------------------------------------
 /*--------------------------------------------------------------
 # Artikel
 --------------------------------------------------------------*/
@@ -355,6 +517,7 @@ header {
 }
 
 /* END SECTION-TITLE */
+
 /* ------------------- ABOUT US ------------------------- */
 .aboutflek {
   display: flex !important;
@@ -365,6 +528,47 @@ header {
   text-align: justify;
 }
 /* --------------- END ABOUT US -------------------------- */
+
+/* -------------------- FORUM DISKUSI -------------------- */
+.banner-container {
+  background-color: var(--background-artikel); /* Red background color */
+  padding: 50px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.banner-content {
+  display: flex;
+  align-items: center;
+}
+
+.banner-image {
+  width: 250px; /* Adjust size as needed */
+  height: auto;
+  margin-right: 20px;
+}
+
+.banner-text {
+  color: white;
+  text-align: left;
+}
+
+.banner-text h1 {
+  margin: 0;
+  font-size: 45px;
+  font-weight: bold;
+}
+.banner-text h2 {
+  margin: 0;
+  font-size: 36px;
+}
+
+.banner-text .forum {
+  font-size: 32px;
+}
+
+/* -------------------- END FORUM DISKUSI ----------------- */
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/

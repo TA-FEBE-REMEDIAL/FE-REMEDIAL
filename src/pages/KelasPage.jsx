@@ -5,8 +5,8 @@ function KelasPage() {
   return (
     <div className="kelas-page ">
       <KelasComponent
-        title="Kelas"
-        desc="Pilih kelas di Remedial.id sesuai keinginan kamu, dan tambah skill kesenianmu!"
+        title="Kelas Tersedia"
+        desc="Pilih kelas di program remedial sesuai keinginan kamu, dan tambah pengetahuan kesenianmu!"
         hidden="d-none"
       />
     </div>

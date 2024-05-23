@@ -9,17 +9,17 @@ function JumbrotonComponent() {
       <div className="jumbroton-content">
         <Row>
           <Col>
-            <h2 className="fw-bold">Pengenalan Seni Musik</h2>
+            <h2 className="fw-bold mt-5">Pengenalan Seni Musik</h2>
             <p className="m-0  opacity-50">Seni Musik</p>
-            <p>
+            <p className="mt-3">
               Kelas Seni Rupa dibuat untuk kamu yang ingin <br /> mempelajari
               dasar seni rupa.
             </p>
-            <NavLink to={""}>
+            {/* <NavLink to={""}>
               <button className="btn btn-danger rounded-1 btn-lg mt-3">
                 Ikuti Kelas
               </button>
-            </NavLink>
+            </NavLink> */}
           </Col>
           <Col>
             <img src={img1kelas} alt="" />

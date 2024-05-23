@@ -2,6 +2,7 @@ import React from "react";
 import img1kelas from "../assets/img/kelas/1.png";
 import img2kelas from "../assets/img/kelas/2.png";
 import { Container, Row, Col } from "react-bootstrap";
+import Slider from "./Slider";
 
 function ProgramComponent() {
   return (
@@ -12,11 +13,11 @@ function ProgramComponent() {
             <div className="text-center">
               <div>
                 <h1 className="fw-bold">
-                  Program <span>Remedial</span>
+                  Pilih Program <span>untuk Kamu</span>
                 </h1>
                 <p>
-                  Tingkat keterampilan senimu dengan ikut program di
-                  Remedial.id.
+                  Selain kelas, Remedial memiliki program dan challenge yang
+                  menarik untuk kamu ikuti.
                 </p>
               </div>
             </div>
@@ -29,7 +30,7 @@ function ProgramComponent() {
             className="carousel slide"
             data-bs-ride="carousel"
           > */}
-          <Col>
+          {/* <Col>
             <img src={img1kelas} alt="" className="w-100 mb-5 rounded-top" />
             <div className="mb-5 px">
               <h5>Belajar Pengenalan Seni Rupa</h5>
@@ -58,7 +59,8 @@ function ProgramComponent() {
                 </button>
               </div>
             </div>
-          </Col>
+          </Col> */}
+          <Slider />
           {/* <button
               className="carousel-control-prev"
               type="button"

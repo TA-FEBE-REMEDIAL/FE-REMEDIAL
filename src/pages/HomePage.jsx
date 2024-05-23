@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 import ListKaryaComponent from "../components/ListKaryaComponent";
 import TopikComponent from "../components/TopikComponent";
 import ProgramComponent from "../components/ProgramComponent";
+import img1artikel from "../assets/img/artikel/berita-seni/1.jpg";
+import img2artikel from "../assets/img/artikel/berita-seni/2.jpg";
 
 const HomePage = () => {
   return (
@@ -13,14 +15,14 @@ const HomePage = () => {
       <CarouselComponent />
       <KelasComponent
         title="Kelas Remedial"
-        desc="Remedial.id menyediakan berbagai macam kelas untuk meningkatkan keterampilan kesenianmu."
+        desc="Program remedial menyediakan berbagai macam kelas untuk meningkatkan pengetahuan dan keterampilan kesenianmu."
       />
       {/* ================ Topik Pembelajaran ================ */}
       <section id="main-topik">
         <div className="container">
           <div className="container-fluid pt-5 ">
             <div className="section-title text-center">
-              <h2>Materi</h2>
+              <h2>Topik</h2>
               <h3>
                 Berbagai Topik Pembelajaran <span>di Remedial.id</span>
               </h3>
@@ -40,7 +42,7 @@ const HomePage = () => {
             <div className="section-title text-center">
               <h2>Karya Siswa</h2>
               <h3>
-                Karya<span>Siswa</span>
+                Karya <span>Siswa</span>
               </h3>
               <p>macam-macam karya seni yang di buat oleh beberapa siswa </p>
             </div>
@@ -74,7 +76,8 @@ const HomePage = () => {
 
           <div className="row justify-content-center">
             <div className="col-lg-11">
-              <CardArtikel />
+              <CardArtikel img={img1artikel} />
+              <CardArtikel img={img2artikel} />
             </div>
           </div>
 

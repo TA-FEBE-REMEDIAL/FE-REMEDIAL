@@ -16,12 +16,14 @@ function ListKaryaComponent() {
               style={{ height: "100%" }}
               alt="..."
             />
-            <div className="card-img-overlay">
-              <h5 className="card-title">lorem</h5>
-              <p className="card-text">lorem</p>
-              <p className="card-text">
-                <small>rilis 15 juni 2023</small>
-              </p>
+            <div className="card-img-overlay ">
+              <div className="wrap-content">
+                <h5 className="card-category">lorem</h5>
+                <p className="card-title">lorem</p>
+                <p className="card-text">
+                  <small>rilis 15 juni 2023</small>
+                </p>
+              </div>
             </div>
           </div>
         </NavLink>
@@ -36,11 +38,13 @@ function ListKaryaComponent() {
               alt="..."
             />
             <div className="card-img-overlay">
-              <h5 className="card-title">lorem</h5>
-              <p className="card-text">lorem</p>
-              <p className="card-text">
-                <small>rilis 15 juni 2023</small>
-              </p>
+              <div className="wrap-content">
+                <h5 className="card-category">lorem</h5>
+                <p className="card-title">lorem</p>
+                <p className="card-text">
+                  <small>rilis 15 juni 2023</small>
+                </p>
+              </div>
             </div>
           </div>
         </NavLink>
@@ -54,12 +58,14 @@ function ListKaryaComponent() {
               style={{ height: "100%" }}
               alt="..."
             />
-            <div className="card-img-overlay">
-              <h5 className="card-title">lorem</h5>
-              <p className="card-text">lorem</p>
-              <p className="card-text">
-                <small>rilis 15 juni 2023</small>
-              </p>
+            <div className="card-img-overlay d-flex flex-column">
+              <div className="wrap-content">
+                <h5 className="card-category">lorem</h5>
+                <p className="card-title">lorem</p>
+                <p className="card-text">
+                  <small>rilis 15 juni 2023</small>
+                </p>
+              </div>
             </div>
           </div>
         </NavLink>

@@ -12,6 +12,8 @@ import TentangKamiPage from "./pages/TentangKamiPage";
 import KelasPage from "./pages/KelasPage";
 import DetailKelasPage from "./pages/DetailKelasPage";
 import DetailKaryaPage from "./pages/DetailKaryaPage";
+import DetailArtikelPage from "./pages/DetailArtikelPage";
+import ForrumDiskusiPage from "./pages/ForrumDiskusiPage";
 
 function App() {
   return (
@@ -21,11 +23,14 @@ function App() {
 
       <Routes>
         <Route path="/" Component={HomePage} />
+        <Route path="/home" Component={HomePage} />
         <Route path="/program" Component={ProgramPage} />
         <Route path="/artikel" Component={ArtikelPage} />
+        <Route path="/artikel/detail" Component={DetailArtikelPage} />
         <Route path="/karya-siswa" Component={KaryaPage} />
         <Route path="/karya-siswa/detail" Component={DetailKaryaPage} />
         <Route path="/tentang-kami" Component={TentangKamiPage} />
+        <Route path="/forum-diskusi" Component={ForrumDiskusiPage} />
         <Route path="/kelaspage" Component={KelasPage} />
         <Route path="/kelaspage/detail" Component={DetailKelasPage} />
       </Routes>

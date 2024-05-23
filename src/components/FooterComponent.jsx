@@ -24,15 +24,14 @@ const FooterComponent = () => {
                     </li>
                     <li>
                       <IoChevronForward />{" "}
+                      <NavLink to="/karya-siswa">Karya Siswa</NavLink>
+                    </li>
+                    <li>
+                      <IoChevronForward />{" "}
                       <NavLink to="/artikel">Artikel</NavLink>
                     </li>
                     <li>
-                      <IoChevronForward />{" "}
-                      <NavLink to="/karya">Karya Siswa</NavLink>
-                    </li>
-                    <li>
-                      <IoChevronForward />{" "}
-                      <NavLink to="/tentangkami">Tentang Kami</NavLink>
+                      <IoChevronForward /> <NavLink to="/">Informasi</NavLink>
                     </li>
                   </ul>
                 </div>

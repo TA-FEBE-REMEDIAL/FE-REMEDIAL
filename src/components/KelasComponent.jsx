@@ -36,7 +36,7 @@ function KelasComponent(props) {
             </div>
             <div className="mb-5 px-3">
               <p className="m-0 text-secondary fw-bold">Gratis</p>
-              <Link to={"/kelaspage/detail"}>
+              <Link to={"/kelaspage/detail-kelas"}>
                 <div className="d-grid gap-2">
                   <button className="btn btn-outline-danger rounded-1 m-2">
                     Lihat Detail
@@ -53,7 +53,7 @@ function KelasComponent(props) {
             </div>
             <div className="mb-5 px-3">
               <p className="m-0 text-secondary fw-bold">Gratis</p>
-              <Link to={"/kelaspage/detail"}>
+              <Link to={"/kelaspage/detail-kelas"}>
                 <div className="d-grid gap-2">
                   <button className="btn btn-outline-danger rounded-1 m-2">
                     Lihat Detail
@@ -70,7 +70,7 @@ function KelasComponent(props) {
             </div>
             <div className="mb-5 px-3">
               <p className="m-0 text-secondary fw-bold">Gratis</p>
-              <Link to={"/kelaspage/detail"}>
+              <Link to={"/kelaspage/detail-kelas"}>
                 <div className="d-grid gap-2">
                   <button className="btn btn-outline-danger rounded-1 m-2">
                     Lihat Detail

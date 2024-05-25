@@ -1,32 +1,28 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import img1kelas from "../assets/img/kelas/1.png";
-import { NavLink } from "react-router-dom";
+import { Row, Col, NavLink } from "react-bootstrap";
 
-function JumbrotonComponent() {
+function JumbrotonComponent(props) {
   return (
     <section id="jumbroton">
       <div className="jumbroton-content">
         <Row>
           <Col>
-            <h2 className="fw-bold mt-5">Pengenalan Seni Musik</h2>
-            <p className="m-0  opacity-50">Seni Musik</p>
-            <p className="mt-3">
-              Kelas Seni Rupa dibuat untuk kamu yang ingin <br /> mempelajari
-              dasar seni rupa.
-            </p>
-            {/* <NavLink to={""}>
+            <h2 className="fw-bold mt-5">{props.title}</h2>
+            <p className="m-0  opacity-50">{props.kategori}</p>
+            <p className="mt-3">{props.deskrip}</p>
+
+            <NavLink className={props.hide} to={""}>
               <button className="btn btn-danger rounded-1 btn-lg mt-3">
-                Ikuti Kelas
+                Gabung Program
               </button>
-            </NavLink> */}
+            </NavLink>
           </Col>
           <Col>
-            <img src={img1kelas} alt="" />
+            <img src={props.img} alt="" />
           </Col>
         </Row>
       </div>
-      <hr />
+      <hr className={props.hr} />
     </section>
   );
 }

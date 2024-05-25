@@ -1,10 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import img1forum from "../assets/img/forum/1.png";
+import { categories } from "../data/kategoridiskusi";
+
 function ForrumDiskusiPage() {
   return (
-    <div className="top-nav">
-      <section id="breadcrumbs" className="breadcrumbs">
+    <div className="top-nav ">
+      <section id="breadcrumbs" className="breadcrumbs px-5  ">
         <div className="container-fluid">
           <div className="row justify-content-center">
             <div className="col-11">
@@ -30,6 +32,40 @@ function ForrumDiskusiPage() {
           </div>
         </div>
       </section>
+
+      <div className="category-list my-5">
+        {categories.map((category, index) => (
+          <div
+            className="category-item container"
+            style={{ backgroundColor: category.color }}
+            key={index}
+          >
+            <div className="category-header">
+              <img
+                src={category.icon}
+                alt={`${category.name} icon`}
+                className="category-icon"
+              />
+              <div>
+                <h2>{category.name}</h2>
+                <p>{category.description}</p>
+              </div>
+            </div>
+            {category.tags && (
+              <div className="category-tags">
+                {category.tags.map((tag, tagIndex) => (
+                  <span className="tag" key={tagIndex}>
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            )}
+            {/* <div className="category-topics">
+              <span>{category.topics}</span> Topics
+            </div> */}
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

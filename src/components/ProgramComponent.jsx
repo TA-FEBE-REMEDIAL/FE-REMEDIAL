@@ -1,6 +1,4 @@
 import React from "react";
-import img1kelas from "../assets/img/kelas/1.png";
-import img2kelas from "../assets/img/kelas/2.png";
 import { Container, Row, Col } from "react-bootstrap";
 import Slider from "./Slider";
 

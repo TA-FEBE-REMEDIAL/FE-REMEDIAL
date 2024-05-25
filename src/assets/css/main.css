@@ -6,7 +6,9 @@
 :root {
   --primary-color: #f6f8fd;
   --secondary-color: #d05d5d;
+  --secondary-color2: #ce5555;
   --color-text: #4a4b4c;
+  --color-text2: #babec1;
   --navbar-color: #1c1b1b;
   --navbar-color-text: #f2f2f2;
   --background-topik: #f5f5f5;
@@ -14,6 +16,8 @@
   --background-title: #ececec;
   --background-dasar: #f7f9fc;
   --background-artikel: #212529;
+  --background-forum: #995c5c;
+  --background-program: #f7f9fc;
 }
 
 /* STYLE NAVBAR */
@@ -22,7 +26,7 @@
   padding: 15px 0 15 px 0;
   width: 100%;
   background-color: var(--navbar-color) !important;
-  z-index: 1;
+  z-index: 5;
 }
 
 .navbar .nav-link a {
@@ -86,7 +90,7 @@
   padding-top: 8rem;
 }
 hr {
-  border: 3px solid black;
+  border: 2.5px solid rgba(0, 0, 0, 0.251);
 }
 #jumbroton img {
   width: 90%;
@@ -261,8 +265,29 @@ header {
     height: 11em;
   }
 }
-/*------------------- end program -------------------------------- */
-/* ======================= coba program =========================== */
+/* ---------- sticky ---------- */
+/* STICKY ELEMENT */
+.sticky {
+  /* height: 10rem;
+  width: 10rem; */
+  /* flex-grow: 1;
+  flex-basis: 300px; */
+  position: sticky;
+  top: 5rem;
+  /* center the text */
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+}
+.sticky-right {
+  /* height: auto;
+  width: auto; */
+  margin-right: 20px;
+  /* flex-grow: 1; */
+  position: sticky;
+  top: 5rem;
+}
+/* ======================= Semua program =========================== */
 /* src/Tabs.css */
 
 .titlepro h2 {
@@ -291,7 +316,246 @@ header {
   border-top: none;
 }
 
-/* ================= end coba program ================================== */
+/* ====================== Detail Program ========================= */
+#detail-pro {
+  background-color: var(--background-program);
+}
+.isi-detailpro {
+  font-size: 12px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  padding: 8px 10px;
+  margin: 0;
+  background: var(--background-title);
+  color: var(--navbar-color);
+  display: inline-block;
+  text-transform: uppercase;
+  border-radius: 50px;
+}
+.app {
+  display: flex;
+  padding: auto 20px;
+}
+.box-program {
+  /* background-color: var;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px; */
+  /* padding: 40px; */
+}
+
+.sidebar {
+  width: 30%;
+  height: 10%;
+  background-color: var(--background-dasar);
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+#detail-pro .sticky-top::after {
+  margin-top: 5rem !important;
+  /* padding: 2rem !important; */
+  z-index: 1;
+}
+
+.content {
+  width: 100%;
+  padding: 0 20px;
+}
+
+.navigation {
+  position: sticky !important;
+}
+.navigation h6 {
+  font-weight: bold;
+  color: var(--color-text);
+  margin-bottom: 20px;
+}
+/* .navigation ul {
+  list-style: none;
+  padding: 0;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+} */
+.navigation a {
+  padding: 10px 0;
+  cursor: pointer;
+  cursor: pointer;
+  /* border-left: 2px solid var(--secondary-color); */
+  transition: border-color 0.3s;
+  padding-left: 5px;
+}
+
+.navigation a .active {
+  font-weight: bold;
+  color: var(--secondary-color);
+  border-left: 2px solid var(--secondary-color) !important;
+  background-color: #d05d5d !important;
+}
+.navigation a:hover {
+  font-weight: bold;
+  color: var(--navbar-color-text);
+  background-color: var(--secondary-color);
+  border-left: 2px solid var(--secondary-color);
+  border-radius: 5px;
+}
+
+/* .content h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.content h2 {
+  font-size: 20px;
+  margin-left: 20px;
+}
+
+.content p {
+  margin-bottom: 10px;
+} */
+.border-content {
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  padding: 40px;
+  margin-bottom: 20px;
+}
+.border-content h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.border-content h2 {
+  font-size: 20px;
+}
+.border-content:nth-child(1) {
+  margin-bottom: 10px;
+  text-align: justify;
+}
+.border-content span {
+  font-weight: bold;
+}
+
+/* .border-content:nth-child(1) {
+  margin-right: 10px;
+} */
+.border-content h5 {
+  font-size: 14px;
+  color: var(--color-text);
+}
+.registration {
+  margin-top: 20px;
+}
+
+.registration button {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 8px 40px;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+}
+.registration button:hover {
+  background-color: var(--secondary-color2);
+  color: white;
+  padding: 8px 40px;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+/* =================== metode pembelajaran ======================== */
+/* .container {
+  text-align: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+} */
+
+.methods {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.method {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 30px;
+  width: 340px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.border-content h5 {
+  font-size: 12px;
+  font-weight: bold;
+  color: var(--color-text2);
+  margin-bottom: 12x;
+  padding: 10px;
+}
+
+.border-content h1 {
+  font-weight: bold;
+  padding: 10px;
+}
+.method h3 {
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.method p {
+  color: #666;
+}
+
+.methods .btn-primary {
+  --bs-btn-hover-border-color: none;
+}
+.method button {
+  background-color: #fff;
+  color: var(--secondary-color);
+  border: 1px solid var(--secondary-color);
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.method button:hover {
+  background-color: var(--secondary-color);
+}
+
+/* ================== Keuntungan Program  ========================== */
+
+.benefits-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.benefit-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-right: 5px;
+  padding: 20px;
+  width: 40%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.benefit-card:hover {
+  transform: scale(1.05);
+}
+
+.benefit-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  border-bottom: 2px solid var(--secondary-color);
+  display: inline-block;
+}
+
+.benefit-description {
+  font-size: 14px;
+  color: #555;
+}
+
+/*----------------------------- end program ----------------------------------- */
 
 /*  ======= karya siswa ======*/
 #karya-siswa {
@@ -324,7 +588,7 @@ header {
 }
 
 .wrap-content {
-  padding: 130px 0 0 25px;
+  padding: 116px 0 0 25px;
 }
 
 #detail-karya .img-center {
@@ -334,6 +598,22 @@ header {
   margin: auto 15% auto 15%;
 }
 /* Karya Category */
+.isi-konten h5 {
+  font-size: 8px;
+  letter-spacing: 1px;
+  /* font-weight: 700; */
+  padding: 8px 15px;
+  margin: 0;
+  background: var(--secondary-color);
+  color: var(--navbar-color-text);
+  display: inline-block;
+  /* text-transform: uppercase; */
+  border-radius: 50px;
+}
+.isi-konten .card-title {
+  font-weight: bold;
+  margin-top: 8px;
+}
 
 /*  ======= end karya siswa ======*/
 
@@ -381,7 +661,9 @@ header {
     margin-top: 60px;
   }
 }
-
+.breadcrumbs a {
+  color: var(--secondary-color) !important;
+}
 .breadcrumbs h2 {
   font-size: 28px;
   font-weight: 600;
@@ -531,7 +813,7 @@ header {
 
 /* -------------------- FORUM DISKUSI -------------------- */
 .banner-container {
-  background-color: var(--background-artikel); /* Red background color */
+  background-color: var(--background-forum); /* Red background color */
   padding: 50px;
   display: flex;
   justify-content: left;
@@ -567,6 +849,61 @@ header {
 .banner-text .forum {
   font-size: 32px;
 }
+/* --------- isi forum diskusi ------------- */
+.category-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.category-item {
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.category-icon {
+  width: 150px;
+  height: 150px;
+  margin-right: 16px;
+  border-radius: 8px;
+}
+
+.category-header h2 {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+.category-header p {
+  margin: 0;
+  color: #555;
+}
+
+.category-tags {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.tag {
+  background-color: #e0e0e0;
+  border-radius: 12px;
+  padding: 4px 8px;
+  font-size: 0.9em;
+}
+
+.category-topics {
+  font-weight: bold;
+  color: #333;
+}
+
+/* --------- end isi forum diskusi ---------- */
 
 /* -------------------- END FORUM DISKUSI ----------------- */
 /*--------------------------------------------------------------

@@ -7,6 +7,7 @@ import img2program from "../assets/img/program/6.png";
 import img3program from "../assets/img/program/7.png";
 import img4program from "../assets/img/program/8.png";
 import "swiper/css";
+import { Link } from "react-router-dom";
 
 const Slider = () => {
   // const slides = [
@@ -102,11 +103,13 @@ const Slider = () => {
             </div>
             <div className="mb-5 px-3">
               <p className="m-0 text-secondary fw-bold">Gratis</p>
-              <div className="d-grid gap-2 pb-3">
-                <button className="btn btn-outline-danger rounded-1 m-2">
-                  Lihat Detail
-                </button>
-              </div>
+              <Link to={"/program/detail-program"}>
+                <div className="d-grid gap-2 pb-3">
+                  <button className="btn btn-outline-danger rounded-1 m-2">
+                    Lihat Detail
+                  </button>
+                </div>
+              </Link>
             </div>
           </Col>
         </SwiperSlide>
@@ -119,11 +122,13 @@ const Slider = () => {
             </div>
             <div className="mb-5 px-3">
               <p className="m-0 text-secondary fw-bold">Gratis</p>
-              <div className="d-grid gap-2 pb-3">
-                <button className="btn btn-outline-danger rounded-1 m-2">
-                  Lihat Detail
-                </button>
-              </div>
+              <Link to={"/program/detail-program"}>
+                <div className="d-grid gap-2 pb-3">
+                  <button className="btn btn-outline-danger rounded-1 m-2">
+                    Lihat Detail
+                  </button>
+                </div>
+              </Link>
             </div>
           </Col>
         </SwiperSlide>
@@ -136,11 +141,13 @@ const Slider = () => {
             </div>
             <div className="mb-5 px-3">
               <p className="m-0 text-secondary fw-bold">Gratis</p>
-              <div className="d-grid gap-2 pb-3">
-                <button className="btn btn-outline-danger rounded-1 m-2">
-                  Lihat Detail
-                </button>
-              </div>
+              <Link to={"/program/detail-program"}>
+                <div className="d-grid gap-2 pb-3">
+                  <button className="btn btn-outline-danger rounded-1 m-2">
+                    Lihat Detail
+                  </button>
+                </div>
+              </Link>
             </div>
           </Col>
         </SwiperSlide>
@@ -153,11 +160,13 @@ const Slider = () => {
             </div>
             <div className="mb-5 px-3">
               <p className="m-0 text-secondary fw-bold">Gratis</p>
-              <div className="d-grid gap-2 pb-3">
-                <button className="btn btn-outline-danger rounded-1 m-2">
-                  Lihat Detail
-                </button>
-              </div>
+              <Link to={"/program/detail-program"}>
+                <div className="d-grid gap-2 pb-3">
+                  <button className="btn btn-outline-danger rounded-1 m-2">
+                    Lihat Detail
+                  </button>
+                </div>
+              </Link>
             </div>
           </Col>
         </SwiperSlide>

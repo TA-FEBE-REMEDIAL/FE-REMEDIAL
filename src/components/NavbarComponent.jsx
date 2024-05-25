@@ -1,6 +1,5 @@
 import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
-
-import { navLinksDrop, navLinks } from "../data/index";
+import { navLinksDrop, navLinks } from "../data/navbar";
 import { NavLink } from "react-router-dom";
 
 const NavbarComponent = () => {

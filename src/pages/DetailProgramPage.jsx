@@ -3,7 +3,7 @@ import NavigationProgramComponent from "../components/NavigationProgramComponent
 import ProgramDetailComponent from "../components/ProgramDetailComponent";
 import ButtonComponent from "../components/ButtonComponent";
 import JumbrotonComponent from "../components/JumbrotonComponent";
-import img1program from "../assets/img/program/5.png";
+import img1program from "../assets/img/program/7.png";
 import BreadcrumbsComponent from "../components/BreadcrumbsComponent";
 
 function DetailProgramPage() {

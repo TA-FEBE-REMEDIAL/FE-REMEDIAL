@@ -3,6 +3,7 @@ import BreadcrumbsComponent from "../components/BreadcrumbsComponent";
 import JumbrotonComponent from "../components/JumbrotonComponent";
 import img1challenge from "../assets/img/challenge-terpilih/1.png";
 import ChallengePilihComponent from "../components/ChallengePilihComponent";
+import ChallengeList from "../components/ChallengeList";
 
 function PilihChallengePage() {
   return (
@@ -15,7 +16,7 @@ function PilihChallengePage() {
         hide3="d-none"
         hide4="d-none"
         hide5="d-none"
-        now="Challenge yang terpilih"
+        now="Challenge Terpilih"
       />
 
       <div className="container mb-4 pt-5">
@@ -29,9 +30,24 @@ function PilihChallengePage() {
         />
       </div>
       <div className="bg-details-challenge py-5">
-        <div className="container">
+        <div className="container px-5">
+          <h3 className="fw-bold">
+            {" "}
+            <span>Challenge</span> Terpilih
+          </h3>
           <ChallengePilihComponent />
         </div>
+      </div>
+
+      <div className="bg-header">
+        <div className="py-3">
+          <h3>Challenge</h3>
+          <p>
+            Silakan pilih salah satu challenge yang paling cocok denganmu,
+            pastikan kamu melihat detail dari setiap challenge yang tersedia.
+          </p>
+        </div>
+        <ChallengeList />
       </div>
     </div>
   );

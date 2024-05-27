@@ -18,6 +18,7 @@
   --background-artikel: #212529;
   --background-forum: #995c5c;
   --background-program: #f7f9fc;
+  --background-bread: #eeeeee;
 }
 
 /* STYLE NAVBAR */
@@ -114,7 +115,7 @@ header {
 
 /*------------------ STYLE KELAS ---------------- */
 .kelas-page .kelas {
-  padding-top: 7rem;
+  padding-top: 2rem;
 }
 .homepage .kelas {
   background-color: var(--background-dasar);
@@ -680,6 +681,9 @@ header {
 .bg-details-challenge {
   background-color: var(--background-program);
 }
+.bg-details-challenge h3 span {
+  color: var(--secondary-color);
+}
 /* =================== END CHALLENGE ========================== */
 
 /*  ======= karya siswa ======*/
@@ -776,7 +780,7 @@ header {
 --------------------------------------------------------------*/
 .breadcrumbs {
   padding: 15px 0;
-  background: #f7f8f8;
+  background: var(--background-bread);
   min-height: 40px;
   margin-top: -60px;
 }

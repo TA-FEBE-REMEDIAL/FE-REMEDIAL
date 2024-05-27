@@ -21,9 +21,10 @@ function TentangKamiPage() {
       <Container>
         <section id="jumbroton">
           <div className="jumbroton-content  aboutflex">
+            <div></div>
             <Row>
               <Col>
-                <p className="m-0  opacity-50">Tentang Kami</p>
+                <p className="m-0 mt-4 opacity-50">Tentang Kami</p>
                 <h2 className="fw-bold">Remedial.id</h2>
                 <div className="text-about">
                   <p>

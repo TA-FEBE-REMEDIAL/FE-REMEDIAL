@@ -6,13 +6,14 @@ import ButtonComponent from "./ButtonComponent";
 function ChallengePilihComponent() {
   return (
     <div>
-      <h3 className="fw-bold"> Challenge terpilih</h3>
       <Card>
         <Card.Body>
           <div className="d-flex justify-content-start align-items-center">
             <img src={img1challenge} className="w-25" alt="" />
             <div className="px-5 ">
-              <Card.Title>Special title treatment</Card.Title>
+              <Card.Title className="fw-bold">
+                Flash Fiction Contest - Cerita Pendek
+              </Card.Title>
               <Card.Text>
                 With supporting text below as a natural lead-in to additional
                 content.

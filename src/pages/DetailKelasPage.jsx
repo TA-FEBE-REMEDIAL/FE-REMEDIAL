@@ -12,8 +12,9 @@ function DetailKelasPage() {
         <BreadcrumbsComponent
           to1="/"
           bread1="beranda"
+          to2="/kelaspage"
+          bread2="Semua Kelas"
           now="Detail Kelas"
-          hide2="d-none"
           hide3="d-none"
           hide4="d-none"
           hide5="d-none"

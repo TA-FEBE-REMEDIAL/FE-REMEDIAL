@@ -34,7 +34,7 @@ export default function DetailArtikelPage() {
                 </div>
 
                 <div className="col-4 col-lg-3 col-xl-3 col-xxl-4 d-flex justify-content-end">
-                  <img className="img-fluid" src="url" alt="" />
+                  <img src={img1detailartikel} className="img-fluid" />
                 </div>
               </div>
             </div>

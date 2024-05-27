@@ -4,26 +4,21 @@ import img1detailartikel from "../assets/img/artikel/berita-seni/1.jpg";
 import img2detailartikel from "../assets/img/artikel/berita-seni/2.jpg";
 import img3detailartikel from "../assets/img/artikel/berita-seni/3.jpg";
 import img4detailartikel from "../assets/img/artikel/berita-seni/5.jpg";
+import BreadcrumbsComponent from "../components/BreadcrumbsComponent";
 export default function DetailArtikelPage() {
   return (
     <div className="top-nav">
-      <section id="breadcrumbs" className="breadcrumbs">
-        <div className="container-fluid">
-          <div className="row justify-content-center">
-            <div className="col-11">
-              <ol>
-                <li>
-                  <Link to="/home">Beranda</Link>
-                </li>
-                <li>
-                  <Link to="/artikel">Artikel</Link>
-                </li>
-                <li>Detail Artikel</li>
-              </ol>
-            </div>
-          </div>
-        </div>
-      </section>
+      <BreadcrumbsComponent
+        to1="/"
+        bread1="beranda"
+        to2="/artikel"
+        bread2="Semua Artikel"
+        now="Detail Artikel"
+        hide3="d-none"
+        hide4="d-none"
+        hide5="d-none"
+      />
+
       <section>
         <div className="row justify-content-center">
           <div className="col-12 bg-dark d-flex justify-content-center">

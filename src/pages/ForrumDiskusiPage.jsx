@@ -1,25 +1,20 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import img1forum from "../assets/img/forum/1.png";
 import { categories } from "../data/kategoridiskusi";
+import BreadcrumbsComponent from "../components/BreadcrumbsComponent";
 
 function ForrumDiskusiPage() {
   return (
     <div className="top-nav ">
-      <section id="breadcrumbs" className="breadcrumbs px-5  ">
-        <div className="container-fluid">
-          <div className="row justify-content-center">
-            <div className="col-11">
-              <ol>
-                <li>
-                  <Link to="/home">Beranda</Link>
-                </li>
-                <li>Forum Diskusi</li>
-              </ol>
-            </div>
-          </div>
-        </div>
-      </section>
+      <BreadcrumbsComponent
+        to1="/"
+        bread1="beranda"
+        now="Tentang Kami"
+        hide2="d-none"
+        hide3="d-none"
+        hide4="d-none"
+        hide5="d-none"
+      />
 
       <section>
         <div className="banner-container">

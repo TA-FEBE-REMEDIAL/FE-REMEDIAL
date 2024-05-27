@@ -6,7 +6,7 @@
 :root {
   --primary-color: #f6f8fd;
   --secondary-color: #d05d5d;
-  --secondary-color2: #ce5555;
+  --secondary-color2: #bc4c4c;
   --color-text: #4a4b4c;
   --color-text2: #babec1;
   --navbar-color: #1c1b1b;
@@ -112,13 +112,31 @@ header {
 }
 /* END HOME PAGE  */
 
-/* STYLE KELAS */
+/*------------------ STYLE KELAS ---------------- */
 .kelas-page .kelas {
   padding-top: 7rem;
 }
 .homepage .kelas {
   background-color: var(--background-dasar);
   padding-bottom: 100px;
+}
+
+.btn-danger {
+  background-color: var(--secondary-color) !important;
+  color: var(--background-dasar) !important;
+}
+.btn-danger:hover {
+  background-color: var(--secondary-color2) !important;
+  color: var(--background-dasar) !important;
+}
+.btn-outline-danger {
+  background-color: none !important;
+  color: var(--secondary-color) !important;
+  border: 1px solid var(--secondary-color) !important;
+}
+.btn-outline-danger:hover {
+  background-color: var(--secondary-color) !important;
+  color: var(--navbar-color-text) !important;
 }
 
 .homepage .kelas .row:nth-child(1) {
@@ -161,8 +179,12 @@ header {
 /* END STYLE HOMEPAGE KELAS  */
 
 /*  ================== ISI KELAS ========= */
-#isi-kelas {
-  margin: auto 0.5rem;
+.isi-kelas {
+  background-color: var(--background-program);
+}
+.isi-kelas_konten {
+  padding-left: 6rem;
+  padding-right: 6rem;
 }
 
 /*  ================== ISI KELAS ========= */
@@ -557,6 +579,109 @@ header {
 
 /*----------------------------- end program ----------------------------------- */
 
+/* ===================== Challenge ============================== */
+/* .App {
+  font-family: Arial, sans-serif;
+}
+
+.App-header {
+  margin-bottom: 20px;
+} */
+.bg-header {
+  background-color: var(--background-program);
+  padding: 10px 120px;
+}
+.bg-header h3 {
+  font-weight: bold;
+}
+.bg-header p {
+  font-size: 14px;
+}
+
+/* -- Challenge Card */
+.challenge-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px;
+  width: 300px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.challenge-category {
+  font-size: 14px;
+  color: #888;
+}
+
+.challenge-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+.challenge-subtitle {
+  font-size: 12px;
+  margin: 8px 0;
+}
+
+.challenge-footer {
+  /* display: flex;
+  justify-content: space-between; */
+  align-items: center;
+}
+
+.participants {
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.participants p {
+  padding-top: 10px;
+}
+
+.details-button,
+.choose-button {
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.details-button {
+  background-color: var(--background-dasar);
+  color: var(--secondary-color);
+  border: 1px solid var(--secondary-color);
+}
+.details-button:hover {
+  background-color: var(--secondary-color);
+  color: var(--navbar-color-text);
+}
+
+.choose-button {
+  background-color: var(--secondary-color);
+}
+.choose-button:hover {
+  background-color: var(--secondary-color2);
+}
+
+/* challenge list  */
+.challenge-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* challenge yang dipilih */
+.bg-details-challenge {
+  background-color: var(--background-program);
+}
+/* =================== END CHALLENGE ========================== */
+
 /*  ======= karya siswa ======*/
 #karya-siswa {
   background-color: var(--background-topik);
@@ -804,6 +929,7 @@ header {
 .aboutflek {
   display: flex !important;
   justify-content: space-between !important;
+  margin-bottom: 30px;
 }
 .text-about p {
   font-size: 15px !important;

@@ -4,27 +4,21 @@ import ProgramDetailComponent from "../components/ProgramDetailComponent";
 import ButtonComponent from "../components/ButtonComponent";
 import JumbrotonComponent from "../components/JumbrotonComponent";
 import img1program from "../assets/img/program/5.png";
-import { Link } from "react-router-dom";
+import BreadcrumbsComponent from "../components/BreadcrumbsComponent";
+
 function DetailProgramPage() {
   return (
     <div className="top-nav">
-      <section id="breadcrumbs" className="breadcrumbs">
-        <div className="container-fluid">
-          <div className="row justify-content-center">
-            <div className="col-11">
-              <ol>
-                <li>
-                  <Link to="/home">Beranda</Link>
-                </li>
-                <li>
-                  <Link to="/program">Semua Program</Link>
-                </li>
-                <li>Detail Program</li>
-              </ol>
-            </div>
-          </div>
-        </div>
-      </section>
+      <BreadcrumbsComponent
+        to1="/"
+        bread1="beranda"
+        to2="/program"
+        bread2="Semua Program"
+        now="Detail Program"
+        hide3="d-none"
+        hide4="d-none"
+        hide5="d-none"
+      />
 
       <div className="container mb-5">
         <JumbrotonComponent
@@ -33,6 +27,8 @@ function DetailProgramPage() {
           deskrip="Program seni yang dilaksanakan oleh Serrum sebagai organisasi  pada program remedial . Siswa akan membentuk tim atau individual dan mengerjakan tantangan untuk membantu memecahkan masalah pada challenge yang dipilih,  serta dibekali dengan Keterampilan kesenian dan kemampuan digital lainnya."
           img={img1program}
           hr="d-none"
+          name="Gabung Program"
+          to="/program/detail-program/pilih-challange"
         />
       </div>
       <section id="detail-pro" className="pt-5">

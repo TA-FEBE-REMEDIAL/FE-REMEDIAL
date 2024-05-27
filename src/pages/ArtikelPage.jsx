@@ -1,24 +1,20 @@
-import { Link } from "react-router-dom";
 import ArtikelList from "../components/ArtikelList";
 import ButtonArtikel from "../components/ButtonArtikel";
+import BreadcrumbsComponent from "../components/BreadcrumbsComponent";
 
 const ArtikelPage = () => {
   return (
     <main className="top-nav">
-      <section id="breadcrumbs" className="breadcrumbs">
-        <div className="container-fluid">
-          <div className="row justify-content-center">
-            <div className="col-11 col-xl-10">
-              <ol>
-                <li>
-                  <Link to="/home">Beranda</Link>
-                </li>
-                <li>Artikel</li>
-              </ol>
-            </div>
-          </div>
-        </div>
-      </section>
+      <BreadcrumbsComponent
+        to1="/"
+        bread1="beranda"
+        now="Semua Artikel"
+        hide2="d-none"
+        hide3="d-none"
+        hide4="d-none"
+        hide5="d-none"
+      />
+
       <div className="container-fluid-1">
         <div className="row justify-content-center">
           <div className="col-11 col-xl-10">

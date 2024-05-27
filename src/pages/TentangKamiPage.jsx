@@ -1,27 +1,22 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
 import img1about from "../assets/img/about/about1.png";
 import img2about from "../assets/img/about/about2.png";
 import img3about from "../assets/img/about/about3.png";
+import BreadcrumbsComponent from "../components/BreadcrumbsComponent";
 
 function TentangKamiPage() {
   return (
     <div className="top-nav">
-      <section id="breadcrumbs" className="breadcrumbs px-5  mb-3">
-        <div className="container-fluid">
-          <div className="row justify-content-center">
-            <div className="col-11">
-              <ol>
-                <li>
-                  <Link to="/home">Beranda</Link>
-                </li>
-                <li>Tentang Kami</li>
-              </ol>
-            </div>
-          </div>
-        </div>
-      </section>
+      <BreadcrumbsComponent
+        to1="/"
+        bread1="beranda"
+        now="Tentang Kami"
+        hide2="d-none"
+        hide3="d-none"
+        hide4="d-none"
+        hide5="d-none"
+      />
 
       <Container>
         <section id="jumbroton">

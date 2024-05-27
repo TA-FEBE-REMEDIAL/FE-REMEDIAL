@@ -15,6 +15,8 @@ import DetailKaryaPage from "./pages/DetailKaryaPage";
 import DetailArtikelPage from "./pages/DetailArtikelPage";
 import ForrumDiskusiPage from "./pages/ForrumDiskusiPage";
 import DetailProgramPage from "./pages/DetailProgramPage";
+import ChallengePage from "./pages/ChallengePage";
+import PilihChallengePage from "./pages/PilihChallengePage";
 
 function App() {
   return (
@@ -27,6 +29,14 @@ function App() {
         <Route path="/home" Component={HomePage} />
         <Route path="/program" Component={ProgramPage} />
         <Route path="/program/detail-program" Component={DetailProgramPage} />
+        <Route
+          path="/program/detail-program/pilih-challange"
+          Component={ChallengePage}
+        />
+        <Route
+          path="/program/detail-program/pilih-challange/challenge-terpilih"
+          Component={PilihChallengePage}
+        />
         <Route path="/artikel" Component={ArtikelPage} />
         <Route path="/artikel/detail-artikel" Component={DetailArtikelPage} />
         <Route path="/karya-siswa" Component={KaryaPage} />

@@ -912,7 +912,7 @@ header {
 }
 
 .fundamental .fundamental-item .fundamental-img {
-  width: 90px;
+  width: 100px;
   border-radius: 10px;
   /* border: 6px solid #fff; */
   float: left;
@@ -956,6 +956,33 @@ header {
 .img-artikel {
   display: flex;
   flex: roun;
+}
+.img-artikel1 {
+  width: 900px;
+}
+
+.jumbroton-artikel {
+  background-color: var(--background-artikel) !important;
+}
+
+#jumbroton-artikel img {
+  width: 90%;
+  border-radius: 0.3rem;
+}
+#jumbroton-artikel p:nth-child(3) {
+  font-size: 16px;
+}
+.jumbroton-content-artikel {
+  display: flex !important;
+  justify-content: space-around !important;
+  margin-left: 50px;
+  padding: 50px;
+}
+
+/* isi Konten Artikel */
+
+.isi-konten-artikel {
+  background-color: #995c5c;
 }
 
 /*--------------------------------------------------------------

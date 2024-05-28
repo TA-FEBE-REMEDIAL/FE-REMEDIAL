@@ -2,7 +2,7 @@ import React from "react";
 
 function ChallengeInfo(props) {
   const details = props.details;
-  console.log(details);
+
   return (
     <div className="box-detailschallenge">
       <div className="border-content-challenge mb-4">

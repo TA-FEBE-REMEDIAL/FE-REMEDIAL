@@ -5,14 +5,20 @@ import img1challenge from "../assets/img/challenge-terpilih/1.png";
 import ChallengePilihComponent from "../components/ChallengePilihComponent";
 import ChallengeList from "../components/ChallengeList";
 import img1challengeterpilih from "../assets/img/challenge/3.png";
+import data from "../data/detailchallenge";
+import { useParams } from "react-router-dom";
 
 function PilihChallengePage() {
+  const params = useParams();
+  const challenges = [data[params.id]];
+  const challenge = challenges[0];
+
   return (
     <div className="top-nav">
       <BreadcrumbsComponent
         to1="/"
         bread1="beranda"
-        to2="/program/detail-program/pilih-challange"
+        to2="/program/detail-program/pilih-challange/"
         bread2="Pilih Challenge"
         hide3="d-none"
         hide4="d-none"
@@ -22,10 +28,10 @@ function PilihChallengePage() {
 
       <div className="container mb-4 pt-5">
         <JumbrotonComponent
-          title="Literary Forge: Program Remedial Seni Sastra"
-          kategori="Seni Rupa"
-          deskrip="Program seni yang dilaksanakan oleh Serrum sebagai organisasi  pada program remedial . Siswa akan membentuk tim atau individual dan mengerjakan tantangan untuk membantu memecahkan masalah pada challenge yang dipilih,  serta dibekali dengan Keterampilan kesenian dan kemampuan digital lainnya."
-          img={img1challenge}
+          title={challenge.jumb_title}
+          kategori={challenge.ctgr}
+          deskrip={challenge.jumb_desc}
+          img={challenge.jumb_img}
           hide="d-none"
           hr="d-none"
         />
@@ -37,9 +43,9 @@ function PilihChallengePage() {
           </h3>
           <ChallengePilihComponent
             img={img1challengeterpilih}
-            title1="Flash Fiction Contest - Cerita Pendek"
+            title1={challenge.title1_challenge}
             hidedesc="d-none"
-            to="/program/detail-program/pilih-challange/challenge-terpilih/detail-challenge"
+            to={`/program/detail-program/pilih-challange/challenge-terpilih/detail-challenge/${challenge.id}`}
           />
         </div>
       </div>

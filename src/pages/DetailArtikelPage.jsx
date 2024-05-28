@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import img1detailartikel from "../assets/img/artikel/berita-seni/1.jpg";
 import img2detailartikel from "../assets/img/artikel/berita-seni/2.jpg";
 import img3detailartikel from "../assets/img/artikel/berita-seni/3.jpg";
@@ -68,29 +67,29 @@ export default function DetailArtikelPage() {
                 <section>
                   <div id="blog"></div>
 
-                  <div class="container-fluid my-4 col-11">
-                    <div class="card">
-                      <h5 class="card-title m-3 fw-bold">Komentar</h5>
-                      <div class="comment comment-new flex justify-content-lg-start">
-                        <div class="flex-1">
+                  <div className="container-fluid my-4 col-11">
+                    <div className="card">
+                      <h5 className="card-title m-3 fw-bold">Komentar</h5>
+                      <div className="comment comment-new flex justify-content-lg-start">
+                        <div className="flex-1">
                           <form
                             action="#"
-                            class="comment-form d-flex align-items-center"
+                            className="comment-form d-flex align-items-center"
                           >
                             <textarea
                               placeholder="Add a comment"
-                              class="comment-input col-6 mx-3 mb-3 p-3"
+                              className="comment-input col-6 mx-3 mb-3 p-3"
                             ></textarea>
                             <input
                               type="submit"
-                              class="comment-submit mb-3"
+                              className="comment-submit mb-3"
                               value="Reply"
                             />
                           </form>
                         </div>
-                        <div class="comments">
-                          <div class="comment flex items-start justify-start">
-                            <div class="flex-1"></div>
+                        <div className="comments">
+                          <div className="comment flex items-start justify-start">
+                            <div className="flex-1"></div>
                           </div>
                         </div>
                       </div>

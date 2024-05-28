@@ -10,7 +10,7 @@ function ProgramDetailComponent() {
           data-bs-spy="scroll"
           data-bs-target="#list-example"
           data-bs-offset="0"
-          class="scrollspy-example"
+          className="scrollspy-example"
           tabindex="0"
         >
           <div className="border-content">

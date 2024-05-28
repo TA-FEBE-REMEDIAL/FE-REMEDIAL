@@ -19,6 +19,8 @@ function ChallengeCard(props) {
         <div>
           <NavLink to={props.to}>
             <button className="details-button">Lihat Detail</button>
+          </NavLink>
+          <NavLink to={props.to2}>
             <button className="choose-button">Pilih Challenge</button>
           </NavLink>
         </div>

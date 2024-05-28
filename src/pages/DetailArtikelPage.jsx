@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import img1detailartikel from "../assets/img/artikel/berita-seni/1.jpg";
 import img2detailartikel from "../assets/img/artikel/berita-seni/2.jpg";
 import img3detailartikel from "../assets/img/artikel/berita-seni/3.jpg";

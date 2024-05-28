@@ -20,6 +20,15 @@ import PilihChallengePage from "./pages/PilihChallengePage";
 import DetailChallengePage from "./pages/DetailChallengePage";
 
 function App() {
+  // Disable error gajelas
+  const consoleError = console.error;
+  console.error = function (warning) {
+    if (/(validateDOMNesting)/.test(warning)) {
+      return;
+    }
+    consoleError.apply(console, arguments);
+  };
+
   return (
     <div>
       <NavbarComponent />
@@ -35,11 +44,11 @@ function App() {
           Component={ChallengePage}
         />
         <Route
-          path="/program/detail-program/pilih-challange/challenge-terpilih"
+          path="/program/detail-program/pilih-challange/challenge-terpilih/:id"
           Component={PilihChallengePage}
         />
         <Route
-          path="/program/detail-program/pilih-challange/challenge-terpilih/detail-challenge"
+          path="/program/detail-program/pilih-challange/challenge-terpilih/detail-challenge/:id"
           Component={DetailChallengePage}
         />
         <Route path="/artikel" Component={ArtikelPage} />

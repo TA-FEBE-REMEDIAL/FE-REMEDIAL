@@ -13,9 +13,9 @@ const NavbarComponent = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mx-auto text-center">
-              {navLinks.map((link) => {
+              {navLinks.map((link, index) => {
                 return (
-                  <div className="nav-link custom" key={link.id}>
+                  <div className="nav-link custom" key={index}>
                     <NavLink
                       to={link.path}
                       className={({ isActive, isPending }) =>
@@ -30,14 +30,14 @@ const NavbarComponent = () => {
               {navLinksDrop.map((program, index) => {
                 return (
                   <NavLink
+                    key={index}
                     className={({ isActive, isPending }) =>
                       isPending ? "pending" : isActive ? "active" : ""
                     }
                   >
-                    <div className="nav-link drop-bg" key={index}>
+                    <div className="nav-link drop-bg">
                       <NavDropdown
                         className="title-bg"
-                        key={index}
                         title={program.text}
                         id="basic-nav-dropdown"
                       >

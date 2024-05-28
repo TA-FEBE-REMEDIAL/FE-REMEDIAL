@@ -3,14 +3,18 @@ import ChallengeInfo from "../components/ChallengeInfo";
 import PreparationComponent from "../components/PreparationComponent";
 import MentorComponent from "../components/MentorComponent";
 import BreadcrumbsComponent from "../components/BreadcrumbsComponent";
-import img1program from "../assets/img/program/7.png";
 import JumbrotonComponent from "../components/JumbrotonComponent";
+import img1challengeterpilih from "../assets/img/challenge/3.png";
 import { Row, Col } from "react-bootstrap";
 import data from "../data/detailchallenge";
+import { useParams } from "react-router-dom";
+import ChallengePilihComponent from "../components/ChallengePilihComponent";
 
 const DetailChallengePage = () => {
-  console.log(data);
-  console.log(data.detail1_challenge);
+  const params = useParams();
+  const challenges = [data[params.id]];
+  const challenge = challenges[0];
+
   return (
     <div className="top-nav">
       <BreadcrumbsComponent
@@ -24,31 +28,44 @@ const DetailChallengePage = () => {
       />
       <div className="container mb-4 pt-5">
         <JumbrotonComponent
-          title={data.jumb_title}
-          kategori={data.ctgr}
-          deskrip={data.jumb_desc}
-          img={data.jumb_img}
+          title={challenge.jumb_title}
+          kategori={challenge.ctgr}
+          deskrip={challenge.jumb_desc}
+          img={challenge.jumb_img}
           hide="d-none"
           hr="d-none"
         />
+      </div>
+      <div className="bg-details-challenge py-5">
+        <div className="container px-5">
+          <h3 className="fw-bold">Challenge</h3>
+          <ChallengePilihComponent
+            img={img1challengeterpilih}
+            title1={challenge.title1_challenge}
+            deskrip1={challenge.desc1_challenge}
+            hide="d-none"
+          />
+        </div>
       </div>
       <div className="isi-detailchallenge py-5">
         <div className="container">
           <Row>
             <Col xs={9}>
-              {/* <ChallengeInfo
-                title={data.title1_challenge}
-                desc1={data.desc1_challenge}
-                details={data.detail1_challenge}
-                desc_end={data.title1_challenge_end}
-              /> */}
-              {/* <PreparationComponent
-                title={data.title2_challenge}
-                desc={data.desc2_challenge}
-                details={data.detail2_challenge}
-              /> */}
+              <ChallengeInfo
+                title={challenge.title1_challenge}
+                desc1={challenge.desc1_challenge}
+                details={challenge.detail1_challenge}
+                desc_end={challenge.title1_challenge_end}
+              />
+              <PreparationComponent
+                title={challenge.title2_challenge}
+                desc={challenge.desc2_challenge}
+                details={challenge.detail2_challenge}
+              />
             </Col>
-            <Col>{/* <MentorComponent /> */}</Col>
+            <Col>
+              <MentorComponent mentors={challenge.mentor} />
+            </Col>
           </Row>
         </div>
       </div>

@@ -1,24 +1,22 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
-import img1challenge from "../assets/img/challenge/3.png";
 import ButtonComponent from "./ButtonComponent";
 
-function ChallengePilihComponent() {
+function ChallengePilihComponent(props) {
   return (
     <div>
       <Card>
         <Card.Body>
           <div className="d-flex justify-content-start align-items-center">
-            <img src={img1challenge} className="w-25" alt="" />
+            <img src={props.img} className="w-25" alt="" />
             <div className="px-5 ">
-              <Card.Title className="fw-bold">
-                Flash Fiction Contest - Cerita Pendek
-              </Card.Title>
-              <Card.Text>
-                With supporting text below as a natural lead-in to additional
-                content.
-              </Card.Text>
-              <ButtonComponent name="Lanjutkan Challenge" to="" />
+              <Card.Title className="fw-bold">{props.title1}</Card.Title>
+              <div className={props.hidedesc}>
+                <Card.Text>{props.deskrip1}</Card.Text>
+              </div>
+              <div className={props.hide}>
+                <ButtonComponent name="Lanjutkan Challenge" to={props.to} />
+              </div>
             </div>
           </div>
         </Card.Body>

@@ -17,6 +17,7 @@ import ForrumDiskusiPage from "./pages/ForrumDiskusiPage";
 import DetailProgramPage from "./pages/DetailProgramPage";
 import ChallengePage from "./pages/ChallengePage";
 import PilihChallengePage from "./pages/PilihChallengePage";
+import DetailChallengePage from "./pages/DetailChallengePage";
 
 function App() {
   return (
@@ -36,6 +37,10 @@ function App() {
         <Route
           path="/program/detail-program/pilih-challange/challenge-terpilih"
           Component={PilihChallengePage}
+        />
+        <Route
+          path="/program/detail-program/pilih-challange/challenge-terpilih/detail-challenge"
+          Component={DetailChallengePage}
         />
         <Route path="/artikel" Component={ArtikelPage} />
         <Route path="/artikel/detail-artikel" Component={DetailArtikelPage} />

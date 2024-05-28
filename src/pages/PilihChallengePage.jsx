@@ -4,6 +4,7 @@ import JumbrotonComponent from "../components/JumbrotonComponent";
 import img1challenge from "../assets/img/challenge-terpilih/1.png";
 import ChallengePilihComponent from "../components/ChallengePilihComponent";
 import ChallengeList from "../components/ChallengeList";
+import img1challengeterpilih from "../assets/img/challenge/3.png";
 
 function PilihChallengePage() {
   return (
@@ -32,10 +33,14 @@ function PilihChallengePage() {
       <div className="bg-details-challenge py-5">
         <div className="container px-5">
           <h3 className="fw-bold">
-            {" "}
             <span>Challenge</span> Terpilih
           </h3>
-          <ChallengePilihComponent />
+          <ChallengePilihComponent
+            img={img1challengeterpilih}
+            title1="Flash Fiction Contest - Cerita Pendek"
+            hidedesc="d-none"
+            to="/program/detail-program/pilih-challange/challenge-terpilih/detail-challenge"
+          />
         </div>
       </div>
 

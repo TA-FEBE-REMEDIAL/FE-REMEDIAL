@@ -8,8 +8,8 @@ function ChallengePage() {
   return (
     <div className="top-nav">
       <BreadcrumbsComponent
-        to1="/"
-        bread1="beranda"
+        to1="/program"
+        bread1="Semua Program"
         to2="/program/detail-program"
         bread2="Detail program"
         hide3="d-none"

@@ -1,5 +1,6 @@
 import React from "react";
 import { mentors } from "../data/mentor";
+import ModalComponent from "./ModalComponent";
 
 function MentorComponent(props) {
   return (
@@ -11,7 +12,12 @@ function MentorComponent(props) {
           <p>{mentor.name}</p>
         </div>
       ))}
-      <button className="upload-button">Unggah Projek</button>
+      <ModalComponent
+        btn="Lihat Selengkapnya"
+        title="Unggah Proyek"
+        body="form"
+      />
+      {/* <button className="upload-button">Unggah Projek</button> */}
     </div>
   );
 }

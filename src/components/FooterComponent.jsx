@@ -76,7 +76,7 @@ const FooterComponent = () => {
                   </a>
                   <p>
                     Remedial merupakan kegiatan yang akan Serrum lakukan selama
-                    1 tahun di 2019.Dengan metode saling silang informasi yang
+                    1 tahun di 2019. Dengan metode saling silang informasi yang
                     menghasilkan pengetahuan dan pendekatan seni dan literasi.
                   </p>
                   <div className="social-links mt-3">

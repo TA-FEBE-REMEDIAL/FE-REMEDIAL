@@ -9,43 +9,51 @@ import ArtikelKonten from "../components/ArtikelKonten";
 import ArtikelKomentar from "../components/ArtikelKomentar";
 import ArtikelTerbaru from "../components/ArtikelTerbaru";
 import { Row, Col } from "react-bootstrap";
+import NavbarComponent from "../components/NavbarComponent";
+import FooterComponent from "../components/FooterComponent";
 
 export default function DetailArtikelPage() {
   return (
-    <div className="top-nav">
-      <BreadcrumbsComponent
-        to1="/"
-        bread1="beranda"
-        to2="/artikel"
-        bread2="Semua Artikel"
-        now="Detail Artikel"
-        hide3="d-none"
-        hide4="d-none"
-        hide5="d-none"
-      />
-
-      <div className="row justify-content-center">
-        <JumbrotonArtikel
-          kategori="Berita Seni"
-          title="Mini Residensi Siswa : Mencetak Seniman Muda dari Sekolah"
-          penerbit="oleh rianto rianto"
-          tanggal="15-01-2019"
-          img={img1detailartikel}
+    <>
+      <NavbarComponent />
+      <div className="top-nav">
+        <BreadcrumbsComponent
+          to1="/"
+          bread1="beranda"
+          to2="/artikel"
+          bread2="Semua Artikel"
+          now="Detail Artikel"
+          hide3="d-none"
+          hide4="d-none"
+          hide5="d-none"
         />
-        <div className="isi-konten-artikel">
+
+        <div className="row justify-content-center">
           <div className="">
-            <Row>
-              <Col xs={9}>
-                <ArtikelKonten />
-                <ArtikelKomentar />
-              </Col>
-              <Col>
-                <ArtikelTerbaru />
-              </Col>
-            </Row>
+            <JumbrotonArtikel
+              kategori="Berita Seni"
+              title="Mini Residensi Siswa : Mencetak Seniman Muda dari Sekolah"
+              penerbit="oleh rianto rianto"
+              tanggal="15-01-2019"
+              img={img1detailartikel}
+            />
+          </div>
+          <div className="isi-konten-artikel pt-5">
+            <div className="container">
+              <Row>
+                <Col xs={9}>
+                  <ArtikelKonten />
+                  <ArtikelKomentar />
+                </Col>
+                <Col>
+                  <ArtikelTerbaru />
+                </Col>
+              </Row>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+      <FooterComponent />
+    </>
   );
 }

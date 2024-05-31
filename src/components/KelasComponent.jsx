@@ -4,6 +4,9 @@ import img1kelas from "../assets/img/kelas/1.png";
 import img2kelas from "../assets/img/kelas/2.png";
 import img3kelas from "../assets/img/kelas/3.png";
 import { NavLink, Link } from "react-router-dom";
+import CardComponent from "./CardComponent";
+import CardGroup from "react-bootstrap/CardGroup";
+import Card from "react-bootstrap/Card";
 
 function KelasComponent(props) {
   return (
@@ -28,57 +31,29 @@ function KelasComponent(props) {
         </Row>
 
         <Row>
-          <Col>
-            <img src={img1kelas} alt="" className="w-100 mb-5 rounded-top" />
-            <div className="mb-5 px-3">
-              <h5>Belajar Pengenalan Seni Rupa</h5>
-              <p className="m-0 text-secondary opacity-50">Seni Rupa</p>
-            </div>
-            <div className="mb-5 px-3">
-              <p className="m-0 text-secondary fw-bold">Gratis</p>
-              <Link to={"/kelaspage/detail-kelas"}>
-                <div className="d-grid gap-2">
-                  <button className="btn btn-outline-danger rounded-1 m-2">
-                    Lihat Detail
-                  </button>
-                </div>
-              </Link>
-            </div>
-          </Col>
-          <Col>
-            <img src={img2kelas} alt="" className="w-100 mb-5 rounded-top" />
-            <div className="mb-5 px-3">
-              <h5>Belajar Pengenalan Seni Musik</h5>
-              <p className="m-0 text-secondary opacity-50">Seni Musik</p>
-            </div>
-            <div className="mb-5 px-3">
-              <p className="m-0 text-secondary fw-bold">Gratis</p>
-              <Link to={"/kelaspage/detail-kelas"}>
-                <div className="d-grid gap-2">
-                  <button className="btn btn-outline-danger rounded-1 m-2">
-                    Lihat Detail
-                  </button>
-                </div>
-              </Link>
-            </div>
-          </Col>
-          <Col>
-            <img src={img3kelas} alt="" className="w-100 mb-5 rounded-top" />
-            <div className="mb-5 px-3">
-              <h5>Belajar Pengenalan Seni Sastra</h5>
-              <p className="m-0 text-secondary opacity-50">Seni Sastra</p>
-            </div>
-            <div className="mb-5 px-3">
-              <p className="m-0 text-secondary fw-bold">Gratis</p>
-              <Link to={"/kelaspage/detail-kelas"}>
-                <div className="d-grid gap-2">
-                  <button className="btn btn-outline-danger rounded-1 m-2">
-                    Lihat Detail
-                  </button>
-                </div>
-              </Link>
-            </div>
-          </Col>
+          <CardGroup>
+            <CardComponent
+              img={img1kelas}
+              title="Pengenalan Seni Rupa"
+              category="Seni Rupa"
+              block="d-grid gap-2"
+              to="/kelaspage/detail-kelas"
+            />
+            <CardComponent
+              img={img3kelas}
+              title="Seni Sastra: Pengertian, jenis, unsur, ciri, fungsi  & manfaat"
+              category="Seni Sastra"
+              block="d-grid gap-2"
+              to="/kelaspage/detail-kelas"
+            />
+            <CardComponent
+              img={img2kelas}
+              title="Pengenalan Musik Tradisional"
+              category="Seni Musik"
+              block="d-grid gap-2"
+              to="/kelaspage/detail-kelas"
+            />
+          </CardGroup>
         </Row>
       </Container>
     </div>

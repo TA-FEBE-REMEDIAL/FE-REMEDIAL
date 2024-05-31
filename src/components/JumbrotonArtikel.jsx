@@ -7,19 +7,21 @@ function JumbrotonArtikel(props) {
     <section id="jumbroton-artikel">
       <div className="jumbroton-content-artikel">
         <div className="container">
-          <Row>
-            <Col>
-              <p className="m-0  py-4 opacity-50">{props.kategori}</p>
-              <h2 className="fw-bold ">{props.title}</h2>
-              <div className="col d-flex">
-                <p className="ps-1">{props.penerbit}</p>
-                <p className="ps-2">{props.tanggal}</p>
-              </div>
-            </Col>
-            <Col>
-              <img src={props.img} alt="" />
-            </Col>
-          </Row>
+          <div className="flex justify-content-center align-items-center">
+            <Row>
+              <Col>
+                <p className="m-0  py-4 opacity-50">{props.kategori}</p>
+                <h2 className="fw-bold ">{props.title}</h2>
+                <div className="col d-flex">
+                  <p className="ps-1">{props.penerbit}</p>
+                  <p className="ps-2">{props.tanggal}</p>
+                </div>
+              </Col>
+              <Col>
+                <img src={props.img} alt="" />
+              </Col>
+            </Row>
+          </div>
         </div>
       </div>
     </section>

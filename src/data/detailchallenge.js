@@ -8,7 +8,7 @@ const data = [
     ctgr: "Seni Rupa",
     jumb_desc:
       "Program seni yang dilaksanakan oleh Serrum sebagai organisasi pada program remedial . Siswa akan membentuk tim atau individual dan mengerjakan tantangan untuk membantu memecahkan masalah pada challenge yang dipilih, serta dibekali dengan Keterampilan kesenian dan kemampuan digital lainnya.",
-    title1_challenge: "1 Literary Forge: Program remedial Seni Sastra",
+    title1_challenge: "Challenge Remedial - Flash Fiction Contest ",
     desc1_challenge:
       "Selamat datang di Flash Fiction Contest - Cerita Pendek! Ini adalah kesempatan bagi para penulis untuk menunjukkan kreativitas mereka dalam format yang singkat namun kuat. tantangan menulis cerita pendek yang mendorong para penulis untuk menciptakan karya fiksi singkat dengan batasan kata tertentu. Tantangan ini menguji kemampuan penulis dalam menyampaikan cerita yang menarik, penuh makna, dan mengesankan dalam format yang sangat ringkas.",
     detail1_challenge: [
@@ -40,11 +40,11 @@ const data = [
   {
     id: 1,
     jumb_img: img1program,
-    jumb_title: "Testing 22",
+    jumb_title: "Literary Forge: Program Remedial Seni Sastra",
     ctgr: "Seni Rupa",
     jumb_desc:
       "Program seni yang dilaksanakan oleh Serrum sebagai organisasi pada program remedial . Siswa akan membentuk tim atau individual dan mengerjakan tantangan untuk membantu memecahkan masalah pada challenge yang dipilih, serta dibekali dengan Keterampilan kesenian dan kemampuan digital lainnya.",
-    title1_challenge: "Testing 22",
+    title1_challenge: "Challenge Remedial - Literary Analysis Blog Series",
     desc1_challenge:
       "Selamat datang di Flash Fiction Contest - Cerita Pendek! Ini adalah kesempatan bagi para penulis untuk menunjukkan kreativitas mereka dalam format yang singkat namun kuat. tantangan menulis cerita pendek yang mendorong para penulis untuk menciptakan karya fiksi singkat dengan batasan kata tertentu. Tantangan ini menguji kemampuan penulis dalam menyampaikan cerita yang menarik, penuh makna, dan mengesankan dalam format yang sangat ringkas.",
     detail1_challenge: [
@@ -76,11 +76,11 @@ const data = [
   {
     id: 2,
     jumb_img: img1program,
-    jumb_title: "Halo 33",
+    jumb_title: "Literary Forge: Program Remedial Seni Sastra",
     ctgr: "Seni Rupa",
     jumb_desc:
       "Program seni yang dilaksanakan oleh Serrum sebagai organisasi pada program remedial . Siswa akan membentuk tim atau individual dan mengerjakan tantangan untuk membantu memecahkan masalah pada challenge yang dipilih, serta dibekali dengan Keterampilan kesenian dan kemampuan digital lainnya.",
-    title1_challenge: "Halo 33",
+    title1_challenge: "Challenge Remedial - Poetry Writing Marathon ",
     desc1_challenge:
       "Selamat datang di Flash Fiction Contest - Cerita Pendek! Ini adalah kesempatan bagi para penulis untuk menunjukkan kreativitas mereka dalam format yang singkat namun kuat. tantangan menulis cerita pendek yang mendorong para penulis untuk menciptakan karya fiksi singkat dengan batasan kata tertentu. Tantangan ini menguji kemampuan penulis dalam menyampaikan cerita yang menarik, penuh makna, dan mengesankan dalam format yang sangat ringkas.",
     detail1_challenge: [

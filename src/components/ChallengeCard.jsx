@@ -16,12 +16,12 @@ function ChallengeCard(props) {
             {props.roll}
           </span>
         </div>
-        <div>
+        <div className="d-flex ">
           <NavLink to={props.to}>
-            <button className="details-button">Lihat Detail</button>
+            <button className="details-button mt-auto">Lihat Detail</button>
           </NavLink>
           <NavLink to={props.to2}>
-            <button className="choose-button">Pilih Challenge</button>
+            <button className="choose-button mt-auto">Pilih Challenge</button>
           </NavLink>
         </div>
       </div>

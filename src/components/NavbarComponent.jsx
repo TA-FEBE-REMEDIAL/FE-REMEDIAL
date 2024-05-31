@@ -2,17 +2,21 @@ import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
 import { navLinksDrop, navLinks } from "../data/navbar";
 import { NavLink } from "react-router-dom";
 
-const NavbarComponent = () => {
+const NavbarComponent = (props) => {
   return (
     <div>
-      <Navbar expand="lg" className="bg-body-tertiary">
+      <Navbar expand="lg" className={`bg-body-tertiary ${props.align}`}>
         <Container>
           <NavLink to={"/"}>
             <Navbar.Brand>Remedial.id</Navbar.Brand>
           </NavLink>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+
+          <Navbar.Toggle
+            aria-controls="basic-navbar-nav"
+            className={props.hide}
+          />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="mx-auto text-center">
+            <Nav className={`mx-auto text-center ${props.hide} `}>
               {navLinks.map((link, index) => {
                 return (
                   <div className="nav-link custom" key={index}>
@@ -70,16 +74,20 @@ const NavbarComponent = () => {
               })}
             </Nav>
 
-            <div className="text-center">
-              <button
-                type="button"
-                className="btn btn-outline-danger rounded-1 m-2"
-              >
-                Daftar
-              </button>
-              <button type="button" className="btn btn-danger">
-                Masuk
-              </button>
+            <div className={`text-center ${props.hide} `}>
+              <NavLink to={"/register"}>
+                <button
+                  type="button"
+                  className="btn btn-outline-danger rounded-1 m-2"
+                >
+                  Daftar
+                </button>
+              </NavLink>
+              <NavLink to={"/login"}>
+                <button type="button" className="btn btn-danger">
+                  Masuk
+                </button>
+              </NavLink>
             </div>
           </Navbar.Collapse>
         </Container>

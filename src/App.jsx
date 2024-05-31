@@ -1,7 +1,5 @@
 import { Routes, Route } from "react-router-dom";
 
-import NavbarComponent from "./components/NavbarComponent";
-import FooterComponent from "./components/FooterComponent";
 // import CarouselComponent from "./components/CarouselComponent";
 
 import HomePage from "./pages/HomePage";
@@ -18,6 +16,8 @@ import DetailProgramPage from "./pages/DetailProgramPage";
 import ChallengePage from "./pages/ChallengePage";
 import PilihChallengePage from "./pages/PilihChallengePage";
 import DetailChallengePage from "./pages/DetailChallengePage";
+import LoginPage from "./pages/LoginPage";
+import RegisterPage from "./pages/RegisterPage";
 
 function App() {
   // Disable error gajelas
@@ -31,10 +31,10 @@ function App() {
 
   return (
     <div>
-      <NavbarComponent />
-      {/* <CarouselComponent /> */}
-
       <Routes>
+        {/* Auth */}
+        <Route path="/login" Component={LoginPage} />
+        <Route path="/register" Component={RegisterPage} />
         <Route path="/" Component={HomePage} />
         <Route path="/home" Component={HomePage} />
         <Route path="/program" Component={ProgramPage} />
@@ -63,8 +63,6 @@ function App() {
         <Route path="/kelaspage" Component={KelasPage} />
         <Route path="/kelaspage/detail-kelas" Component={DetailKelasPage} />
       </Routes>
-
-      <FooterComponent />
     </div>
   );
 }

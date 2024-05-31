@@ -1,6 +1,9 @@
 * {
   font-family: "Poppins", sans-serif;
   text-decoration: none !important;
+  /* margin: 0;
+  padding: 0;
+  box-sizing: border-box; */
 }
 
 :root {
@@ -24,10 +27,11 @@
 /* STYLE NAVBAR */
 .navbar {
   position: fixed;
-  padding: 15px 0 15 px 0;
+  padding: 15px 0 auto 0;
   width: 100%;
   background-color: var(--navbar-color) !important;
   z-index: 5;
+  margin-top: 0;
 }
 
 .navbar .nav-link a {
@@ -86,6 +90,88 @@
 
 /* END STYLE NAVBAR */
 
+/* =========== FITUR LOGIN ========== */
+#login {
+  margin: auto 6rem;
+  font-size: 12px;
+}
+#login ::-webkit-input-placeholder {
+  font-size: 12px !important;
+}
+
+#login .form-control {
+  padding: 12px auto !important;
+}
+#login img {
+  margin: 0 auto;
+  padding-top: 10%;
+}
+.login {
+  background-color: var(--background-dasar);
+  border-radius: 5px;
+  padding: 30px 40px;
+  margin-bottom: 40px;
+  margin-left: -40px;
+  margin-right: 20px;
+}
+
+.footer-form button {
+  background-color: var(--secondary-color) !important;
+  border: none !important;
+}
+.footer-form button:hover {
+  background-color: var(--secondary-color2) !important;
+}
+.footer-form span a {
+  color: var(--secondary-color) !important;
+}
+
+/* ============= END FITUR LOGIN ============= */
+
+/* ============ FITUR REGISTER ============ */
+#login .form-check-input:checked,
+#register .form-check-input:checked {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+#register {
+  margin: auto 6rem;
+  padding-top: 5rem;
+  font-size: 12px;
+}
+#register ::-webkit-input-placeholder {
+  font-size: 12px !important;
+}
+
+#register .form-control {
+  padding: 12px auto !important;
+}
+
+.register {
+  background-color: var(--background-dasar);
+  border-radius: 5px;
+  padding: 30px 40px;
+  /* margin-bottom: 40px; */
+  margin: auto 340px;
+  /* margin-left: -40px;
+  margin-right: 20px; */
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* ============ END FITUR REGISTER ========== */
+
 /* ===== JUMBROTON =========== */
 .top-nav {
   padding-top: 8rem;
@@ -107,13 +193,40 @@ hr {
 }
 /* ===== END JUMBROTON =========== */
 
-/* STYLE HOME PAGE  */
+/* ============== STYLE HOME PAGE ================ */
 header {
   background: #d05d5d;
 }
-/* END HOME PAGE  */
+/*==============  END HOME PAGE ================= */
 
-/*------------------ STYLE KELAS ---------------- */
+/* ============== CARD PROGRAM & KELAS =============== */
+
+/* card kelas & program */
+.card-footer {
+  /* padding: var(--bs-card-cap-padding-y) var(--bs-card-cap-padding-x);
+  color: var(--bs-card-cap-color); */
+  background-color: #fff !important;
+  border-top: none !important;
+  border-radius: 0.5rem !important;
+}
+
+.card-pro img {
+  border-top-left-radius: 0.5rem !important;
+  border-top-right-radius: 0.5rem !important;
+}
+.card-pro {
+  /* --bs-card-border-color: black !important; */
+  border: none;
+  border-radius: 0.5rem !important;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+/* ============ END CARD PROGRAM & KELAS ============= */
+
+/*=============== STYLE KELAS =============== */
+.kelas-page {
+  background-color: var(--background-dasar);
+}
+
 .kelas-page .kelas {
   padding-top: 2rem;
 }
@@ -140,38 +253,42 @@ header {
   color: var(--navbar-color-text) !important;
 }
 
-.homepage .kelas .row:nth-child(1) {
-  padding-top: 150px;
+.kelas .row:nth-child(1) {
+  /* padding-top: 150px; */
   padding-bottom: 100px;
 }
-.homepage .kelas .row:nth-child(1) button {
+.homepage .kelas .row:nth-child(1) {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.kelas .row:nth-child(1) button {
   margin: auto;
 }
-.homepage .kelas .row:nth-child(1) .btn-kelas {
+.kelas .row:nth-child(1) .btn-kelas {
   margin: 0;
 }
 
-.homepage .kelas .row:nth-child(1) h1,
-.homepage .kelas .row:nth-child(1) p {
+.kelas .row:nth-child(1) h1,
+.kelas .row:nth-child(1) p {
   color: var(--color-text);
 }
 
-.homepage .kelas .row:nth-child(2) {
+.kelas .row:nth-child(2) {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 15px;
   padding-inline: 10px;
   margin-top: -4rem !important;
 }
-.homepage .kelas .row:nth-child(2) .col {
-  background-color: #ffffffff;
+.kelas .row:nth-child(2) .col {
+  /* background-color: #ffffffff; */
   padding: 0;
 }
-.homepage .kelas .row:nth-child(2) img {
+.kelas .row:nth-child(2) img {
   height: 250px;
 }
 
-.homepage .kelas .row:nth-child(2) h5 {
+.kelas .row:nth-child(2) h5 {
   color: var(--color-text);
   font-weight: bold;
   line-height: 1.5;
@@ -181,7 +298,7 @@ header {
 
 /*  ================== ISI KELAS ========= */
 .isi-kelas {
-  background-color: var(--background-program);
+  background-color: var(--background-dasar);
 }
 .isi-kelas_konten {
   padding-left: 6rem;
@@ -337,6 +454,9 @@ header {
   padding: 20px;
   border: 1px solid #ccc;
   border-top: none;
+}
+.programall {
+  background-color: var(--background-dasar);
 }
 
 /* ====================== Detail Program ========================= */
@@ -655,7 +775,7 @@ header {
 }
 
 .details-button {
-  background-color: var(--background-dasar);
+  background-color: #fff;
   color: var(--secondary-color);
   border: 1px solid var(--secondary-color);
 }
@@ -764,6 +884,108 @@ header {
 
 .upload-button:hover {
   background-color: var(--secondary-color2);
+}
+
+/* ---- Upload Proyek ---- */
+/* src/ImageUpload.css */
+.upload-input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40vh;
+}
+
+.upload-input-box {
+  border: 2px dashed #ccc;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.isi-upload-input {
+  padding-top: 50px !important;
+}
+
+.upload-input-box p {
+  margin: 0;
+}
+
+.file-upload-input {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+}
+
+.upload-input-button {
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+.upload-input-button:hover {
+  background-color: var(--secondary-color2);
+  color: white;
+  border: none;
+}
+
+.clear-input-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: #1c1b1be5;
+  border: none;
+  color: var(--navbar-color-text);
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+.clear-input-button:hover {
+  background: #1c1b1b;
+}
+
+.image-preview-container {
+  position: relative;
+}
+
+.preview-input-image {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+/* ---- modal ----- */
+.form-input p {
+  text-align: justify;
+}
+.modal-content {
+  position: relative;
+  display: flex;
+  padding: 40px !important;
+  flex-direction: column;
+  width: 150%;
+  height: 150% !important;
+  color: var(--bs-modal-color);
+  pointer-events: auto;
+  background-color: var(--bs-modal-bg);
+  background-clip: padding-box;
+  border: var(--bs-modal-border-width) solid var(--bs-modal-border-color);
+  border-radius: var(--bs-modal-border-radius);
+  outline: 0;
 }
 
 /* =================== END CHALLENGE ========================== */
@@ -904,6 +1126,9 @@ header {
 /* ------------------------------------------------------------
 #Fundamental
 --------------------------------------------------------------*/
+.artikel-terbaru {
+  font-size: 12px;
+}
 .fundamental .fundamental-item {
   box-sizing: content-box;
   padding: 10px;
@@ -913,6 +1138,7 @@ header {
 
 .fundamental .fundamental-item .fundamental-img {
   width: 100px;
+  height: 100px;
   border-radius: 10px;
   /* border: 6px solid #fff; */
   float: left;
@@ -920,11 +1146,12 @@ header {
 }
 
 .fundamental .fundamental-item h3 {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
   margin: 10px 0 5px 0;
   color: #394047;
   align-items: center;
+  margin-top: -2px;
 }
 
 .fundamental .fundamental-item a {
@@ -961,8 +1188,9 @@ header {
   width: 900px;
 }
 
-.jumbroton-artikel {
+#jumbroton-artikel {
   background-color: var(--background-artikel) !important;
+  color: var(--navbar-color-text);
 }
 
 #jumbroton-artikel img {
@@ -982,7 +1210,49 @@ header {
 /* isi Konten Artikel */
 
 .isi-konten-artikel {
-  background-color: #995c5c;
+  background-color: var(--background-program);
+}
+/*  Artikel Terbaru  */
+.artikel-terbaru {
+  margin-right: auto;
+}
+.article-list {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
+}
+.article-list h2 {
+  margin-bottom: 20px;
+}
+.article-item {
+  display: flex;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+
+.article-image {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  margin-right: 20px;
+  border-radius: 5px;
+}
+
+.article-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.article-content h3 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.article-content p {
+  margin: 5px 0 0;
+  color: #777;
 }
 
 /*--------------------------------------------------------------

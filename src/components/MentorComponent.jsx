@@ -12,11 +12,7 @@ function MentorComponent(props) {
           <p>{mentor.name}</p>
         </div>
       ))}
-      <ModalComponent
-        btn="Lihat Selengkapnya"
-        title="Unggah Proyek"
-        body="form"
-      />
+      <ModalComponent btn="Unggah Proyek" title="Unggah Proyek" body="form" />
       {/* <button className="upload-button">Unggah Projek</button> */}
     </div>
   );

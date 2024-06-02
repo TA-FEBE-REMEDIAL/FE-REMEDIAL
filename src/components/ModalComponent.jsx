@@ -7,6 +7,9 @@ import SelectComponent from "./Form/SelectComponent";
 import { Col, Row } from "react-bootstrap";
 import ImgInputComponent from "./Form/ImgInputComponent";
 import TextareaComponent from "./Form/TextareaComponent";
+import LinkComponent from "./Form/LinkComponent";
+import LampiranComponent from "./Form/LampiranComponent";
+import FooterComponent from "./Form/FooterComponent";
 
 const ModalComponent = (props) => {
   const [show, setShow] = useState(false);
@@ -69,11 +72,20 @@ const ModalComponent = (props) => {
                 </Row>
                 <ImgInputComponent />
                 <TextareaComponent />
-                <InputComponent
-                  label="Password:"
-                  type="password"
-                  holder="Masukkan Password"
-                />
+                <div className="Link-form">
+                  <h5 className="fw-bold">Link Pendukung</h5>
+                  <LinkComponent />
+                  <LampiranComponent />
+                  <div className="text-muted">
+                    <FooterComponent
+                      label1="Dengan mencentang kotak ini, kamu menyetujui untuk mengirimkan hasil pekerjaan proyek dan menyelesaikan Inovasi Digital Seni ini."
+                      btnform="Selesaikan Proyek"
+                      footer="Belum punya akun?"
+                      to="/register"
+                      link="Daftar Sekarang"
+                    />
+                  </div>
+                </div>
               </Form.Group>
             </Form>
           ) : (

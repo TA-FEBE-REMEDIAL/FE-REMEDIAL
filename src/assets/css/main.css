@@ -397,7 +397,8 @@ header {
 }
 
 .carousel-caption {
-  padding-bottom: 4.5rem !important;
+  padding-bottom: 6rem !important;
+  text-align: none !important;
 }
 
 @media (min-width: 768px) {
@@ -1073,6 +1074,14 @@ header {
 .file-name {
   font-weight: bold;
 }
+.file-name a {
+  color: var(--color-text) !important;
+  text-decoration: none; /* Removes the underline */
+}
+
+.file-name a:hover {
+  text-decoration: underline; /* Adds underline on hover */
+}
 
 .file-type {
   color: #757575;
@@ -1324,25 +1333,28 @@ header {
 .banner-container {
   background-color: var(--background-forum); /* Red background color */
   padding: 50px;
-  display: flex;
-  justify-content: left;
+  /* display: flex;
+  justify-content: left; */
   align-items: center;
 }
 
 .banner-content {
   display: flex;
   align-items: center;
+  padding: 10px;
 }
 
 .banner-image {
-  width: 250px; /* Adjust size as needed */
+  width: 300px; /* Adjust size as needed */
   height: auto;
-  margin-right: 20px;
+  margin-right: 80px;
+  margin-left: 200px;
 }
 
 .banner-text {
   color: white;
   text-align: left;
+  padding-left: 60px;
 }
 
 .banner-text h1 {
@@ -1352,11 +1364,11 @@ header {
 }
 .banner-text h2 {
   margin: 0;
-  font-size: 36px;
+  font-size: 26px;
 }
 
 .banner-text .forum {
-  font-size: 32px;
+  font-size: 28px;
 }
 /* --------- isi forum diskusi ------------- */
 .category-list {
@@ -1413,6 +1425,159 @@ header {
 }
 
 /* --------- end isi forum diskusi ---------- */
+
+/* ---- diskusi ----- */
+/* src/components/CategoryCard.css */
+.category-card-diskusi {
+  padding: 20px;
+  margin: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.category-card-diskusi h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 24px;
+}
+
+.category-card-diskusi p {
+  margin: 10px 0 0 0;
+  font-size: 16px;
+}
+/*---- category diskusi -----*/
+/* src/Categories.css */
+.categories-container {
+  font-family: Arial, sans-serif;
+  margin: auto 200px;
+  padding-top: 100px;
+}
+
+.categories-header {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  position: relative; /* Added for dropdown positioning */
+}
+
+.categories-button {
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.categories-button.active {
+  background-color: var(--secondary-color);
+  color: white;
+  border-color: var(--secondary-color);
+  border-radius: 5px;
+}
+
+.categories-button.active:hover {
+  background-color: var(--secondary-color2);
+  color: white;
+  border-color: var(--secondary-color2);
+}
+
+/* .dropdown-menu {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  background-color: white;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  z-index: 1000; 
+} */
+
+/* .dropdown-item {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background-color: #562424;
+} */
+
+.categories-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.category-diskusi {
+  padding: 10px;
+  border: 1px solid #ddd;
+  position: relative;
+  width: 110%;
+}
+
+.category-diskusi h2 {
+  margin-top: 0;
+}
+
+.category-diskusi .tags {
+  display: flex;
+  gap: px;
+  margin-top: 10px;
+}
+
+.category-diskusi .tag {
+  padding: 2px 5px;
+  border-radius: 3px;
+  font-size: 0.9em;
+  color: rgb(9, 9, 9);
+}
+
+.category-diskusi .tag.blue {
+  background-color: #e0e0e0;
+}
+.category-diskusi .tag.blue {
+  background-color: #e0e0e0;
+}
+.category-diskusi .tag.blue {
+  background-color: #e0e0e0;
+}
+
+.category-diskusi .topics-count {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.category-rupa {
+  background-color: #ffdddd;
+  padding: 10px;
+  border: 1px solid #ddd;
+  position: relative;
+  width: 110%;
+}
+
+.category-musik {
+  background-color: #eeeeff;
+  padding: 10px;
+  border: 1px solid #ddd;
+  position: relative;
+  width: 110%;
+}
+
+.category-sastra {
+  background-color: #ffffdd;
+  padding: 10px;
+  border: 1px solid #ddd;
+  position: relative;
+  width: 110%;
+}
+.category-pertunjukan {
+  background-color: #ffffdd;
+  padding: 10px;
+  border: 1px solid #ddd;
+  position: relative;
+  width: 110%;
+}
 
 /* -------------------- END FORUM DISKUSI ----------------- */
 /*--------------------------------------------------------------

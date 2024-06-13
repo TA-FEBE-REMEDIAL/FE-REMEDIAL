@@ -11,7 +11,7 @@ const ArtikelPage = () => {
       <main className="top-nav">
         <BreadcrumbsComponent
           to1="/"
-          bread1="beranda"
+          bread1="Beranda"
           now="Semua Artikel"
           hide2="d-none"
           hide3="d-none"
@@ -22,7 +22,7 @@ const ArtikelPage = () => {
         <div className="container-fluid-1">
           <div className="row justify-content-center">
             <div className="col-11 col-xl-10">
-              <h2 className="mt-3">Artikel</h2>
+              <h2 className="mt-3"> Semua Artikel</h2>
               <h6 className="">
                 Kami menyediakan informasi atau laporan mengenai suatu kejadian,
                 isu, atau <br />

@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import { Row, Col } from "react-bootstrap";
 import img1program from "../assets/img/program/5.png";
 import img2program from "../assets/img/program/6.png";
@@ -15,6 +16,7 @@ function ProgramPage() {
   const handleTabClick = (tabName) => {
     setActiveTab(tabName);
   };
+
   return (
     <>
       <NavbarComponent />

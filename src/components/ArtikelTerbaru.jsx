@@ -5,7 +5,7 @@ function ArtikelTerbaru() {
   return (
     <div className="artikel-terbaru ">
       <div className="article-list">
-        <h2>Baca Artikel</h2>
+        <h2>Artikel Terkait</h2>
         {articles.map((article, index) => (
           <div className="article-item" key={index}>
             <img

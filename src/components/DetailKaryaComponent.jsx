@@ -97,7 +97,7 @@ cuma tamu yang datang lalu pergi.`,
   return (
     <Container className="px-5">
       <section id="detail-karya">
-        <Row className="top-nav">
+        <Row className="mb-5 pt-5">
           <Col xs={12}>
             {isEditing ? (
               <Form.Control
@@ -251,21 +251,6 @@ cuma tamu yang datang lalu pergi.`,
           </div>
 
           <Col xs={12} className="pt-4 mb-5">
-            <NavLink to="/karya-siswa" className="pb-5 mt-3">
-              <Button
-                type="button"
-                className="btn btn-danger rounded-1 m-2"
-                style={{ transition: "background-color 0.3s" }}
-                onMouseOver={(e) =>
-                  (e.currentTarget.style.backgroundColor = "#dc3545")
-                }
-                onMouseOut={(e) =>
-                  (e.currentTarget.style.backgroundColor = "transparent")
-                }
-              >
-                Kembali
-              </Button>
-            </NavLink>
             <Button
               onClick={handleEditToggle}
               className="btn btn-outline-danger rounded-1 m-2"

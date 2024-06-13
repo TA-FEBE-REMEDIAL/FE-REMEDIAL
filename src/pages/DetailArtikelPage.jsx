@@ -19,7 +19,7 @@ export default function DetailArtikelPage() {
       <div className="top-nav">
         <BreadcrumbsComponent
           to1="/"
-          bread1="beranda"
+          bread1="Beranda"
           to2="/artikel"
           bread2="Semua Artikel"
           now="Detail Artikel"

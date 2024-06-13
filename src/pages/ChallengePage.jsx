@@ -12,10 +12,9 @@ function ChallengePage() {
       <NavbarComponent />
       <div className="top-nav">
         <BreadcrumbsComponent
-          to1="/program"
-          bread1="Semua Program"
-          to2="/program/detail-program"
-          bread2="Detail program"
+          to1="/program/detail-program"
+          bread1="Detail Program"
+          hide2="d-none"
           hide3="d-none"
           hide4="d-none"
           hide5="d-none"

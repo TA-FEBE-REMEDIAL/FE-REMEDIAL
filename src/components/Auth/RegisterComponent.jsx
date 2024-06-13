@@ -13,28 +13,28 @@ function RegisterComponent() {
       />
       <Form>
         <InputComponent
-          label="Nama Depan"
+          label="Nama Depan:"
           type="text"
           holder="Masukkan Nama Anda"
         />
         <InputComponent
-          label="Nama Belakang"
+          label="Nama Belakang:"
           type="text"
           holder="Masukkan Nama Belakang Anda"
         />
         <InputComponent label="Email" type="email" holder="Masukkan email" />
         <InputComponent
-          label="Nomor WhatsApp"
+          label="Nomor WhatsApp:"
           type="number"
           holder="Masukkan Nomor Telfon Anda"
         />
         <InputComponent
-          label="Password"
+          label="Password:"
           type="password"
           holder="Masukkan Password"
         />
         <InputComponent
-          label="Password"
+          label="Konfirmasi Password:"
           type="password"
           holder="Konfirmasi Password"
         />

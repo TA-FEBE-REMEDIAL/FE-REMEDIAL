@@ -6,7 +6,7 @@ import ButtonComponent from "./ButtonComponent";
 
 function CardComponent(props) {
   return (
-    <>
+    <div className="cardColumn">
       <Card className="mx-2 card-pro">
         <Card.Img variant="top" src={props.img} />
         <Card.Body>
@@ -22,7 +22,7 @@ function CardComponent(props) {
           </NavLink>
         </Card.Footer>
       </Card>
-    </>
+    </div>
   );
 }
 

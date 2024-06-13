@@ -13,8 +13,8 @@ function ForrumDiskusiPage() {
       <div className="top-nav ">
         <BreadcrumbsComponent
           to1="/"
-          bread1="beranda"
-          now="Tentang Kami"
+          bread1="Beranda"
+          now="Forum Diskusi"
           hide2="d-none"
           hide3="d-none"
           hide4="d-none"

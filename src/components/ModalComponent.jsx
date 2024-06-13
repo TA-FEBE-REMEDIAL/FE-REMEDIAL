@@ -19,7 +19,11 @@ const ModalComponent = (props) => {
   return (
     <div>
       {" "}
-      <Button onClick={handleShow}>{props.btn}</Button>
+      <div className="d-grid gap-2s">
+        <Button className="btn-danger" onClick={handleShow}>
+          {props.btn}
+        </Button>
+      </div>
       <Modal
         show={show}
         onHide={handleClose}

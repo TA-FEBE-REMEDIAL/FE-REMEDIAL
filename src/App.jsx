@@ -61,7 +61,7 @@ function App() {
         <Route path="/tentang-kami" Component={TentangKamiPage} />
         <Route path="/forum-diskusi" Component={ForrumDiskusiPage} />
         <Route path="/kelaspage" Component={KelasPage} />
-        <Route path="/kelaspage/detail-kelas" Component={DetailKelasPage} />
+        <Route path="/kelaspage/detail-kelas/:id" Component={DetailKelasPage} />
       </Routes>
     </div>
   );

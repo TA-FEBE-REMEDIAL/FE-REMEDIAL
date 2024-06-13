@@ -1,4 +1,7 @@
 import { Container, Row, Col } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+
 import CarouselComponent from "../components/CarouselComponent";
 import KelasComponent from "../components/KelasComponent";
 import CardArtikel from "../components/CardArtikel";
@@ -12,6 +15,17 @@ import NavbarComponent from "../components/NavbarComponent";
 import FooterComponent from "../components/FooterComponent";
 
 const HomePage = () => {
+  const [kelasLimit, setKelasLimit] = useState([]);
+
+  useEffect(() => {
+    getKelas();
+  }, []);
+
+  const getKelas = async () => {
+    const url = "http://localhost:5000/api/kelas/";
+    const response = await axios.get(url);
+    setKelasLimit(response.data.limit);
+  };
   return (
     <>
       <NavbarComponent />
@@ -20,6 +34,7 @@ const HomePage = () => {
         <KelasComponent
           title="Kelas Remedial"
           desc="Program remedial menyediakan berbagai macam kelas untuk meningkatkan pengetahuan dan keterampilan kesenianmu."
+          type_data={kelasLimit}
         />
 
         {/* ================ Topik Pembelajaran ================ */}
@@ -74,7 +89,7 @@ const HomePage = () => {
             <div className="section-title text-center">
               <h2>Artikel</h2>
               <h3>
-                Artikel<span>Terbaru</span>
+                Artikel<span>Remedial</span>
               </h3>
               <p>Kalian bisa menikmati artikel terbaru di Remedial.id.</p>
             </div>

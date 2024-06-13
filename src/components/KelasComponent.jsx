@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import { Container, Row, Col } from "react-bootstrap";
 import img1kelas from "../assets/img/kelas/1.png";
 import img2kelas from "../assets/img/kelas/2.png";
@@ -9,6 +10,21 @@ import CardGroup from "react-bootstrap/CardGroup";
 import Card from "react-bootstrap/Card";
 
 function KelasComponent(props) {
+  // const [kelas, setKelas] = useState([]);
+  // const [kelasLimit, setKelasLimit] = useState([]);
+
+  // useEffect(() => {
+  //   getKelas();
+  // }, []);
+
+  // const getKelas = async () => {
+  //   const url = "http://localhost:5000/api/kelas/";
+  //   const response = await axios.get(url);
+  //   setKelas(response.props.dataKelas);
+  //   setKelasLimit(response.props.kelasLimit);
+  // };
+
+  const kelasType = props.type_data;
   return (
     <div className="kelas">
       <Container>
@@ -31,29 +47,24 @@ function KelasComponent(props) {
         </Row>
 
         <Row>
-          <CardGroup>
-            <CardComponent
-              img={img1kelas}
-              title="Pengenalan Seni Rupa"
-              category="Seni Rupa"
-              block="d-grid gap-2"
-              to="/kelaspage/detail-kelas"
-            />
-            <CardComponent
-              img={img3kelas}
-              title="Seni Sastra: Pengertian, jenis, unsur, ciri, fungsi  & manfaat"
-              category="Seni Sastra"
-              block="d-grid gap-2"
-              to="/kelaspage/detail-kelas"
-            />
-            <CardComponent
-              img={img2kelas}
-              title="Pengenalan Musik Tradisional"
-              category="Seni Musik"
-              block="d-grid gap-2"
-              to="/kelaspage/detail-kelas"
-            />
-          </CardGroup>
+          <div className="cardClass">
+            <CardGroup>
+              {kelasType.map((data, index) => (
+                <>
+                  <CardComponent
+                    key={index}
+                    img={data.image_url}
+                    title={data.judul_kelas}
+                    category={data.kategori}
+                    block="d-grid gap-2"
+                    to={`/kelaspage/detail-kelas/${data.id}`}
+                  />
+
+                  {/* <div dangerouslySetInnerHTML={{ __html: data.isi_materi }} /> */}
+                </>
+              ))}
+            </CardGroup>
+          </div>
         </Row>
       </Container>
     </div>

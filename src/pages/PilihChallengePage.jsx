@@ -20,10 +20,11 @@ function PilihChallengePage() {
       <NavbarComponent />
       <div className="top-nav">
         <BreadcrumbsComponent
-          to1="/"
-          bread1="beranda"
-          to2="/program/detail-program/pilih-challange/"
-          bread2="Pilih Challenge"
+          // to1="/program/detail-program/"
+          // bread1="Detail program"
+          to1="/program/detail-program/pilih-challange/"
+          bread1="Pilih Challenge"
+          hide2="d-none"
           hide3="d-none"
           hide4="d-none"
           hide5="d-none"

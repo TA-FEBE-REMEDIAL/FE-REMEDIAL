@@ -1,10 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import KelasComponent from "../components/KelasComponent";
 import BreadcrumbsComponent from "../components/BreadcrumbsComponent";
 import NavbarComponent from "../components/NavbarComponent";
 import FooterComponent from "../components/FooterComponent";
 
 function KelasPage() {
+  const [kelas, setKelas] = useState([]);
+
+  useEffect(() => {
+    getKelas();
+  }, []);
+
+  const getKelas = async () => {
+    const url = "http://localhost:5000/api/kelas/";
+    const response = await axios.get(url);
+    setKelas(response.data.data);
+  };
   return (
     <>
       <NavbarComponent />
@@ -25,6 +37,7 @@ function KelasPage() {
                 title="Kelas Tersedia"
                 desc="Pilih kelas di program remedial sesuai keinginan kamu, dan tambah pengetahuan kesenianmu!"
                 hidden="d-none"
+                type_data={kelas}
               />
             </div>
           </div>

@@ -15,7 +15,7 @@ function DetailProgramPage() {
       <div className="top-nav">
         <BreadcrumbsComponent
           to1="/"
-          bread1="beranda"
+          bread1="Beranda"
           to2="/program"
           bread2="Semua Program"
           now="Detail Program"

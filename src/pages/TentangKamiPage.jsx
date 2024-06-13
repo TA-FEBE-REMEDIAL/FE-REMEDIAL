@@ -14,7 +14,7 @@ function TentangKamiPage() {
       <div className="top-nav">
         <BreadcrumbsComponent
           to1="/"
-          bread1="beranda"
+          bread1="Beranda"
           now="Tentang Kami"
           hide2="d-none"
           hide3="d-none"

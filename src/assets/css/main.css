@@ -136,10 +136,11 @@
 }
 
 #register {
-  margin: auto 6rem;
+  margin: auto 5rem;
   padding-top: 5rem;
   font-size: 12px;
 }
+
 #register ::-webkit-input-placeholder {
   font-size: 12px !important;
 }
@@ -152,10 +153,7 @@
   background-color: var(--background-dasar);
   border-radius: 5px;
   padding: 30px 40px;
-  /* margin-bottom: 40px; */
   margin: auto 340px;
-  /* margin-left: -40px;
-  margin-right: 20px; */
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -170,26 +168,108 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
+/* Responsive Register Form */
+@media (max-width: 992px) {
+  #register {
+    margin: auto 3rem;
+    padding-top: 4rem;
+    font-size: 14px;
+  }
+
+  .register {
+    padding: 20px 30px;
+    margin: auto 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  #register {
+    margin: auto 2rem;
+    padding-top: 3rem;
+    font-size: 14px;
+  }
+
+  .register {
+    padding: 20px 20px;
+    margin: auto 50px;
+  }
+}
+
+@media (max-width: 576px) {
+  #register {
+    margin: auto 1rem;
+    padding-top: 2rem;
+    font-size: 14px;
+  }
+
+  .register {
+    padding: 20px 10px;
+    margin: auto 20px;
+  }
+}
+
 /* ============ END FITUR REGISTER ========== */
 
 /* ===== JUMBROTON =========== */
 .top-nav {
   padding-top: 8rem;
 }
+
 hr {
   border: 2.5px solid rgba(0, 0, 0, 0.251);
 }
+
 #jumbroton img {
   width: 90%;
   border-radius: 0.5rem;
 }
+
 #jumbroton p:nth-child(3) {
   font-size: 18px;
 }
+
 .jumbroton-content {
   display: flex !important;
   justify-content: space-around !important;
   margin-left: 50px;
+}
+
+/* Responsive Jumbotron */
+@media (max-width: 768px) {
+  .top-nav {
+    padding-top: 4rem;
+  }
+
+  .jumbroton-content {
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  #jumbroton img {
+    width: 100%;
+  }
+
+  #jumbroton p:nth-child(3) {
+    font-size: 16px;
+    padding: 0 1rem; /* Tambahkan padding untuk menjaga jarak teks dari tepi layar */
+  }
+}
+
+@media (max-width: 480px) {
+  .top-nav {
+    padding-top: 2rem;
+  }
+
+  #jumbroton img {
+    width: 100%;
+    border-radius: 0.3rem;
+  }
+
+  #jumbroton p:nth-child(3) {
+    font-size: 14px;
+  }
 }
 /* ===== END JUMBROTON =========== */
 
@@ -332,7 +412,60 @@ header {
   text-align: justify;
 }
 
-/*  ================== ISI KELAS ========= */
+/* Responsive CSS */
+@media (max-width: 1200px) {
+  .isi-kelas_konten {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .cardColumn {
+    width: 50%;
+  }
+
+  .isi-kelas_konten {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .cardColumn {
+    width: 100%;
+  }
+
+  .isi-kelas_konten {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .kelas .row:nth-child(1) {
+    padding-bottom: 50px;
+  }
+
+  .homepage .kelas .row:nth-child(1) {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .kelas .row:nth-child(2) img {
+    height: auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .kelas .row:nth-child(2) {
+    grid-template-columns: 1fr;
+    padding-inline: 0;
+  }
+
+  .isi-kelas_konten {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
 
 /* ========= TOPIK PEMBELAJARAN ========= */
 
@@ -362,6 +495,50 @@ header {
   margin-bottom: 4rem;
 }
 /* ========= END TOPIK PEMBELAJARAN ========= */
+
+/* Responsive CSS */
+@media (max-width: 1200px) {
+  .bg-topik-2 {
+    padding: 1rem 3rem;
+    margin-bottom: 3rem;
+  }
+}
+
+@media (max-width: 992px) {
+  #main-topik .section-title h2 {
+    font-size: 12px;
+    padding: 6px 16px;
+  }
+
+  .bg-topik-2 {
+    padding: 1rem 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #main-topik .section-title h2 {
+    font-size: 11px;
+    padding: 4px 12px;
+  }
+
+  .bg-topik-2 {
+    padding: 0.5rem 1rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  #main-topik .section-title h2 {
+    font-size: 10px;
+    padding: 3px 10px;
+  }
+
+  .bg-topik-2 {
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+  }
+}
 
 /* -------------------- Program ----------------------------- */
 .program-page .program {
@@ -433,6 +610,7 @@ header {
     height: 11em;
   }
 }
+
 /* ---------- sticky ---------- */
 /* STICKY ELEMENT */
 .sticky {
@@ -455,6 +633,88 @@ header {
   position: sticky;
   top: 5rem;
 }
+
+/* Responsive CSS */
+@media (max-width: 1200px) {
+  .homepage .program .row:nth-child(1) {
+    padding-top: 100px;
+    padding-bottom: 75px;
+  }
+}
+
+@media (max-width: 992px) {
+  .homepage .program .row:nth-child(1) {
+    padding-top: 75px;
+    padding-bottom: 50px;
+  }
+
+  .homepage .program .row:nth-child(2) img {
+    height: 200px;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 4vh;
+    height: 4vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .homepage .program {
+    padding-bottom: 75px;
+  }
+
+  .homepage .program .row:nth-child(1) {
+    padding-top: 50px;
+    padding-bottom: 25px;
+  }
+
+  .homepage .program .row:nth-child(2) img {
+    height: 150px;
+  }
+
+  .carousel-caption {
+    padding-bottom: 4rem !important;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 3vh;
+    height: 3vh;
+  }
+}
+
+@media (max-width: 576px) {
+  .homepage .program {
+    padding-bottom: 50px;
+  }
+
+  .homepage .program .row:nth-child(1) {
+    padding-top: 25px;
+    padding-bottom: 10px;
+  }
+
+  .homepage .program .row:nth-child(2) {
+    grid-template-columns: 1fr;
+    padding-inline: 0;
+    gap: 10px;
+  }
+
+  .homepage .program .row:nth-child(2) img {
+    height: 100px;
+  }
+
+  .carousel-caption {
+    padding-bottom: 2rem !important;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 2vh;
+    height: 2vh;
+  }
+}
+
 /* ======================= Semua program =========================== */
 /* src/Tabs.css */
 
@@ -598,6 +858,9 @@ header {
 .border-content h2 {
   font-size: 20px;
 }
+.border-content h5 {
+  font-weight: 500 !important;
+}
 .border-content:nth-child(1) {
   margin-bottom: 10px;
   text-align: justify;
@@ -661,10 +924,15 @@ header {
   margin-bottom: 12x;
   padding: 10px;
 }
+.border-content section h5 {
+  color: var(--color-text1);
+  font-size: 20px;
+  font-weight: bold !important;
+}
 
 .border-content h1 {
   font-weight: bold;
-  padding: 10px;
+  padding-top: 20px;
 }
 .method h3 {
   color: #333;
@@ -728,6 +996,81 @@ header {
 }
 
 /*----------------------------- end program ----------------------------------- */
+
+/* Responsive CSS */
+@media (max-width: 1200px) {
+  .sidebar {
+    width: 35%;
+  }
+  .benefit-card {
+    width: 45%;
+  }
+}
+
+@media (max-width: 992px) {
+  .sidebar {
+    width: 40%;
+  }
+  .benefit-card {
+    width: 50%;
+  }
+  .methods {
+    flex-direction: column;
+    align-items: center;
+  }
+  .method {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+  .tab-header {
+    flex-direction: column;
+  }
+  .tab-item {
+    padding: 10px;
+  }
+  .app {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+  }
+  .benefit-card {
+    width: 100%;
+  }
+  .method {
+    width: 100%;
+  }
+  .tab-item {
+    padding: 5px;
+    text-align: center;
+  }
+  .border-content {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .methods {
+    flex-direction: column;
+  }
+  .method {
+    width: 100%;
+  }
+  .benefits-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .benefit-card {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+  .border-content {
+    padding: 10px;
+  }
+}
 
 /* ===================== Challenge ============================== */
 /* .App {
@@ -1018,6 +1361,78 @@ header {
 
 /* =================== END CHALLENGE ========================== */
 
+/* Responsive CSS */
+@media (max-width: 1200px) {
+  .bg-header {
+    padding: 10px 60px;
+  }
+  .challenge-card {
+    width: 45%;
+    margin: 10px;
+  }
+}
+
+@media (max-width: 992px) {
+  .bg-header {
+    padding: 10px 40px;
+  }
+  .challenge-card {
+    width: 100%;
+    margin: 10px 0;
+  }
+  .challenge-list {
+    flex-direction: column;
+    align-items: center;
+  }
+  .mentor-container {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .bg-header {
+    padding: 10px 20px;
+  }
+  .upload-input-container {
+    height: auto;
+  }
+  .upload-input-box {
+    height: auto;
+  }
+  .border-content-challenge {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .bg-header {
+    padding: 10px 10px;
+  }
+  .challenge-card {
+    width: 100%;
+    margin: 10px 0;
+  }
+  .mentor {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .mentor img {
+    margin-bottom: 10px;
+  }
+  .upload-input-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .upload-input-box {
+    padding: 10px;
+  }
+  .modal-content {
+    width: 100%;
+    height: auto !important;
+    padding: 20px !important;
+  }
+}
 /*  ======= karya siswa ======*/
 #karya-siswa {
   background-color: var(--background-topik);
@@ -1196,8 +1611,101 @@ header {
   margin-bottom: 3rem;
 }
 
-/*  ======= end karya siswa ======*/
+/* Responsive CSS */
+@media (max-width: 1200px) {
+  .wrap-content {
+    padding: 60px 0 0 15px;
+  }
+  #detail-karya {
+    margin: auto 10%;
+  }
+}
 
+@media (max-width: 992px) {
+  .wrap-content {
+    padding: 30px 0 0 10px;
+  }
+  #detail-karya {
+    margin: auto 5%;
+  }
+  .card-poem img {
+    width: 70%;
+  }
+  .card-mentor {
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .wrap-content {
+    padding: 20px 0 0 5px;
+  }
+  .card-poem img {
+    width: 80%;
+  }
+  .circle-mentor {
+    width: 80px;
+    height: 80px;
+  }
+  .score-mentor {
+    font-size: 1.5rem;
+  }
+  .feedback {
+    font-size: 0.875rem;
+  }
+  .btn-mentor {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .wrap-content {
+    padding: 10px 0 0 5px;
+  }
+  #karya-siswa .section-title h2 {
+    font-size: 11px;
+    padding: 6px 15px;
+  }
+  .card-img-overlay:hover {
+    height: auto;
+  }
+  .card-poem img {
+    width: 90%;
+  }
+  .card-title-mentor {
+    font-size: 1rem;
+  }
+  .circle-mentor {
+    width: 60px;
+    height: 60px;
+  }
+  .score-mentor {
+    font-size: 1.25rem;
+  }
+  .feedback {
+    font-size: 0.75rem;
+  }
+  .btn-mentor {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .btn-mentor.document-link {
+    padding: 6px 10px;
+  }
+  .document-icon {
+    width: 20px;
+    height: 20px;
+  }
+  .document-link span {
+    font-size: 14px;
+  }
+  #detail-karya {
+    margin: auto 5%;
+  }
+}
+
+/*  ======= end karya siswa ====== */
 /* -====================== link karya ============= */
 .file-link-container {
   display: flex;
@@ -1236,7 +1744,66 @@ header {
   text-align: left;
 }
 
+/* Responsive CSS */
+@media (max-width: 1200px) {
+  .file-link-container {
+    margin: 1rem 1.5rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .file-link-container {
+    margin: 1rem 1rem;
+    padding: 8px;
+  }
+  .file-icon {
+    margin-right: 8px;
+  }
+  .file-name {
+    font-size: 14px;
+  }
+  .file-type {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .file-link-container {
+    margin: 0.5rem 0.5rem;
+    padding: 6px;
+  }
+  .file-icon {
+    margin-right: 6px;
+  }
+  .file-name {
+    font-size: 12px;
+  }
+  .file-type {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .file-link-container {
+    margin: 0.5rem 0.25rem;
+    padding: 4px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .file-icon {
+    margin-right: 0;
+    margin-bottom: 4px;
+  }
+  .file-name {
+    font-size: 10px;
+  }
+  .file-type {
+    font-size: 8px;
+  }
+}
+
 /* -============== end link karya =============== */
+
 /*--------------------------------------------------------------
 # Breadcrumbs
 --------------------------------------------------------------*/
@@ -1252,9 +1819,11 @@ header {
     margin-top: 60px;
   }
 }
+
 .breadcrumbs a {
   color: var(--secondary-color) !important;
 }
+
 .breadcrumbs h2 {
   font-size: 28px;
   font-weight: 600;
@@ -1281,16 +1850,37 @@ header {
   content: "/";
 }
 
+@media (max-width: 768px) {
+  .breadcrumbs h2 {
+    font-size: 24px;
+  }
+  .breadcrumbs ol {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  .breadcrumbs h2 {
+    font-size: 20px;
+  }
+  .breadcrumbs ol {
+    font-size: 10px;
+  }
+  .breadcrumbs {
+    padding: 10px 0;
+  }
+}
+
 /* ------------------------------------------------------------
-#Fundamental
+# Fundamental
 --------------------------------------------------------------*/
 .artikel-terbaru {
   font-size: 12px;
 }
+
 .fundamental .fundamental-item {
   box-sizing: content-box;
   padding: 10px;
-  /* box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.08); */
   position: relative;
 }
 
@@ -1298,7 +1888,6 @@ header {
   width: 100px;
   height: 100px;
   border-radius: 10px;
-  /* border: 6px solid #fff; */
   float: left;
   margin: 0 10px 0 0;
 }
@@ -1334,7 +1923,49 @@ header {
   position: relative;
   top: 10px;
 }
-/* ------------------------------------------------------------
+
+@media (max-width: 992px) {
+  .fundamental .fundamental-item .fundamental-img {
+    width: 80px;
+    height: 80px;
+    margin: 0 8px 0 0;
+  }
+  .fundamental .fundamental-item h3 {
+    font-size: 13px;
+    margin: 8px 0 4px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .fundamental .fundamental-item .fundamental-img {
+    width: 70px;
+    height: 70px;
+    margin: 0 6px 0 0;
+  }
+  .fundamental .fundamental-item h3 {
+    font-size: 12px;
+    margin: 6px 0 3px 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .fundamental .fundamental-item .fundamental-img {
+    width: 60px;
+    height: 60px;
+    margin: 0 5px 0 0;
+  }
+  .fundamental .fundamental-item h3 {
+    font-size: 11px;
+    margin: 5px 0 2px 0;
+  }
+  .fundamental .fundamental-item .quote-icon-left,
+  .fundamental .fundamental-item .quote-icon-right {
+    font-size: 20px;
+  }
+}
+
+/* ------------------------------------------------------------ */
+
 /*--------------------------------------------------------------
 # Artikel
 --------------------------------------------------------------*/
@@ -1520,46 +2151,6 @@ header {
   font-size: 28px;
 }
 /* --------- isi forum diskusi ------------- */
-.category-list {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.category-item {
-  padding: 16px;
-  border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-.category-header {
-  display: flex;
-  align-items: center;
-  margin-bottom: 8px;
-}
-
-.category-icon {
-  width: 150px;
-  height: 150px;
-  margin-right: 16px;
-  border-radius: 8px;
-}
-
-.category-header h2 {
-  margin: 0;
-  font-size: 1.5em;
-}
-
-.category-header p {
-  margin: 0;
-  color: #555;
-}
-
-.category-tags {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 8px;
-}
 
 .tag {
   background-color: #e0e0e0;
@@ -1567,166 +2158,36 @@ header {
   padding: 4px 8px;
   font-size: 0.9em;
 }
+.card-forum-diskusi {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 5px;
+  border: 1px solid var(--background-artikel);
+}
 
-.category-topics {
-  font-weight: bold;
-  color: #333;
+.card-img-left-forum {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+.btn-forum:hover {
+  background-color: #ffff;
+  color: #212529;
+}
+.card-title-link-forum {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card-title-link-forum:hover {
+  color: var(--navbar-color); /* Bootstrap primary color */
+  text-decoration: underline;
 }
 
 /* --------- end isi forum diskusi ---------- */
-
-/* ---- diskusi ----- */
-/* src/components/CategoryCard.css */
-.category-card-diskusi {
-  padding: 20px;
-  margin: 10px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.category-card-diskusi h2 {
-  margin: 0;
-  padding: 0;
-  font-size: 24px;
-}
-
-.category-card-diskusi p {
-  margin: 10px 0 0 0;
-  font-size: 16px;
-}
-/*---- category diskusi -----*/
-/* src/Categories.css */
-.categories-container {
-  font-family: Arial, sans-serif;
-  margin: auto 200px;
-  padding-top: 100px;
-}
-
-.categories-header {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
-  position: relative; /* Added for dropdown positioning */
-}
-
-.categories-button {
-  background-color: white;
-  border: 1px solid #ddd;
-  padding: 5px 10px;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-.categories-button.active {
-  background-color: var(--secondary-color);
-  color: white;
-  border-color: var(--secondary-color);
-  border-radius: 5px;
-}
-
-.categories-button.active:hover {
-  background-color: var(--secondary-color2);
-  color: white;
-  border-color: var(--secondary-color2);
-}
-
-/* .dropdown-menu {
-  position: absolute;
-  top: 40px;
-  left: 0;
-  background-color: white;
-  border: 1px solid #ddd;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-  z-index: 1000; 
-} */
-
-/* .dropdown-item {
-  padding: 10px;
-  cursor: pointer;
-}
-
-.dropdown-item:hover {
-  background-color: #562424;
-} */
-
-.categories-list {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.category-diskusi {
-  padding: 10px;
-  border: 1px solid #ddd;
-  position: relative;
-  width: 110%;
-}
-
-.category-diskusi h2 {
-  margin-top: 0;
-}
-
-.category-diskusi .tags {
-  display: flex;
-  gap: px;
-  margin-top: 10px;
-}
-
-.category-diskusi .tag {
-  padding: 2px 5px;
-  border-radius: 3px;
-  font-size: 0.9em;
-  color: rgb(9, 9, 9);
-}
-
-.category-diskusi .tag.blue {
-  background-color: #e0e0e0;
-}
-.category-diskusi .tag.blue {
-  background-color: #e0e0e0;
-}
-.category-diskusi .tag.blue {
-  background-color: #e0e0e0;
-}
-
-.category-diskusi .topics-count {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 1.2em;
-  font-weight: bold;
-}
-
-.category-rupa {
-  background-color: #ffdddd;
-  padding: 10px;
-  border: 1px solid #ddd;
-  position: relative;
-  width: 110%;
-}
-
-.category-musik {
-  background-color: #eeeeff;
-  padding: 10px;
-  border: 1px solid #ddd;
-  position: relative;
-  width: 110%;
-}
-
-.category-sastra {
-  background-color: #ffffdd;
-  padding: 10px;
-  border: 1px solid #ddd;
-  position: relative;
-  width: 110%;
-}
-.category-pertunjukan {
-  background-color: #ffffdd;
-  padding: 10px;
-  border: 1px solid #ddd;
-  position: relative;
-  width: 110%;
-}
 
 /* -------------------- END FORUM DISKUSI ----------------- */
 /*--------------------------------------------------------------

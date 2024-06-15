@@ -1,6 +1,5 @@
 import React from "react";
 import img1forum from "../assets/img/forum/1.png";
-import { categories } from "../data/kategoridiskusi";
 import BreadcrumbsComponent from "../components/BreadcrumbsComponent";
 import NavbarComponent from "../components/NavbarComponent";
 import FooterComponent from "../components/FooterComponent";
@@ -34,7 +33,9 @@ function ForrumDiskusiPage() {
         </section>
 
         <div className="categories-diskusi">
-          <CategoriesDiskusi />
+          <div className="container">
+            <CategoriesDiskusi />
+          </div>
         </div>
       </div>
       <FooterComponent />

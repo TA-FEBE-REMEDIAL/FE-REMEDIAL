@@ -4,7 +4,6 @@ import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import JumbrotonComponent from "../components/JumbrotonComponent";
 import KelasComponent from "../components/KelasComponent";
-import img1kelas from "../assets/img/kelas/1.png";
 import BreadcrumbsComponent from "../components/BreadcrumbsComponent";
 import KelasKontenComponent from "../components/KelasKontenComponent";
 import NavbarComponent from "../components/NavbarComponent";
@@ -16,10 +15,6 @@ function DetailKelasPage() {
   const [detailKelas, setDetailKelas] = useState([]);
   const [kelasLimit, setKelasLimit] = useState([]);
 
-  useEffect(() => {
-    getdetailKelas();
-  }, []);
-
   const getdetailKelas = async () => {
     const url = `http://localhost:5000/api/kelas/${id}`;
     const urlLimit = `http://localhost:5000/api/kelas`;
@@ -28,6 +23,10 @@ function DetailKelasPage() {
     setDetailKelas(response.data);
     setKelasLimit(responseLimit.data.limit);
   };
+
+  useEffect(() => {
+    getdetailKelas();
+  }, []);
 
   return (
     <>

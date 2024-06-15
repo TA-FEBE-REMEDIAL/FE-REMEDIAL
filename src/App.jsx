@@ -38,9 +38,12 @@ function App() {
         <Route path="/" Component={HomePage} />
         <Route path="/home" Component={HomePage} />
         <Route path="/program" Component={ProgramPage} />
-        <Route path="/program/detail-program" Component={DetailProgramPage} />
         <Route
-          path="/program/detail-program/pilih-challange"
+          path="/program/detail-program/:id"
+          Component={DetailProgramPage}
+        />
+        <Route
+          path="/program/detail-program/pilih-challange/:program_id"
           Component={ChallengePage}
         />
         <Route

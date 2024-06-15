@@ -31,7 +31,7 @@ function KelasPage() {
             hide4="d-none"
             hide5="d-none"
           />
-          <div className=" py-5 ">
+          <div className=" py-2 ">
             <div className="container">
               <KelasComponent
                 title="Kelas Tersedia"

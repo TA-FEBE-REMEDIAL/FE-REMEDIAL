@@ -96,10 +96,10 @@ const ProjectEditModal = ({ show, onHide, project }) => {
         </div>
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="secondary" onClick={onHide}>
+        <Button variant="outline-danger" onClick={onHide}>
           Close
         </Button>
-        <Button variant="primary" onClick={handleSubmit}>
+        <Button variant="danger" onClick={handleSubmit}>
           Save Changes
         </Button>
       </Modal.Footer>

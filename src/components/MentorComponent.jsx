@@ -8,8 +8,8 @@ function MentorComponent(props) {
       <h3>Mentor</h3>
       {props.mentors.map((mentor, index) => (
         <div key={index} className="mentor">
-          <img src={mentor.imgSrc} alt={mentor.name} />
-          <p>{mentor.name}</p>
+          <img src="https://via.placeholder.com/150" alt={mentor} />
+          <p>{mentor}</p>
         </div>
       ))}
       <ModalComponent btn="Unggah Proyek" title="Unggah Proyek" body="form" />

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import NavigationProgramComponent from "../components/NavigationProgramComponent";
 import ProgramDetailComponent from "../components/ProgramDetailComponent";
 import ButtonComponent from "../components/ButtonComponent";
@@ -7,8 +7,26 @@ import img1program from "../assets/img/program/7.png";
 import BreadcrumbsComponent from "../components/BreadcrumbsComponent";
 import NavbarComponent from "../components/NavbarComponent";
 import FooterComponent from "../components/FooterComponent";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 
 function DetailProgramPage() {
+  const { id } = useParams();
+
+  const [detail_program, setDetailProgram] = useState([]);
+
+  const getdetailProgram = async () => {
+    const url = `http://localhost:5000/api/program/${id}`;
+    const response = await axios.get(url);
+    setDetailProgram(response.data);
+  };
+
+  useEffect(() => {
+    getdetailProgram();
+  }, []);
+
+  // console.log(detail_program);
+
   return (
     <>
       <NavbarComponent />
@@ -26,13 +44,13 @@ function DetailProgramPage() {
 
         <div className="container mb-5">
           <JumbrotonComponent
-            title="Literary Forge: Program Remedial Seni Sastra"
-            kategori="Seni Sastra"
-            deskrip="Program seni yang dilaksanakan oleh Serrum sebagai organisasi  pada program remedial . Siswa akan membentuk tim atau individual dan mengerjakan tantangan untuk membantu memecahkan masalah pada challenge yang dipilih,  serta dibekali dengan Keterampilan kesenian dan kemampuan digital lainnya."
-            img={img1program}
+            title={detail_program.judul}
+            kategori={detail_program.kategori}
+            deskrip={detail_program.desc_program}
+            img={detail_program.image}
             hr="d-none"
             name="Gabung Program"
-            to="/program/detail-program/pilih-challange"
+            to={`/program/detail-program/pilih-challange/${detail_program.id}`}
           />
         </div>
         <section id="detail-pro" className="pt-5">
@@ -42,12 +60,14 @@ function DetailProgramPage() {
               <div className="text-center">
                 <ButtonComponent
                   name="Gabung Program"
-                  to="/program/detail-program/pilih-challange"
+                  to={`/program/detail-program/pilih-challange/${detail_program.id}`}
                 />
               </div>
             </div>
             <div className="content mb-5">
-              <ProgramDetailComponent />
+              <ProgramDetailComponent
+                detailpro={detail_program.detail_program}
+              />
             </div>
           </div>
         </section>

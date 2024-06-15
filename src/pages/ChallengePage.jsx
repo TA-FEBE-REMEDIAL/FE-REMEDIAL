@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 import ChallengeList from "../components/ChallengeList";
 import JumbrotonComponent from "../components/JumbrotonComponent";
 import img1program from "../assets/img/program/7.png";
@@ -7,12 +9,36 @@ import NavbarComponent from "../components/NavbarComponent";
 import FooterComponent from "../components/FooterComponent";
 
 function ChallengePage() {
+  const { program_id } = useParams();
+  const { id } = useParams();
+
+  const [challenge, setChallenge] = useState([]);
+  const [program, setProgram] = useState([]);
+
+  useEffect(() => {
+    getChallenge();
+    getProgram();
+  }, []);
+
+  const getChallenge = async () => {
+    const url = `http://localhost:5000/api/challenge/${program_id}`;
+    const response = await axios.get(url);
+    // console.log(response.data);
+    setChallenge(response.data);
+  };
+
+  const getProgram = async () => {
+    const url = `http://localhost:5000/api/program/${program_id}`;
+    const response = await axios.get(url);
+    setProgram(response.data);
+  };
+
   return (
     <>
       <NavbarComponent />
       <div className="top-nav">
         <BreadcrumbsComponent
-          to1="/program/detail-program"
+          to1={`/program/detail-program/${program_id}`}
           bread1="Detail Program"
           hide2="d-none"
           hide3="d-none"
@@ -22,10 +48,10 @@ function ChallengePage() {
         />
         <div className="container mb-4">
           <JumbrotonComponent
-            title="Literary Forge: Program Remedial Seni Sastra"
-            kategori="Seni Rupa"
-            deskrip="Program seni yang dilaksanakan oleh Serrum sebagai organisasi  pada program remedial . Siswa akan membentuk tim atau individual dan mengerjakan tantangan untuk membantu memecahkan masalah pada challenge yang dipilih,  serta dibekali dengan Keterampilan kesenian dan kemampuan digital lainnya."
-            img={img1program}
+            title={program.judul}
+            kategori={program.kategori}
+            deskrip={program.desc_program}
+            img={program.image}
             hide="d-none"
             hr="d-none"
           />
@@ -38,7 +64,7 @@ function ChallengePage() {
               pastikan kamu melihat detail dari setiap challenge yang tersedia.
             </p>
           </div>
-          <ChallengeList />
+          <ChallengeList data={challenge} />
         </div>
       </div>
       <FooterComponent />

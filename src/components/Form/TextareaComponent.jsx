@@ -1,7 +1,7 @@
 import React from "react";
 import Form from "react-bootstrap/Form";
 
-function TextareaComponent() {
+function TextareaComponent(props) {
   return (
     <div>
       <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
@@ -15,7 +15,12 @@ function TextareaComponent() {
               tersebut
             </small>
           </p>
-          <Form.Control as="textarea" rows={3} />
+          <Form.Control
+            value={props.value}
+            onChange={props.change}
+            as="textarea"
+            rows={3}
+          />
         </Form.Group>
       </Form.Group>
       <hr />

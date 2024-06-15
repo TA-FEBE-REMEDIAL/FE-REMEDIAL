@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ChallengeInfo from "../components/ChallengeInfo";
 import PreparationComponent from "../components/PreparationComponent";
 import MentorComponent from "../components/MentorComponent";
@@ -8,21 +8,56 @@ import img1challengeterpilih from "../assets/img/challenge/3.png";
 import { Row, Col } from "react-bootstrap";
 import data from "../data/detailchallenge";
 import { useParams } from "react-router-dom";
+import axios from "axios";
 import ChallengePilihComponent from "../components/ChallengePilihComponent";
 import NavbarComponent from "../components/NavbarComponent";
 import FooterComponent from "../components/FooterComponent";
 
 const DetailChallengePage = () => {
-  const params = useParams();
-  const challenges = [data[params.id]];
-  const challenge = challenges[0];
+  const { id } = useParams();
 
+  const [challenge, setChallenge] = useState([]);
+  const [program, setProgram] = useState([]);
+  const [arrMentor, setArrMentor] = useState([]);
+  const idProgram = challenge.program_id;
+
+  useEffect(() => {
+    getChallenge();
+  }, []);
+
+  useEffect(() => {
+    if (idProgram) {
+      getProgramId();
+    }
+  }, [idProgram]);
+
+  const getChallenge = async () => {
+    const url = `http://localhost:5000/api/challenge/find/${id}`;
+    const response = await axios.get(url);
+    setChallenge(response.data);
+  };
+
+  const getProgramId = async () => {
+    const url = `http://localhost:5000/api/program/${idProgram}`;
+    const response = await axios.get(url);
+    setProgram(response.data);
+  };
+
+  useEffect(() => {
+    if (challenge.mentor) {
+      const data = challenge.mentor;
+      const arrMentor = data.split(", ");
+      setArrMentor(arrMentor);
+    }
+  }, [challenge]);
+
+  console.log(arrMentor);
   return (
     <>
       <NavbarComponent />
       <div className="top-nav">
         <BreadcrumbsComponent
-          to1="/program/detail-program/pilih-challange"
+          to1={`/program/detail-program/pilih-challange/${program.id}`}
           bread1="Pilih Challenge"
           hide2="d-none"
           hide3="d-none"
@@ -32,10 +67,9 @@ const DetailChallengePage = () => {
         />
         <div className="container mb-4 pt-5">
           <JumbrotonComponent
-            title={challenge.jumb_title}
-            kategori={challenge.ctgr}
-            deskrip={challenge.jumb_desc}
-            img={challenge.jumb_img}
+            title={program.judul}
+            deskrip={program.desc_program}
+            img={program.image}
             hide="d-none"
             hr="d-none"
           />
@@ -44,9 +78,9 @@ const DetailChallengePage = () => {
           <div className="container px-5">
             <h3 className="fw-bold">Challenge</h3>
             <ChallengePilihComponent
-              img={img1challengeterpilih}
-              title1={challenge.title1_challenge}
-              deskrip1={challenge.desc1_challenge}
+              img={challenge.img_url}
+              title1={challenge.title}
+              deskrip1={challenge.deskripsi}
               hide="d-none"
             />
           </div>
@@ -55,20 +89,11 @@ const DetailChallengePage = () => {
           <div className="container">
             <Row>
               <Col xs={9}>
-                <ChallengeInfo
-                  title={challenge.title1_challenge}
-                  desc1={challenge.desc1_challenge}
-                  details={challenge.detail1_challenge}
-                  desc_end={challenge.title1_challenge_end}
-                />
-                <PreparationComponent
-                  title={challenge.title2_challenge}
-                  desc={challenge.desc2_challenge}
-                  details={challenge.detail2_challenge}
-                />
+                <ChallengeInfo desc1={challenge.detail_challenge_1} />
+                <PreparationComponent desc2={challenge.detail_challenge_2} />
               </Col>
               <Col>
-                <MentorComponent mentors={challenge.mentor} />
+                <MentorComponent mentors={arrMentor} />
               </Col>
             </Row>
           </div>

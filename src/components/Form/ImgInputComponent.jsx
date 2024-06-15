@@ -1,25 +1,8 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 
-function ImgInputComponent() {
-  const [image, setImage] = useState(null);
-
-  const handleImageChange = (e) => {
-    if (e.target.files && e.target.files[0]) {
-      setImage(URL.createObjectURL(e.target.files[0]));
-    }
-  };
-
-  const handleDrop = (e) => {
-    e.preventDefault();
-    if (e.dataTransfer.files && e.dataTransfer.files[0]) {
-      setImage(URL.createObjectURL(e.dataTransfer.files[0]));
-    }
-  };
-
-  const handleClearImage = () => {
-    setImage(null);
-  };
+function ImgInputComponent(props) {
+  const image = props.data;
 
   return (
     <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
@@ -34,7 +17,7 @@ function ImgInputComponent() {
       <div className="upload-input-container">
         <div
           className="upload-input-box"
-          onDrop={handleDrop}
+          onDrop={props.hDrop}
           onDragOver={(e) => e.preventDefault()}
         >
           {image ? (
@@ -44,7 +27,10 @@ function ImgInputComponent() {
                 alt="Upload preview"
                 className="preview-input-image"
               />
-              <button className="clear-input-button" onClick={handleClearImage}>
+              <button
+                className="clear-input-button"
+                onClick={props.hClearImage}
+              >
                 ×
               </button>
             </div>
@@ -56,7 +42,7 @@ function ImgInputComponent() {
                 <input
                   type="file"
                   accept="image/*"
-                  onChange={handleImageChange}
+                  onChange={props.hImageChange}
                   className="file-upload-input"
                 />
                 <button className="upload-input-button">Select File</button>

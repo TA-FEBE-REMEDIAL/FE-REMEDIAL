@@ -3,9 +3,9 @@ import React from "react";
 function ArtikelKonten() {
   return (
     <div>
-      <div className="col-10 col-lg-11">
+      <div className="col-10 col-lg-12">
         <div className="row justify-content-center">
-          <div className=" col-md-12 col-lg-9 col-xl-9 col-xxl-9">
+          <div className=" col-md-12 col-lg-8 col-xl-10 col-xxl-9">
             <p className="mt-4">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet
               magni perferendis debitis soluta eligendi, ipsam expedita hic fuga

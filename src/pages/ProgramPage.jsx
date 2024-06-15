@@ -1,20 +1,27 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import { Row, Col } from "react-bootstrap";
-import img1program from "../assets/img/program/5.png";
-import img2program from "../assets/img/program/6.png";
-import img3program from "../assets/img/program/7.png";
-import { Link } from "react-router-dom";
 import NavbarComponent from "../components/NavbarComponent";
 import FooterComponent from "../components/FooterComponent";
 import CardComponent from "../components/CardComponent";
 import CardGroup from "react-bootstrap/CardGroup";
+import axios from "axios";
 
 function ProgramPage() {
   const [activeTab, setActiveTab] = useState("Semua Program");
 
   const handleTabClick = (tabName) => {
     setActiveTab(tabName);
+  };
+  const [program, setProgram] = useState([]);
+
+  useEffect(() => {
+    getProgram();
+  }, []);
+
+  const getProgram = async () => {
+    const url = "http://localhost:5000/api/program";
+    const response = await axios.get(url);
+    setProgram(response.data);
   };
 
   return (
@@ -49,27 +56,16 @@ function ProgramPage() {
               <div className="py-4">
                 <Row>
                   <CardGroup>
-                    <CardComponent
-                      img={img1program}
-                      title="Pengenalan Seni Rupa"
-                      category="Seni Rupa"
-                      block="d-grid gap-2"
-                      to="/program/detail-program"
-                    />
-                    <CardComponent
-                      img={img2program}
-                      title="Seni Sastra: Pengertian, jenis, unsur, ciri, fungsi  & manfaat"
-                      category="Seni Sastra"
-                      block="d-grid gap-2"
-                      to="/program/detail-program"
-                    />
-                    <CardComponent
-                      img={img3program}
-                      title="Pengenalan Musik Tradisional"
-                      category="Seni Musik"
-                      block="d-grid gap-2"
-                      to="/program/detail-program"
-                    />
+                    {program.map((data, index) => (
+                      <CardComponent
+                        key={index}
+                        img={data.image}
+                        title={data.judul}
+                        category={data.kategori}
+                        block="d-grid gap-2"
+                        to={`/program/detail-program/${data.id}`}
+                      />
+                    ))}
                   </CardGroup>
                 </Row>
               </div>

@@ -7,7 +7,9 @@ function RegisterPage() {
     <>
       <NavbarComponent hide="d-none" align="py-2" />
       <div className="" id="register">
-        <RegisterComponent />
+        <div className="my-5">
+          <RegisterComponent />
+        </div>
       </div>
     </>
   );

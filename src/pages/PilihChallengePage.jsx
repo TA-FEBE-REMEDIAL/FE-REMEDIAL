@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import BreadcrumbsComponent from "../components/BreadcrumbsComponent";
 import JumbrotonComponent from "../components/JumbrotonComponent";
 import img1challenge from "../assets/img/challenge-terpilih/1.png";
@@ -7,13 +7,36 @@ import ChallengeList from "../components/ChallengeList";
 import img1challengeterpilih from "../assets/img/challenge/3.png";
 import data from "../data/detailchallenge";
 import { useParams } from "react-router-dom";
+import axios from "axios";
 import NavbarComponent from "../components/NavbarComponent";
 import FooterComponent from "../components/FooterComponent";
 
 function PilihChallengePage() {
-  const params = useParams();
-  const challenges = [data[params.id]];
-  const challenge = challenges[0];
+  const { id } = useParams();
+  const [challenge, setChallenge] = useState([]);
+  const [challengeAll, setChallengeAll] = useState([]);
+
+  useEffect(() => {
+    getChallenge();
+  }, []);
+
+  useEffect(() => {
+    if (challenge.program_id) {
+      getChallengeAll();
+    }
+  }, [challenge]);
+
+  const getChallenge = async () => {
+    const url = `http://localhost:5000/api/challenge/find/${id}`;
+    const response = await axios.get(url);
+    setChallenge(response.data);
+  };
+
+  const getChallengeAll = async () => {
+    const url = `http://localhost:5000/api/challenge/${challenge.program_id}`;
+    const response = await axios.get(url);
+    setChallengeAll(response.data);
+  };
 
   return (
     <>
@@ -22,7 +45,7 @@ function PilihChallengePage() {
         <BreadcrumbsComponent
           // to1="/program/detail-program/"
           // bread1="Detail program"
-          to1="/program/detail-program/pilih-challange/"
+          to1={`/program/detail-program/pilih-challange/${challenge.program_id}`}
           bread1="Pilih Challenge"
           hide2="d-none"
           hide3="d-none"
@@ -33,10 +56,9 @@ function PilihChallengePage() {
 
         <div className="container mb-4 pt-5">
           <JumbrotonComponent
-            title={challenge.jumb_title}
-            kategori={challenge.ctgr}
-            deskrip={challenge.jumb_desc}
-            img={challenge.jumb_img}
+            title="Tingkatkan Skill dan Kreativitasmu Melalui Challenge di Remedial Sekarang!"
+            deskrip="Pilih dan kerjakan tantangan dari berbagai partner kami untuk meningkatkan skill dan memberikan solusi digital berdasarkan kebutuhan."
+            img={img1challenge}
             hide="d-none"
             hr="d-none"
           />
@@ -47,8 +69,8 @@ function PilihChallengePage() {
               <span>Challenge</span> Terpilih
             </h3>
             <ChallengePilihComponent
-              img={img1challengeterpilih}
-              title1={challenge.title1_challenge}
+              img={challenge.img_url}
+              title1={challenge.title}
               hidedesc="d-none"
               to={`/program/detail-program/pilih-challange/challenge-terpilih/detail-challenge/${challenge.id}`}
             />
@@ -63,7 +85,7 @@ function PilihChallengePage() {
               pastikan kamu melihat detail dari setiap challenge yang tersedia.
             </p>
           </div>
-          <ChallengeList />
+          <ChallengeList data={challengeAll} />
         </div>
       </div>
       <FooterComponent />

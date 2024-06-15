@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Container, Row, Col } from "react-bootstrap";
-import img1kelas from "../assets/img/kelas/1.png";
-import img2kelas from "../assets/img/kelas/2.png";
-import img3kelas from "../assets/img/kelas/3.png";
 import { NavLink, Link } from "react-router-dom";
 import CardComponent from "./CardComponent";
 import CardGroup from "react-bootstrap/CardGroup";

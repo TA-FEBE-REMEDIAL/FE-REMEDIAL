@@ -9,7 +9,12 @@ function InputComponent(props) {
         <p className={`text-muted ${props.show ? props.show : "d-none"}`}>
           <small>{props.desc}</small>
         </p>
-        <Form.Control type={props.type} placeholder={props.holder} />
+        <Form.Control
+          value={props.value}
+          onChange={props.change}
+          type={props.type}
+          placeholder={props.holder}
+        />
       </Form.Group>
     </div>
   );

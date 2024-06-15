@@ -6,7 +6,7 @@ function ChallengeCard(props) {
   return (
     <div className="challenge-card">
       <div className="challenge-img">
-        <img src={img1challenge} alt="" className="w-100 mb-5 rounded-top" />
+        <img src={props.img} alt="" className="w-100 mb-5 rounded-top" />
       </div>
       <div className="challenge-title">{props.titlechallenge}</div>
       <div className="challenge-footer">

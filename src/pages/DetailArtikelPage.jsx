@@ -29,7 +29,7 @@ export default function DetailArtikelPage() {
         />
 
         <div className="row justify-content-center">
-          <div className="">
+          <div className="container">
             <JumbrotonArtikel
               kategori="Berita Seni"
               title="Mini Residensi Siswa : Mencetak Seniman Muda dari Sekolah"

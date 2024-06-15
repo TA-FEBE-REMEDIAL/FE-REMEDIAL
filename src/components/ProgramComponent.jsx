@@ -1,4 +1,3 @@
-import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Slider from "./Slider";
 
@@ -23,7 +22,9 @@ function ProgramComponent() {
         </Row>
 
         <Row>
+          {/* {program.map((data, index) => ( */}
           <Slider />
+          {/* ))} */}
         </Row>
       </Container>
     </div>

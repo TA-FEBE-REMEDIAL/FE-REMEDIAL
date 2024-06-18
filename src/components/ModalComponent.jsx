@@ -12,37 +12,61 @@ import TextareaComponent from "./Form/TextareaComponent";
 import LinkComponent from "./Form/LinkComponent";
 import LampiranComponent from "./Form/LampiranComponent";
 import FooterComponent from "./Form/FooterComponent";
+import { useNavigate, useParams } from "react-router-dom";
 
 const ModalComponent = (props) => {
+  const { id } = useParams();
   const [show, setShow] = useState(false);
+  const navigate = useNavigate();
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
-  const [karya, setKarya] = useState([]);
 
   const [kategori, setKategori] = useState("");
   const [judul, setJudul] = useState("");
   const [author, setAuthor] = useState("");
   const [tanggal_penerbit, setTanggalPenerbit] = useState("");
+  const [nilai, setNilai] = useState("");
+  const [feedback, setFeedback] = useState("");
+  const [challenge_id, setChallengeId] = useState(id);
   const [deskripsi, setDeskripsi] = useState("");
 
-  const [image_url, setImage] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentItem, setCurrentItem] = useState();
+
+  const [preview, setPreview] = useState("");
+
+  const openModal = (item) => {
+    setCurrentItem({ ...item });
+    setIsModalOpen(true);
+  };
+
+  // Function to close the modal and reset currentItem
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setCurrentItem(null);
+  };
+
+  const [image_url, setImage] = useState("");
   const handleImageChange = (e) => {
+    const image = e.target.files[0];
+    setImage(image);
     if (e.target.files && e.target.files[0]) {
-      setImage(URL.createObjectURL(e.target.files[0]));
+      setPreview(URL.createObjectURL(image));
     }
   };
 
   const handleDrop = (e) => {
     e.preventDefault();
+    const image = e.dataTransfer.files[0];
+    setImage(image);
     if (e.dataTransfer.files && e.dataTransfer.files[0]) {
-      setImage(URL.createObjectURL(e.dataTransfer.files[0]));
+      setPreview(URL.createObjectURL(image));
     }
   };
 
   const handleClearImage = () => {
-    setImage(null);
+    setImage("");
   };
 
   const selectKategori = [
@@ -83,22 +107,29 @@ const ModalComponent = (props) => {
   // add data
   const addKarya = async (e) => {
     e.preventDefault();
+    const formData = new FormData();
+    formData.append("kategori", kategori);
+    formData.append("judul", judul);
+    formData.append("author", author);
+    formData.append("tanggal_penerbit", tanggal_penerbit);
+    formData.append("image_url", image_url);
+    formData.append("deskripsi", deskripsi);
+    formData.append("nilai", nilai);
+    formData.append("feedback", feedback);
+    formData.append("challenge_id", challenge_id);
     try {
-      await axios.post("http://localhost:5000/api/karya", {
-        kategori,
-        judul,
-        author,
-        tanggal_penerbit,
-        image_url,
-        deskripsi,
+      await axios.post("http://localhost:5000/api/karya", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
       });
       Swal.fire({
         title: "Good Job!",
         text: " Kamu udah berhasil menyelesaikan challenge proyek ini!",
         icon: "success",
       }).then(() => {
-        window.location.reload();
-        // Navigate("/karya-siswa")
+        // window.location.reload();
+        navigate("/karya-siswa");
       });
     } catch (error) {
       console.log(error);
@@ -182,6 +213,7 @@ const ModalComponent = (props) => {
                 </Row>
                 <ImgInputComponent
                   data={image_url}
+                  preview={preview}
                   hDrop={handleDrop}
                   hClearImage={handleClearImage}
                   hImageChange={handleImageChange}

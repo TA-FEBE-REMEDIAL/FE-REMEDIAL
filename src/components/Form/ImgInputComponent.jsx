@@ -3,7 +3,7 @@ import Form from "react-bootstrap/Form";
 
 function ImgInputComponent(props) {
   const image = props.data;
-
+  const preview = props.preview;
   return (
     <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
       <Form.Label>Gambar Proyek</Form.Label>
@@ -23,7 +23,12 @@ function ImgInputComponent(props) {
           {image ? (
             <div className="image-preview-container">
               <img
-                src={image}
+                src={preview}
+                style={{
+                  maxWidth: "300px", // Atur lebar maksimum
+                  maxHeight: "250px", // Atur tinggi maksimum
+                  borderRadius: "10px",
+                }}
                 alt="Upload preview"
                 className="preview-input-image"
               />

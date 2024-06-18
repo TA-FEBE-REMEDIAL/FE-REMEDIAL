@@ -51,7 +51,6 @@ const DetailChallengePage = () => {
     }
   }, [challenge]);
 
-  console.log(arrMentor);
   return (
     <>
       <NavbarComponent />

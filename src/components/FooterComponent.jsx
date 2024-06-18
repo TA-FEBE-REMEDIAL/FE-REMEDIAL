@@ -6,6 +6,7 @@ import {
   AiFillInstagram,
 } from "react-icons/ai";
 import { Link, NavLink } from "react-router-dom";
+import img1logo from "../assets/img/logo/1.png";
 
 const FooterComponent = () => {
   return (
@@ -71,7 +72,7 @@ const FooterComponent = () => {
 
                 <div className="col-lg-3 col-md-6 footer-info">
                   <a href="/home" className="logo d-flex align-items-center">
-                    {/* <img src={logo} alt="" /> */}
+                    <img src={img1logo} alt="" />
                     <span></span>
                   </a>
                   <p>

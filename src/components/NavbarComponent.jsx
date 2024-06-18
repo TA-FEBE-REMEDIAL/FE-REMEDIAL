@@ -1,6 +1,7 @@
 import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
 import { navLinksDrop, navLinks } from "../data/navbar";
 import { NavLink } from "react-router-dom";
+import img1logo from "../assets/img/logo/1.png";
 
 const NavbarComponent = (props) => {
   return (
@@ -8,7 +9,9 @@ const NavbarComponent = (props) => {
       <Navbar expand="lg" className={`bg-body-tertiary ${props.align}`}>
         <Container>
           <NavLink to={"/"}>
-            <Navbar.Brand>Remedial.id</Navbar.Brand>
+            <Navbar.Brand>
+              <img src={img1logo} alt="" width={150} />
+            </Navbar.Brand>
           </NavLink>
 
           <Navbar.Toggle

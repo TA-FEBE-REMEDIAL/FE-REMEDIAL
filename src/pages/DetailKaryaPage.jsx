@@ -1,13 +1,26 @@
-import React from "react";
-import DetailKaryaCompenent from "../components/DetailKaryaComponent.jsx";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 import NavbarComponent from "../components/NavbarComponent";
 import FooterComponent from "../components/FooterComponent";
 import BreadcrumbsComponent from "../components/BreadcrumbsComponent.jsx";
 import Poem from "../components/Coba-karya/Poem.jsx";
-import ProjectCard from "../components/Karya-siswa/ProjectCard.jsx";
-import ProjectEditModal from "../components/Karya-siswa/ProjectEditModal.jsx";
 
 function DetailKaryaPage() {
+  const { id } = useParams();
+
+  const [detailKarya, setDetailKarya] = useState([]);
+
+  const getdetailKarya = async () => {
+    const url = `http://localhost:5000/api/karya/${id}`;
+    const response = await axios.get(url);
+    setDetailKarya(response.data.data);
+  };
+
+  useEffect(() => {
+    getdetailKarya();
+  }, []);
+
   return (
     <>
       <NavbarComponent />
@@ -23,8 +36,7 @@ function DetailKaryaPage() {
           hide5="d-none"
           now="Challenge Terpilih"
         />
-        {/* <Metadata title={title} author={author} date={date} score={score} /> */}
-        <Poem />
+        <Poem data={detailKarya} />
 
         {/* <DetailKaryaCompenent /> */}
         {/* <ProjectCard />

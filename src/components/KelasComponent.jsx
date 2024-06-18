@@ -7,21 +7,8 @@ import CardGroup from "react-bootstrap/CardGroup";
 import Card from "react-bootstrap/Card";
 
 function KelasComponent(props) {
-  // const [kelas, setKelas] = useState([]);
-  // const [kelasLimit, setKelasLimit] = useState([]);
-
-  // useEffect(() => {
-  //   getKelas();
-  // }, []);
-
-  // const getKelas = async () => {
-  //   const url = "http://localhost:5000/api/kelas/";
-  //   const response = await axios.get(url);
-  //   setKelas(response.props.dataKelas);
-  //   setKelasLimit(response.props.kelasLimit);
-  // };
-
   const kelasType = props.type_data;
+
   return (
     <div className="kelas">
       <Container>

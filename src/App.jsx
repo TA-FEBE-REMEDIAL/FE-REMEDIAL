@@ -61,7 +61,7 @@ function App() {
         />
         <Route path="/karya-siswa" Component={KaryaPage} />
         <Route
-          path="/karya-siswa/detail-karyasiswa"
+          path="/karya-siswa/detail-karyasiswa/:id"
           Component={DetailKaryaPage}
         />
         <Route path="/tentang-kami" Component={TentangKamiPage} />

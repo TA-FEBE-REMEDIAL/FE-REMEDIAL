@@ -11,17 +11,6 @@ function ArtikelList(props) {
           <CardArtikel key={index} data={data} />
         </Link>
       ))}
-      {/* <Link to={ `artikel/detail-artikel/${data.id}`}>
-        <CardArtikel
-          key={index}
-          img={img1artikel}
-          title={data.title}
-          category={data.kategori}
-          author={data.author}
-          desc={"lorem"}
-          date={data.date}
-        />
-      </Link> */}
     </div>
   );
 }

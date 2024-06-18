@@ -1519,18 +1519,35 @@ header {
   margin-left: 0.5rem !important;
 }
 .card-mentor {
-  margin-top: 20px;
+  margin: 1rem;
+  padding: 1rem;
   border: 1px solid #e0e0e0;
-  border-radius: 10px;
+  border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.card-body-mentor {
+  padding: 1rem;
+}
 .card-title-mentor {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+/* .card-title-mentor {
   margin-top: 10px;
   font-size: 1.25rem;
   font-weight: 500;
-}
-
+} */
+/* .circle-mentor {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+} */
 .circle-mentor {
   width: 100px;
   height: 100px;
@@ -1539,7 +1556,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 10px auto;
+  margin: 0 auto 1rem;
 }
 
 .score-mentor {
@@ -1549,8 +1566,9 @@ header {
 }
 
 .feedback {
-  margin-top: 10px;
-  font-size: 1rem;
+  white-space: pre-wrap; /* Ensures text wraps to the next line */
+  word-wrap: break-word; /* Ensures long words break to the next line */
+  margin-bottom: 1rem;
 }
 
 .btn-mentor {
@@ -1711,20 +1729,21 @@ header {
   display: flex;
   align-items: center;
   padding: 10px;
-  margin: 1rem 2rem;
+  /* margin: 1rem 2rem; */
   border: 1px solid #e0e0e0;
   border-radius: 5px;
-  width: fit-content;
+  /* width: fit-content; */
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .file-icon {
-  margin-right: 10px;
+  margin-right: 0.5rem;
 }
 
 .file-details {
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
+  text-align: left;
 }
 
 .file-name {

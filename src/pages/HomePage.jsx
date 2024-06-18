@@ -18,10 +18,12 @@ import ArtikelList from "../components/ArtikelList";
 const HomePage = () => {
   const [kelasLimit, setKelasLimit] = useState([]);
   const [artikelLimit, setArtikel] = useState([]);
+  const [karyaLimit, setKarya] = useState([]);
 
   useEffect(() => {
     getKelas();
     getArtikel();
+    getKarya();
   }, []);
 
   const getKelas = async () => {
@@ -34,7 +36,13 @@ const HomePage = () => {
     const response = await axios.get(url);
     setArtikel(response.data.limit);
   };
+  const getKarya = async () => {
+    const url = "http://localhost:5000/api/karya/";
+    const response = await axios.get(url);
+    setKarya(response.data.limit);
+  };
 
+  // console.log(karyaLimit);
   return (
     <>
       <NavbarComponent />
@@ -77,7 +85,7 @@ const HomePage = () => {
               </div>
             </div>
             <div className="row py-4">
-              <ListKaryaComponent />
+              <ListKaryaComponent data={karyaLimit} />
             </div>
             <div className="col-lg-13 d-flex justify-content-center">
               <Link to="/karya-siswa">

@@ -1,77 +1,46 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import img1karya from "../assets/img/karya/1.png";
-import img2karya from "../assets/img/karya/2.jpg";
-import img3karya from "../assets/img/karya/3.jpg";
 
-function ListKaryaComponent() {
+function ListKaryaComponent(props) {
+  const karya = props.data;
+
   return (
     <>
-      <div className="mb-4 col-12 col-sm-12 col-md-6 col-lg-4">
-        <NavLink to="/karya-siswa/detail-karyasiswa">
-          <div className="card" style={{ height: "250px", width: "100%" }}>
-            <img
-              src={img1karya}
-              className="card-img card-img-overlay"
-              style={{ height: "100%" }}
-              alt="..."
-            />
-            <div className="card-img-overlay ">
-              <div className="wrap-content isi-konten">
-                <h5 className="card-category">Dongeng</h5>
-                <p className="card-title">Dongeng pukul 10</p>
-                <p className="card-text">
+      {karya.map((data, index) => (
+        <div className="mb-4 col-12 col-sm-12 col-md-6 col-lg-4">
+          <NavLink key={index} to={`/karya-siswa/detail-karyasiswa/${data.id}`}>
+            <div className="card" style={{ height: "250px", width: "100%" }}>
+              <img
+                src={data.image_url}
+                className="card-img card-img-overlay"
+                style={{ height: "100%" }}
+                alt="..."
+              />
+              <div className="card-img-overlay ">
+                <div className="wrap-content isi-konten">
+                  <h5 className="card-category">{data.kategori}</h5>
+                  <p className="card-title">{data.judul}</p>
+                  {/* <p className="card-text">
                   <small>July 24, 2019</small>
-                </p>
+                </p> */}
+                  {/* <div className="entry-meta d-flex align-items-center">
+                    <p className="category me-4">{data.author}</p>
+                    <small className="text-body-secondary">
+                      {data.tanggal_penerbit}
+                    </small>
+                  </div> */}
+                  <div className="entry-meta d-flex align-items-center">
+                    <small className="category me-4">
+                      {data.tanggal_penerbit}
+                    </small>
+                    <small>{data.author}</small>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </NavLink>
-      </div>
-      <div className="mb-4 col-12 col-sm-12 col-md-6 col-lg-4">
-        <NavLink to="/karya-siswa/detail-karyasiswa">
-          <div className="card" style={{ height: "250px", width: "100%" }}>
-            <img
-              src={img2karya}
-              className="card-img card-img-overlay"
-              style={{ height: "100%" }}
-              alt="..."
-            />
-            <div className="card-img-overlay">
-              <div className="wrap-content isi-konten">
-                <h5 className="card-category">Puisi</h5>
-                <p className="card-title">Kita sedang asyik-asyiknya berkata</p>
-                <p className="card-text">
-                  <small>July 24, 2019</small>
-                </p>
-              </div>
-            </div>
-          </div>
-        </NavLink>
-      </div>
-      <div className="mb-4 col-12 col-sm-12 col-md-6 col-lg-4">
-        <NavLink to="/karya-siswa/detail-karyasiswa">
-          <div className="card" style={{ height: "250px", width: "100%" }}>
-            <img
-              src={img3karya}
-              className="card-img card-img-overlay"
-              style={{ height: "100%" }}
-              alt="..."
-            />
-            <div className="card-img-overlay d-flex flex-column">
-              <div className="wrap-content isi-konten">
-                <h5 className="card-category">Cerpen</h5>
-                <p className="card-title">
-                  Mini Residensi Siswa : Mencetak Seniman Muda dari Sekolah
-                </p>
-                <p className="card-text">
-                  <small>January 15, 2019</small>
-                </p>
-              </div>
-            </div>
-          </div>
-        </NavLink>
-      </div>
+          </NavLink>
+        </div>
+      ))}
     </>
   );
 }

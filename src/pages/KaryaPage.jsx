@@ -1,8 +1,21 @@
 import ListKaryaComponent from "../components/ListKaryaComponent";
 import NavbarComponent from "../components/NavbarComponent";
 import FooterComponent from "../components/FooterComponent";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 const KaryaPage = () => {
+  const [karya, setKarya] = useState([]);
+
+  const getKarya = async () => {
+    const url = "http://localhost:5000/api/karya/";
+    const response = await axios.get(url);
+    setKarya(response.data.data);
+  };
+  useEffect(() => {
+    getKarya();
+  }, []);
+
   return (
     <>
       <NavbarComponent />
@@ -14,7 +27,7 @@ const KaryaPage = () => {
           </h6>
           <hr />
           <br />
-          <ListKaryaComponent />
+          <ListKaryaComponent data={karya} />
         </div>
       </section>
       <FooterComponent />

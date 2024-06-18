@@ -66,6 +66,14 @@ const ModalComponent = (props) => {
       value: "musik",
       text: "Musik",
     },
+    {
+      value: "komik",
+      text: "Komik",
+    },
+    {
+      value: "lainnya",
+      text: "Lainnya",
+    },
   ];
 
   // useEffect(() => {

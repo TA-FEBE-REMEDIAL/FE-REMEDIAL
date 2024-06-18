@@ -2001,6 +2001,9 @@ header {
 .isi-konten-artikel {
   background-color: var(--background-program);
 }
+.artikel-card .card-text {
+  text-align: justify;
+}
 /*  Artikel Terbaru  */
 .artikel-terbaru {
   margin-right: auto;
@@ -2043,7 +2046,13 @@ header {
   margin: 5px 0 0;
   color: #777;
 }
-
+/* komentar  */
+.list-komentar {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+}
 /*--------------------------------------------------------------
 # Sections General
 --------------------------------------------------------------*/

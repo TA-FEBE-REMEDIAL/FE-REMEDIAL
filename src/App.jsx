@@ -55,7 +55,10 @@ function App() {
           Component={DetailChallengePage}
         />
         <Route path="/artikel" Component={ArtikelPage} />
-        <Route path="/artikel/detail-artikel" Component={DetailArtikelPage} />
+        <Route
+          path="/artikel/detail-artikel/:id"
+          Component={DetailArtikelPage}
+        />
         <Route path="/karya-siswa" Component={KaryaPage} />
         <Route
           path="/karya-siswa/detail-karyasiswa"

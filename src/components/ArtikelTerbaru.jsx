@@ -1,85 +1,30 @@
 import React from "react";
 import { articles } from "../data/artikelterbaru";
+import { Link } from "react-router-dom";
 
-function ArtikelTerbaru() {
+function ArtikelTerbaru({ data }) {
+  const test = "tes";
   return (
     <div className="artikel-terbaru ">
       <div className="article-list">
         <h2>Artikel Terkait</h2>
-        {articles.map((article, index) => (
-          <div className="article-item" key={index}>
-            <img
-              src={article.image}
-              alt={article.title}
-              className="article-image"
-            />
-            <div className="article-content">
-              <h3>{article.title}</h3>
-              <p>{article.date}</p>
+
+        {data.map((article, index) => (
+          <Link to={`/artikel/detail-artikel/${article.id}`} onClick={test}>
+            <div className="article-item" key={index}>
+              <img
+                src={article.image_url}
+                alt={article.title}
+                className="article-image"
+              />
+              <div className="article-content">
+                <h3>{article.title}</h3>
+                <p>{article.date}</p>
+              </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
-
-      {/* <div className="col-12 col-lg-3 col-xl-3 col-xxl-3">
-        <div className="p-3 justify-content-center">
-          <h4 className="pt-3 fw-bold">Baca Artikel</h4>
-        </div>
-        <div className="col">
-          <div className="fundamental">
-            <div className="fundamental-item d-flex">
-              <img src={img1detailartikel} className="fundamental-img" alt="" />
-              <h3>
-                <p href="#!">
-                  Seni Tari: Pengertian, Unsur-Unsur, Fungsi, dan Jenis
-                </p>
-              </h3>
-            </div>
-            <div className="col">
-              <div className="fundamental-item d-flex">
-                <img
-                  src={img2detailartikel}
-                  className="fundamental-img"
-                  alt=""
-                />
-                <h3>
-                  <a href="#!">
-                    Seni Tari: Pengertian, Unsur-Unsur, Fungsi, dan Jenis
-                  </a>
-                </h3>
-              </div>
-            </div>
-            <div className="col">
-              <div className="fundamental-item d-flex">
-                <img
-                  src={img3detailartikel}
-                  className="fundamental-img"
-                  alt=""
-                />
-                <h3>
-                  <a href="#!">
-                    Seni Tari: Pengertian, Unsur-Unsur, Fungsi, dan Jenis
-                  </a>
-                </h3>
-              </div>
-            </div>
-            <div className="col">
-              <div className="fundamental-item d-flex">
-                <img
-                  src={img4detailartikel}
-                  className="fundamental-img"
-                  alt=""
-                />
-                <h3>
-                  <a href="#!">
-                    Seni Tari: Pengertian, Unsur-Unsur, Fungsi, dan Jenis
-                  </a>
-                </h3>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> */}
     </div>
   );
 }

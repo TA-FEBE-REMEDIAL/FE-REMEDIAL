@@ -55,8 +55,8 @@ function KelasComponent(props) {
                     category={data.kategori}
                     block="d-grid gap-2"
                     to={`/kelaspage/detail-kelas/${data.id}`}
+                    refresh={"refresh"}
                   />
-
                   {/* <div dangerouslySetInnerHTML={{ __html: data.isi_materi }} /> */}
                 </>
               ))}

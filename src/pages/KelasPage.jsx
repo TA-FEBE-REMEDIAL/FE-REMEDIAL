@@ -8,15 +8,15 @@ import FooterComponent from "../components/FooterComponent";
 function KelasPage() {
   const [kelas, setKelas] = useState([]);
 
-  useEffect(() => {
-    getKelas();
-  }, []);
-
   const getKelas = async () => {
     const url = "http://localhost:5000/api/kelas/";
     const response = await axios.get(url);
     setKelas(response.data.data);
   };
+  useEffect(() => {
+    getKelas();
+  }, []);
+
   return (
     <>
       <NavbarComponent />

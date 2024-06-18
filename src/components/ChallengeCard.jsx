@@ -27,6 +27,7 @@ function ChallengeCard(props) {
       </div>
     </div>
   );
+  z;
 }
 
 export default ChallengeCard;

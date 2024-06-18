@@ -1,8 +1,4 @@
-import React from "react";
-import img1detailartikel from "../assets/img/artikel/berita-seni/1.jpg";
-import img2detailartikel from "../assets/img/artikel/berita-seni/2.jpg";
-import img3detailartikel from "../assets/img/artikel/berita-seni/3.jpg";
-import img4detailartikel from "../assets/img/artikel/berita-seni/5.jpg";
+import React, { useEffect, useState } from "react";
 import BreadcrumbsComponent from "../components/BreadcrumbsComponent";
 import JumbrotonArtikel from "../components/JumbrotonArtikel";
 import ArtikelKonten from "../components/ArtikelKonten";
@@ -11,8 +7,26 @@ import ArtikelTerbaru from "../components/ArtikelTerbaru";
 import { Row, Col } from "react-bootstrap";
 import NavbarComponent from "../components/NavbarComponent";
 import FooterComponent from "../components/FooterComponent";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 
 export default function DetailArtikelPage() {
+  const { id } = useParams();
+
+  const [detailArtikel, setDetailArtikel] = useState([]);
+  const [rekomenArtikel, setRekomenArtikel] = useState([]);
+
+  const getdetailArtikel = async () => {
+    const url = `http://localhost:5000/api/artikel/${id}`;
+    const response = await axios.get(url);
+    setDetailArtikel(response.data.data);
+    setRekomenArtikel(response.data.rekomendasi);
+  };
+
+  useEffect(() => {
+    getdetailArtikel();
+  }, []);
+
   return (
     <>
       <NavbarComponent />
@@ -35,18 +49,18 @@ export default function DetailArtikelPage() {
               title="Mini Residensi Siswa : Mencetak Seniman Muda dari Sekolah"
               penerbit="oleh rianto rianto"
               tanggal="15-01-2019"
-              img={img1detailartikel}
+              img={detailArtikel.image_url}
             />
           </div>
           <div className="isi-konten-artikel pt-5">
             <div className="container">
               <Row>
                 <Col xs={9}>
-                  <ArtikelKonten />
+                  <ArtikelKonten data={detailArtikel} />
                   <ArtikelKomentar />
                 </Col>
                 <Col>
-                  <ArtikelTerbaru />
+                  <ArtikelTerbaru data={rekomenArtikel} />
                 </Col>
               </Row>
             </div>

@@ -5,6 +5,7 @@ import Card from "react-bootstrap/Card";
 import ButtonComponent from "./ButtonComponent";
 
 function CardComponent(props) {
+  const refresh = props.refresh;
   return (
     <div className="cardColumn">
       <Card className="mx-2 card-pro">
@@ -15,7 +16,7 @@ function CardComponent(props) {
         </Card.Body>
         <Card.Footer>
           <Card.Text>Gratis</Card.Text>
-          <NavLink to={props.to}>
+          <NavLink to={props.to} onClick={refresh}>
             <div className={props.block}>
               <button className={`details-button`}>Lihat Detail</button>
             </div>

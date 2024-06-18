@@ -1,17 +1,27 @@
 import React from "react";
 import CardArtikel from "./CardArtikel";
 import { Link } from "react-router-dom";
-import img1artikel from "../assets/img/artikel/berita-seni/1.jpg";
 
-function ArtikelList() {
+function ArtikelList(props) {
+  const artikelType = props.data;
   return (
     <div className="row">
-      <Link to={"/Artikel"}>
-        <CardArtikel img={img1artikel} title={"judul"} />
-      </Link>
-      <Link to={"/Artikel"}>
-        <CardArtikel img={img1artikel} />
-      </Link>
+      {artikelType.map((data, index) => (
+        <Link to={`/artikel/detail-artikel/${data.id}`}>
+          <CardArtikel key={index} data={data} />
+        </Link>
+      ))}
+      {/* <Link to={ `artikel/detail-artikel/${data.id}`}>
+        <CardArtikel
+          key={index}
+          img={img1artikel}
+          title={data.title}
+          category={data.kategori}
+          author={data.author}
+          desc={"lorem"}
+          date={data.date}
+        />
+      </Link> */}
     </div>
   );
 }

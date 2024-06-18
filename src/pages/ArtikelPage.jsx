@@ -3,8 +3,22 @@ import ButtonArtikel from "../components/ButtonArtikel";
 import BreadcrumbsComponent from "../components/BreadcrumbsComponent";
 import NavbarComponent from "../components/NavbarComponent";
 import FooterComponent from "../components/FooterComponent";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const ArtikelPage = () => {
+  const [artikel, setArtikel] = useState([]);
+
+  const getArtikel = async () => {
+    const url = "http://localhost:5000/api/artikel/";
+    const response = await axios.get(url);
+
+    setArtikel(response.data.data);
+  };
+  useEffect(() => {
+    getArtikel();
+  }, []);
+
   return (
     <>
       <NavbarComponent />
@@ -44,7 +58,7 @@ const ArtikelPage = () => {
                 />
               </div>
               <br />
-              <ArtikelList />
+              <ArtikelList data={artikel} />
             </div>
           </div>
         </div>

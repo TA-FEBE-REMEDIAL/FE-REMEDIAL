@@ -17,11 +17,9 @@ function DetailKelasPage() {
 
   const getdetailKelas = async () => {
     const url = `http://localhost:5000/api/kelas/${id}`;
-    const urlLimit = `http://localhost:5000/api/kelas`;
     const response = await axios.get(url);
-    const responseLimit = await axios.get(urlLimit);
-    setDetailKelas(response.data);
-    setKelasLimit(responseLimit.data.limit);
+    setDetailKelas(response.data.data);
+    setKelasLimit(response.data.rekomendasi);
   };
 
   useEffect(() => {

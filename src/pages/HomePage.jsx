@@ -13,12 +13,15 @@ import img1artikel from "../assets/img/artikel/berita-seni/1.jpg";
 import img2artikel from "../assets/img/artikel/berita-seni/2.jpg";
 import NavbarComponent from "../components/NavbarComponent";
 import FooterComponent from "../components/FooterComponent";
+import ArtikelList from "../components/ArtikelList";
 
 const HomePage = () => {
   const [kelasLimit, setKelasLimit] = useState([]);
+  const [artikelLimit, setArtikel] = useState([]);
 
   useEffect(() => {
     getKelas();
+    getArtikel();
   }, []);
 
   const getKelas = async () => {
@@ -26,6 +29,12 @@ const HomePage = () => {
     const response = await axios.get(url);
     setKelasLimit(response.data.limit);
   };
+  const getArtikel = async () => {
+    const url = "http://localhost:5000/api/artikel/";
+    const response = await axios.get(url);
+    setArtikel(response.data.limit);
+  };
+
   return (
     <>
       <NavbarComponent />
@@ -96,8 +105,7 @@ const HomePage = () => {
 
             <div className="row justify-content-center">
               <div className="col-lg-11">
-                <CardArtikel img={img1artikel} />
-                <CardArtikel img={img2artikel} />
+                <ArtikelList data={artikelLimit} />
               </div>
             </div>
 

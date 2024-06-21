@@ -1,9 +1,18 @@
 import React, { useState } from "react";
 import MentorCard from "./MentorCard";
 import ProjectEditModal from "../Karya-siswa/ProjectEditModal";
+import { useUser } from "../../context/UserContext";
+import { useNavigate } from "react-router-dom";
 
 const Poem = ({ data }) => {
   const [modalShow, setModalShow] = useState(false);
+  const { getUserData } = useUser();
+  const dataUser = getUserData();
+
+  let user = dataUser[0];
+  if (!user) {
+    user = "";
+  }
 
   // const project = [
   //   {
@@ -18,6 +27,7 @@ const Poem = ({ data }) => {
   // ];
 
   // const data = project[0];
+
   return (
     <div className="poem">
       <div className="container my-5">
@@ -32,12 +42,18 @@ const Poem = ({ data }) => {
                   <p>{data.author}</p>
                 </div>
               </div>
-              <button
-                className="btn btn-outline-danger mt-4 pr-5"
-                onClick={() => setModalShow(true)}
-              >
-                Edit Karya Siswa
-              </button>
+              {user.role === "mentor" ? (
+                <>
+                  <button
+                    className="btn btn-outline-danger mt-4 pr-5"
+                    onClick={() => setModalShow(true)}
+                  >
+                    Edit Karya Siswa
+                  </button>
+                </>
+              ) : (
+                ""
+              )}
             </div>
           </div>
           <div className="row">

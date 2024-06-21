@@ -20,7 +20,6 @@ const Slider = () => {
     setProgram(response.data);
   };
 
-  console.log(program);
   return (
     <>
       <Swiper spaceBetween={50} slidesPerView={3}>

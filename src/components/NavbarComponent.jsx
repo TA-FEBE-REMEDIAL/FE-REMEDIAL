@@ -2,8 +2,17 @@ import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
 import { navLinksDrop, navLinks } from "../data/navbar";
 import { NavLink } from "react-router-dom";
 import img1logo from "../assets/img/logo/1.png";
+import LogoutComponent from "./Auth/LogoutComponent";
+import { useUser } from "../context/UserContext";
 
 const NavbarComponent = (props) => {
+  const { getUserData } = useUser();
+  const data = getUserData();
+  const user = data[0];
+
+  const isAuthenticated = () => {
+    return localStorage.getItem("token") !== null;
+  };
   return (
     <div>
       <Navbar expand="lg" className={`bg-body-tertiary ${props.align}`}>
@@ -78,19 +87,30 @@ const NavbarComponent = (props) => {
             </Nav>
 
             <div className={`text-center ${props.hide} `}>
-              <NavLink to={"/register"}>
-                <button
-                  type="button"
-                  className="btn btn-outline-danger rounded-1 m-2"
-                >
-                  Daftar
-                </button>
-              </NavLink>
-              <NavLink to={"/login"}>
-                <button type="button" className="btn btn-danger">
-                  Masuk
-                </button>
-              </NavLink>
+              {!isAuthenticated() ? (
+                <>
+                  <NavLink to={"/register"}>
+                    <button
+                      type="button"
+                      className="btn btn-outline-danger rounded-1 m-2"
+                    >
+                      Daftar
+                    </button>
+                  </NavLink>
+                  <NavLink to={"/login"}>
+                    <button type="button" className="btn btn-danger">
+                      Masuk
+                    </button>
+                  </NavLink>
+                </>
+              ) : (
+                <>
+                  <p className="text-white">
+                    Nama: {user.name} | Role: {user.role}
+                  </p>
+                  <LogoutComponent />
+                </>
+              )}
             </div>
           </Navbar.Collapse>
         </Container>

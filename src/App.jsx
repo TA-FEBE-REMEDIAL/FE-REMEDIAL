@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 
 // import CarouselComponent from "./components/CarouselComponent";
 
@@ -19,6 +19,12 @@ import DetailChallengePage from "./pages/DetailChallengePage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 
+const isAuthenticated = () => {
+  return localStorage.getItem("token") !== null;
+};
+
+// console.log();
+
 function App() {
   // Disable error gajelas
   const consoleError = console.error;
@@ -33,26 +39,54 @@ function App() {
     <div>
       <Routes>
         {/* Auth */}
-        <Route path="/login" Component={LoginPage} />
-        <Route path="/register" Component={RegisterPage} />
+        <Route
+          path="/login"
+          element={!isAuthenticated() ? <LoginPage /> : <Navigate to={"/"} />}
+        />
+        <Route
+          path="/register"
+          element={
+            !isAuthenticated() ? <RegisterPage /> : <Navigate to={"/"} />
+          }
+        />
         <Route path="/" Component={HomePage} />
         <Route path="/home" Component={HomePage} />
         <Route path="/program" Component={ProgramPage} />
         <Route
           path="/program/detail-program/:id"
-          Component={DetailProgramPage}
+          element={
+            !isAuthenticated() ? (
+              <Navigate to={"/login"} />
+            ) : (
+              <DetailProgramPage />
+            )
+          }
         />
         <Route
           path="/program/detail-program/pilih-challange/:program_id"
-          Component={ChallengePage}
+          element={
+            isAuthenticated() ? <ChallengePage /> : <Navigate to={"/login"} />
+          }
         />
         <Route
           path="/program/detail-program/pilih-challange/challenge-terpilih/:id"
-          Component={PilihChallengePage}
+          element={
+            isAuthenticated() ? (
+              <PilihChallengePage />
+            ) : (
+              <Navigate to={"/login"} />
+            )
+          }
         />
         <Route
           path="/program/detail-program/pilih-challange/challenge-terpilih/detail-challenge/:id"
-          Component={DetailChallengePage}
+          element={
+            isAuthenticated() ? (
+              <DetailChallengePage />
+            ) : (
+              <Navigate to={"/login"} />
+            )
+          }
         />
         <Route path="/artikel" Component={ArtikelPage} />
         <Route

@@ -2019,6 +2019,7 @@ header {
 
 .isi-konten-artikel {
   background-color: var(--background-program);
+  text-align: justify;
 }
 .artikel-card .card-text {
   text-align: justify;

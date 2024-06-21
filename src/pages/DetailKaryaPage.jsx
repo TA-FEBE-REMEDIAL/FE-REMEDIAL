@@ -29,12 +29,12 @@ function DetailKaryaPage() {
           // to1="/program/detail-program/"
           // bread1="Detail program"
           to1="/karya-siswa"
-          bread1="Pilih Challenge"
+          bread1="Semua Karya"
           hide2="d-none"
           hide3="d-none"
           hide4="d-none"
           hide5="d-none"
-          now="Challenge Terpilih"
+          now="Detail Karya Siswa"
         />
         <Poem data={detailKarya} />
 

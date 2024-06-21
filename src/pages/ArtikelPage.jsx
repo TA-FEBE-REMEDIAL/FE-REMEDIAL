@@ -7,17 +7,32 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 const ArtikelPage = () => {
+  const [kategori, setKategori] = useState("semua");
   const [artikel, setArtikel] = useState([]);
+  const [artikelAll, setArtikelAll] = useState([]);
 
   const getArtikel = async () => {
     const url = "http://localhost:5000/api/artikel/";
     const response = await axios.get(url);
 
-    setArtikel(response.data.data);
+    setArtikelAll(response.data.data);
   };
+
   useEffect(() => {
     getArtikel();
-  }, []);
+    fetchArticles(kategori);
+  }, [kategori]);
+
+  const fetchArticles = async (kategori) => {
+    try {
+      const response = await axios.get(
+        `http://localhost:5000/api/artikel/filter/${kategori}`
+      );
+      setArtikel(response.data.data);
+    } catch (error) {
+      console.error("Error fetching articles:", error);
+    }
+  };
 
   return (
     <>
@@ -43,22 +58,43 @@ const ArtikelPage = () => {
                 peristiwa yang berkaitan dengan seni dan literasi
               </h6>
               <div className="d-flex justify-content-start mt-3">
-                <ButtonArtikel type={"btn-danger btn-sm"} title={"Semua"} />
                 <ButtonArtikel
-                  type={"btn-outline-danger mx-3 btn-sm"}
+                  click={() => setKategori("semua")}
+                  type={`${
+                    kategori === "semua" ? "btn-danger" : "btn-outline-danger"
+                  } btn-sm`}
+                  title={"Semua"}
+                />
+                <ButtonArtikel
+                  click={() => setKategori("Berita Seni")}
+                  type={`${
+                    kategori === "Berita Seni"
+                      ? "btn-danger"
+                      : "btn-outline-danger"
+                  } mx-4 btn-sm`}
                   title={"Berita Seni"}
                 />
                 <ButtonArtikel
-                  type={"btn-outline-danger btn-sm"}
+                  click={() => setKategori("Kampus")}
+                  type={`${
+                    kategori === "Kampus" ? "btn-danger" : "btn-outline-danger"
+                  } btn-sm`}
                   title={"Kampus"}
                 />
                 <ButtonArtikel
-                  type={"btn-outline-danger mx-3 btn-sm"}
+                  click={() => setKategori("Sekolahan")}
+                  type={`${
+                    kategori === "Sekolahan"
+                      ? "btn-danger"
+                      : "btn-outline-danger"
+                  } mx-3 btn-sm`}
                   title={"Sekolahan"}
                 />
               </div>
               <br />
-              <ArtikelList data={artikel} />
+              <ArtikelList
+                data={artikel[0] === undefined ? artikelAll : artikel}
+              />
             </div>
           </div>
         </div>

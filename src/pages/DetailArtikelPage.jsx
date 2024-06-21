@@ -45,10 +45,10 @@ export default function DetailArtikelPage() {
         <div className="row justify-content-center">
           <div className="container">
             <JumbrotonArtikel
-              kategori="Berita Seni"
-              title="Mini Residensi Siswa : Mencetak Seniman Muda dari Sekolah"
-              penerbit="oleh rianto rianto"
-              tanggal="15-01-2019"
+              kategori={detailArtikel.kategori}
+              title={detailArtikel.title}
+              penerbit={detailArtikel.author}
+              tanggal={detailArtikel.date}
               img={detailArtikel.image_url}
             />
           </div>

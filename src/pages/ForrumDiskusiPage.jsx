@@ -1,5 +1,5 @@
 import React from "react";
-import img1forum from "../assets/img/forum/1.png";
+import img1forum from "../assets/img/forum/forum.png";
 import BreadcrumbsComponent from "../components/BreadcrumbsComponent";
 import NavbarComponent from "../components/NavbarComponent";
 import FooterComponent from "../components/FooterComponent";

@@ -57,7 +57,7 @@ const ArtikelPage = () => {
                 isu, atau <br />
                 peristiwa yang berkaitan dengan seni dan literasi
               </h6>
-              <div className="d-flex justify-content-start mt-3">
+              <div className="d-flex justify-content-start mt-3 btn-artikel">
                 <ButtonArtikel
                   click={() => setKategori("semua")}
                   type={`${
@@ -71,7 +71,7 @@ const ArtikelPage = () => {
                     kategori === "Berita Seni"
                       ? "btn-danger"
                       : "btn-outline-danger"
-                  } mx-4 btn-sm`}
+                  } mx-2 btn-sm`}
                   title={"Berita Seni"}
                 />
                 <ButtonArtikel
@@ -87,7 +87,7 @@ const ArtikelPage = () => {
                     kategori === "Sekolahan"
                       ? "btn-danger"
                       : "btn-outline-danger"
-                  } mx-3 btn-sm`}
+                  } mx-2 btn-sm`}
                   title={"Sekolahan"}
                 />
               </div>

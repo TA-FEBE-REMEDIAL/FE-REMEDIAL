@@ -13,8 +13,8 @@ const LogoutComponent = () => {
       text: "Anda akan keluar.",
       icon: "warning",
       showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
+      confirmButtonColor: "#d05d5d",
+      cancelButtonColor: "#bc4c4c",
       confirmButtonText: "Ya, keluar!",
     }).then((result) => {
       if (result.isConfirmed) {
@@ -34,8 +34,8 @@ const LogoutComponent = () => {
     });
   };
   return (
-    <button onClick={handleLogout} type="button" className="btn btn-danger">
-      Logout
+    <button onClick={handleLogout} type="button" className="btn btn-logout">
+      Keluar
     </button>
   );
 };

@@ -13,9 +13,14 @@ import LinkComponent from "./Form/LinkComponent";
 import LampiranComponent from "./Form/LampiranComponent";
 import FooterComponent from "./Form/FooterComponent";
 import { useNavigate, useParams } from "react-router-dom";
+import { useUser } from "../context/UserContext";
 
 const ModalComponent = (props) => {
   const { id } = useParams();
+  const { getUserData } = useUser();
+  const data = getUserData();
+  const user = data[0];
+
   const [show, setShow] = useState(false);
   const navigate = useNavigate();
 
@@ -30,6 +35,7 @@ const ModalComponent = (props) => {
   const [feedback, setFeedback] = useState("");
   const [challenge_id, setChallengeId] = useState(id);
   const [deskripsi, setDeskripsi] = useState("");
+  const [email, setEmail] = useState(user.email);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentItem, setCurrentItem] = useState();
@@ -104,7 +110,7 @@ const ModalComponent = (props) => {
 
   // })
 
-  // add data
+  // add data karya
   const addKarya = async (e) => {
     e.preventDefault();
     const formData = new FormData();
@@ -117,6 +123,7 @@ const ModalComponent = (props) => {
     formData.append("nilai", nilai);
     formData.append("feedback", feedback);
     formData.append("challenge_id", challenge_id);
+    formData.append("email", email);
     try {
       await axios.post("http://localhost:5000/api/karya", formData, {
         headers: {

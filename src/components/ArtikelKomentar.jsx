@@ -1,7 +1,8 @@
-import React, { useEffect, useState, u } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import Swal from "sweetalert2";
+// import "./ArtikelKomentar.css"; // Import the custom CSS file
 
 function ArtikelKomentar() {
   const { id } = useParams();
@@ -66,7 +67,7 @@ function ArtikelKomentar() {
 
       <div className="container my-4 col-10">
         <h5 className="fw-bold my-4">Tinggalkan komentar</h5>
-        <form className=" container comment-form" onSubmit={addKomentar}>
+        <form className="container comment-form" onSubmit={addKomentar}>
           <div className="mb-3">
             <label htmlFor="comment" className="form-label">
               Komentar:
@@ -121,20 +122,17 @@ function ArtikelKomentar() {
           </button>
         </form>
       </div>
-      <div className="mt-5">
+      <div className="container col-10 mt-5">
         {listKomentar.map((data, index) => (
-          <>
-            <div className="list-komentar">
-              <div className="container" key={index}>
-                <div>
-                  <h4 className="fw-semibold">{data.nama}</h4>
-                  <small>{formatDateTime(data.date)}</small>
-                  <p>{data.komentar}</p>
-                </div>
-              </div>
+          <div className="list-komentar card mb-3" key={index}>
+            <div className="card-body">
+              <h5 className="card-title fw-semibold">{data.nama}</h5>
+              <h6 className="card-subtitle mb-2 text-muted">
+                {formatDateTime(data.date)}
+              </h6>
+              <p className="card-text">{data.komentar}</p>
             </div>
-            <br />
-          </>
+          </div>
         ))}
       </div>
     </section>

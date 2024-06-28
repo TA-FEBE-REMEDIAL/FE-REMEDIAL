@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-// import img1komunitas from "../assets/img/login/1.png";
-// import img1diskusi from "../assets/img/diskusi/1.png";
-// import img2diskusi from "../assets/img/diskusi/2.png";
-// import img3diskusi from "../assets/img/diskusi/3.png";
-// import img4diskusi from "../assets/img/diskusi/4.png";
+import img1komunitas from "../../assets/img/login/1.png";
+import img1diskusi from "../../assets/img/diskusi/1.png";
+import img2diskusi from "../../assets/img/diskusi/2.png";
+import img3diskusi from "../../assets/img/diskusi/3.png";
+import img4diskusi from "../../assets/img/diskusi/4.png";
 
 function CategoriesDiskusi() {
   const [dropdownVisible, setDropdownVisible] = useState(false);
@@ -25,28 +25,43 @@ function CategoriesDiskusi() {
         <button className="btn btn-danger">Kategori</button>
       </div>
       {dropdownVisible && (
-        <div className="dropdown-menu show forum">
-          <button className="dropdown-item" type="button">
-            Seni Rupa
-          </button>
-          <button className="dropdown-item" type="button">
-            Musik
-          </button>
-          <button className="dropdown-item" type="button">
-            Sastra
-          </button>
-          <button className="dropdown-item" type="button">
-            Pertunjukan
-          </button>
+        <div className="forum-diskusi-drop">
+          <div className="dropdown-menu show forum">
+            <button className="dropdown-item" type="button">
+              Artistry Accelerator
+            </button>
+            <button className="dropdown-item" type="button">
+              Melody Mastery
+            </button>
+            <button className="dropdown-item" type="button">
+              Literary Forge
+            </button>
+            <button className="dropdown-item" type="button">
+              Stagecraft Intensive
+            </button>
+          </div>
         </div>
       )}
 
       <div className="row">
         <div className="col-md-12 mb-3">
           <div className="card-forum-diskusi flex-row align-items-center p-3">
-            <img src={""} className="card-img-left-forum" alt="Komunitas" />
+            <img
+              src={img1komunitas}
+              className="card-img-left-forum"
+              alt="Komunitas"
+            />
             <div className="card-body">
-              <h5 className="card-title">Komunitas</h5>
+              <h5 className="card-title">
+                <a
+                  href="https://chat.whatsapp.com/link-to-komunitas"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="custom-link"
+                >
+                  Komunitas
+                </a>
+              </h5>
               <p className="card-text">
                 Belajar bersama berbagai Komunitas yang ada di Program Remedial
               </p>
@@ -59,13 +74,20 @@ function CategoriesDiskusi() {
         <div className="col-md-12 mb-3">
           <div className="card-forum-diskusi flex-row align-items-center p-3">
             <img
-              src={""}
+              src={img1diskusi}
               className="card-img-left-forum"
               alt="Artistry Accelerator"
             />
             <div className="card-body">
               <h5 className="card-title">
-                Artistry Accelerator: Program Remedial Seni Rupa
+                <a
+                  href="https://chat.whatsapp.com/link-to-seni-rupa"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="custom-link"
+                >
+                  Artistry Accelerator: Program Remedial Seni Rupa
+                </a>
               </h5>
               <p className="card-text">
                 Tanya soal Seni Rupa disini. Kita bisa mengekspresikan perasaan
@@ -77,13 +99,20 @@ function CategoriesDiskusi() {
         <div className="col-md-12 mb-3">
           <div className="card-forum-diskusi flex-row align-items-center p-3">
             <img
-              src={""}
+              src={img2diskusi}
               className="card-img-left-forum"
               alt="Melody Mastery"
             />
             <div className="card-body">
               <h5 className="card-title">
-                Melody Mastery: Program Remedial Seni Musik
+                <a
+                  href="https://chat.whatsapp.com/link-to-seni-musik"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="custom-link"
+                >
+                  Melody Mastery: Program Remedial Seni Musik
+                </a>
               </h5>
               <p className="card-text">
                 Tanya soal Seni Musik disini. Dengan seni musik, kita bisa
@@ -95,13 +124,20 @@ function CategoriesDiskusi() {
         <div className="col-md-12 mb-3">
           <div className="card-forum-diskusi flex-row align-items-center p-3">
             <img
-              src={""}
+              src={img3diskusi}
               className="card-img-left-forum"
-              alt="Artistry Accelerator"
+              alt="Literary Forge"
             />
             <div className="card-body">
               <h5 className="card-title">
-                Literary Forge: Program Remedial Seni Sastra
+                <a
+                  href="https://chat.whatsapp.com/link-to-seni-sastra"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="custom-link"
+                >
+                  Literary Forge: Program Remedial Seni Sastra
+                </a>
               </h5>
               <p className="card-text">
                 Tanya soal Seni Sastra di sini. Dengan seni sastra, kita bisa
@@ -114,13 +150,20 @@ function CategoriesDiskusi() {
         <div className="col-md-12 mb-3">
           <div className="card-forum-diskusi flex-row align-items-center p-3">
             <img
-              src={""}
+              src={img4diskusi}
               className="card-img-left-forum"
-              alt="Melody Mastery"
+              alt="Stagecraft Intensive"
             />
             <div className="card-body">
               <h5 className="card-title">
-                Stagecraft Intensive: Program Remedial Seni Pertunjukan
+                <a
+                  href="https://chat.whatsapp.com/link-to-seni-pertunjukan"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="custom-link"
+                >
+                  Stagecraft Intensive: Program Remedial Seni Pertunjukan
+                </a>
               </h5>
               <p className="card-text">
                 Tanya soal Seni Pertunjukan di sini. Dengan seni pertunjukan,

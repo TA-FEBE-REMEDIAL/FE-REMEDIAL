@@ -3,7 +3,7 @@ import { Modal, Button, Form } from "react-bootstrap";
 import LampiranComponent from "../Form/LampiranComponent";
 import LinkComponent from "../Form/LinkComponent";
 
-const ProjectEditModal = ({ show, onHide, project }) => {
+const InputNilaiModal = ({ show, onHide, project }) => {
   const [formData, setFormData] = useState({ ...project });
 
   const handleChange = (e) => {
@@ -97,14 +97,14 @@ const ProjectEditModal = ({ show, onHide, project }) => {
       </Modal.Body>
       <Modal.Footer>
         <Button variant="outline-danger" onClick={onHide}>
-          Close
+          Tutup
         </Button>
         <Button variant="danger" onClick={handleSubmit}>
-          Save Changes
+          Simpan Perubahan
         </Button>
       </Modal.Footer>
     </Modal>
   );
 };
 
-export default ProjectEditModal;
+export default InputNilaiModal;

@@ -5,33 +5,18 @@ import { Modal, Button, Form } from "react-bootstrap";
 import LampiranComponent from "../Form/LampiranComponent";
 import LinkComponent from "../Form/LinkComponent";
 import ImgInputComponent from "../Form/ImgInputComponent";
-import { useNavigate, useParams } from "react-router-dom";
-import { useUser } from "../context/UserContext";
+import SelectComponent from "../Form/SelectComponent";
 
-const InputNilaiModal = ({ show, onHide, project }) => {
-  // const [formData, setFormData] = useState({ ...project });
+const InputNilaiModal = ({ show, onHide, project, isMentor }) => {
+  const karya = project.data;
 
-  const [kategori, setKategori] = useState("");
-  const [judul, setJudul] = useState("");
-  const [author, setAuthor] = useState("");
-  const [tanggal_penerbit, setTanggalPenerbit] = useState("");
-  const [nilai, setNilai] = useState("");
-  const [feedback, setFeedback] = useState("");
-  const [challenge_id, setChallengeId] = useState(id);
-  const [deskripsi, setDeskripsi] = useState("");
-  const [email, setEmail] = useState(user.email);
-
-  const [image_url, setImage] = useState("");
-  const handleImageChange = (e) => {
-    const image = e.target.files[0];
-    setImage(image);
-    if (e.target.files && e.target.files[0]) {
-      setPreview(URL.createObjectURL(image));
-    }
-  };
-
-  const [currentItem, setCurrentItem] = useState();
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentItem, setCurrentItem] = useState(karya);
+  const [preview, setPreview] = useState("");
+
+  // const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   const openModal = (item) => {
     setCurrentItem({ ...item });
@@ -43,25 +28,20 @@ const InputNilaiModal = ({ show, onHide, project }) => {
     setCurrentItem(null);
   };
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setCurrentItem((prevItem) => ({
-      ...prevItem,
-      [name]: value,
-    }));
+  const [kategori, setKategori] = useState("");
+  const [image_url, setImage] = useState("");
+  const handleImageChange = (e) => {
+    const image = e.target.files[0];
+    setImage(image);
+    if (e.target.files && e.target.files[0]) {
+      setPreview(URL.createObjectURL(image));
+    }
   };
 
-  const handleSubmit = () => {
-    // Implement the submit function here
-    console.log("Updated project:", formData);
-    onHide();
-  };
-
-  // edit karya siswa
   const editKarya = async (e) => {
     e.preventDefault();
     const formData = new FormData();
-    formData.append("kategori", currentItem.kategori);
+    formData.append("kategori", !kategori ? currentItem.kategori : kategori);
     formData.append("judul", currentItem.judul);
     formData.append("author", currentItem.author);
     formData.append("tanggal_penerbit", currentItem.tanggal_penerbit);
@@ -75,31 +55,85 @@ const InputNilaiModal = ({ show, onHide, project }) => {
     formData.append("challenge_id", currentItem.challenge_id);
     formData.append("email", currentItem.email);
     formData.append("id", currentItem.id);
+
     try {
-      await axios.put("http://localhost:5000/api/karya", formData, {
+      const url = `http://localhost:5000/api/karya/${currentItem.id}`;
+      await axios.put(url, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
       });
       Swal.fire({
-        title: "berhasil!",
-        text: "Data berhasil diubah!",
+        title: "Edit Data Karya Berhasil!",
+        text: "Berhasil edit data karya!",
         icon: "success",
       }).then(() => {
-        // window.location.reload();
-        navigate("/karya-siswa");
+        window.location.reload();
       });
     } catch (error) {
-      console.log(error);
+      console.error(error);
+
       Swal.fire({
-        title: "Input Failed",
-        text: `${error.response.data.message}`,
+        title: "Gagal edit barang!",
+        text: `Gagal karena ${error.response.data.message}`,
         icon: "error",
       }).then(() => {
         window.location.reload();
       });
     }
   };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setCurrentItem((prevItem) => ({
+      ...prevItem,
+      [name]: value,
+    }));
+  };
+
+  const handleDrop = (e) => {
+    e.preventDefault();
+    const image = e.dataTransfer.files[0];
+    setImage(image);
+    if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+      setPreview(URL.createObjectURL(image));
+    }
+  };
+
+  const handleClearImage = () => {
+    setImage("");
+  };
+
+  const selectKategori = [
+    {
+      value: "puisi",
+      text: "Puisi",
+    },
+    {
+      value: "cerpen",
+      text: "Cerpen",
+    },
+    {
+      value: "drama",
+      text: "Drama",
+    },
+    {
+      value: "dongeng",
+      text: "Dongeng",
+    },
+    {
+      value: "musik",
+      text: "Musik",
+    },
+    {
+      value: "komik",
+      text: "Komik",
+    },
+    {
+      value: "lainnya",
+      text: "Lainnya",
+    },
+  ];
 
   return (
     <Modal show={show} onHide={onHide}>
@@ -108,86 +142,179 @@ const InputNilaiModal = ({ show, onHide, project }) => {
       </Modal.Header>
       <Modal.Body>
         <Form onSubmit={editKarya}>
-          <Form.Group controlId="formTitle">
-            <Form.Label>Judul Proyek</Form.Label>
-            <Form.Control
-              type="text"
-              name="title"
-              value={currentItem.judul}
-              onChange={handleChange}
-            />
-          </Form.Group>
-          <Form.Group controlId="formCategory">
-            <Form.Label>Kategori</Form.Label>
-            <Form.Control
-              type="text"
-              name="category"
-              value={currentItem.kategori}
-              onChange={handleChange}
-            />
-          </Form.Group>
-          <Form.Group controlId="formName">
-            <Form.Label>Nama</Form.Label>
-            <Form.Control
-              type="text"
-              name="name"
-              value={currentItem.author}
-              onChange={handleChange}
-            />
-          </Form.Group>
-          <Form.Group controlId="formDate">
-            <Form.Label>Tanggal Penerbit</Form.Label>
-            <Form.Control
-              type="date"
-              name="date"
-              value={currentItem.tanggal_penerbit}
-              onChange={handleChange}
-            />
-          </Form.Group>
-          {/* <Form.Group controlId="formImage">
-            <Form.Label>Gambar Proyek</Form.Label>
-            <ImgInputComponent
-              data={image_url}
-              preview={preview}
-              hDrop={handleDrop}
-              hClearImage={handleClearImage}
-              hImageChange={handleImageChange}
-            />
-          </Form.Group> */}
-          <Form.Group controlId="formPoem">
-            <Form.Label>Isi Karya (Puisi)</Form.Label>
-            <Form.Control
-              as="textarea"
-              name="poem"
-              value={currentItem.deskripsi}
-              onChange={handleChange}
-            />
-          </Form.Group>
-          <Form.Group controlId="formReviewScore">
-            <Form.Label>Nilai Review Mentor</Form.Label>
-            <Form.Control
-              type="number"
-              name="reviewScore"
-              value={currentItem.nilai}
-              onChange={handleChange}
-            />
-          </Form.Group>
+          {isMentor ? (
+            <>
+              <Form.Group controlId="formReviewScore">
+                <Form.Label>Nilai Review Mentor</Form.Label>
+                <Form.Control
+                  type="number"
+                  name="nilai"
+                  value={currentItem.nilai}
+                  onChange={handleChange}
+                />
+              </Form.Group>
+              <Form.Group controlId="formFeedback">
+                <Form.Label>Feedback Mentor</Form.Label>
+                <Form.Control
+                  as="textarea"
+                  name="feedback"
+                  value={currentItem.feedback}
+                  onChange={handleChange}
+                />
+              </Form.Group>
+            </>
+          ) : (
+            <>
+              <Form.Group controlId="formTitle">
+                <Form.Label>Judul Proyek</Form.Label>
+                <Form.Control
+                  type="text"
+                  name="judul"
+                  value={currentItem.judul}
+                  onChange={handleChange}
+                />
+              </Form.Group>
+              <Form.Group
+                className="my-3"
+                controlId="exampleForm.ControlInput1"
+              >
+                <Form.Label>Kategori</Form.Label>
+
+                <Form.Select
+                  value={!kategori ? currentItem.kategori : kategori}
+                  onChange={(e) => setKategori(e.target.value)}
+                  aria-label="Default select example"
+                >
+                  <option value={""} disabled>
+                    Pilih Kategori
+                  </option>
+
+                  {selectKategori.map((data, index) => (
+                    <option key={index} value={data.value}>
+                      {data.text}
+                    </option>
+                  ))}
+                </Form.Select>
+              </Form.Group>
+              <Form.Group controlId="formName">
+                <Form.Label>Nama Author</Form.Label>
+                <Form.Control
+                  type="text"
+                  name="author"
+                  value={currentItem.author}
+                  onChange={handleChange}
+                />
+              </Form.Group>
+              <Form.Group controlId="formDate" className="my-3">
+                <Form.Label>Tanggal Penerbit</Form.Label>
+                <Form.Control
+                  type="date"
+                  name="tanggal_penerbit"
+                  value={currentItem.tanggal_penerbit}
+                  onChange={handleChange}
+                />
+              </Form.Group>
+
+              <Form.Group
+                className="mb-3"
+                controlId="exampleForm.ControlInput1"
+              >
+                <Form.Label>Gambar Proyek</Form.Label>
+                <p className="text-muted">
+                  <small>
+                    Silahkan upload file gambar sebagai cover atau thumbnail
+                    proyek ini nantinya
+                  </small>
+                </p>
+
+                <div className="upload-input-container">
+                  <div
+                    className="upload-input-box"
+                    onDrop={handleDrop}
+                    onDragOver={(e) => e.preventDefault()}
+                  >
+                    {currentItem.image_url || image_url ? (
+                      <>
+                        <div className="image-preview-container">
+                          <img
+                            src={preview ? preview : currentItem.image_url}
+                            style={{
+                              maxWidth: "300px", // Atur lebar maksimum
+                              maxHeight: "250px", // Atur tinggi maksimum
+                              borderRadius: "10px",
+                            }}
+                            alt="Upload preview"
+                            className="preview-input-image"
+                          />
+                          <button
+                            className="clear-input-button"
+                            onClick={handleClearImage}
+                            type="button"
+                          >
+                            ×
+                          </button>
+                        </div>
+                        <div>
+                          <input
+                            type="file"
+                            accept="image/*"
+                            onChange={handleImageChange}
+                            name="image_url"
+                            className="file-upload-input"
+                          />
+                        </div>
+                      </>
+                    ) : (
+                      <>
+                        <div className="isi-upload-input">
+                          <p>Drag and Drop here</p>
+                          <p>or</p>
+                          <input
+                            type="file"
+                            accept="image/*"
+                            onChange={handleImageChange}
+                            name="image_url"
+                            className="file-upload-input"
+                          />
+                          <button className="upload-input-button">
+                            Select File
+                          </button>
+                        </div>
+                      </>
+                    )}
+                  </div>
+                </div>
+              </Form.Group>
+
+              <Form.Group controlId="formPoem">
+                <Form.Label>Isi Karya (Puisi)</Form.Label>
+                <Form.Control
+                  as="textarea"
+                  name="deskripsi"
+                  value={currentItem.deskripsi}
+                  onChange={handleChange}
+                />
+              </Form.Group>
+
+              <hr />
+              <div className="Link-form">
+                <h5 className="fw-bold">Link Pendukung</h5>
+                <LinkComponent />
+                <LampiranComponent />
+              </div>
+            </>
+          )}
+
+          <Modal.Footer>
+            <Button variant="outline-danger" onClick={onHide}>
+              Tutup
+            </Button>
+            <Button variant="danger" type="submit">
+              Simpan Perubahan
+            </Button>
+          </Modal.Footer>
         </Form>
-        <hr />
-        <div className="Link-form">
-          <h5 className="fw-bold">Link Pendukung</h5>
-          <LinkComponent />
-          <LampiranComponent />
-        </div>
       </Modal.Body>
-      <Modal.Footer>
-        <Button variant="outline-danger" onClick={onHide}>
-          Tutup
-        </Button>
-        <Button variant="danger" onClick={handleSubmit}>
-          Simpan Perubahan
-        </Button>
-      </Modal.Footer>
     </Modal>
   );
 };

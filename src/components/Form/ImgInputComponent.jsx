@@ -4,6 +4,12 @@ import Form from "react-bootstrap/Form";
 function ImgInputComponent(props) {
   const image = props.data;
   const preview = props.preview;
+  const hClearImage = props.hClearImage;
+
+  const handleClearImage = (e) => {
+    e.preventDefault(); // Menghentikan aksi default dari tombol "x"
+    hClearImage();
+  };
   return (
     <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
       <Form.Label>Gambar Proyek</Form.Label>
@@ -23,7 +29,7 @@ function ImgInputComponent(props) {
           {image ? (
             <div className="image-preview-container">
               <img
-                src={preview}
+                src={preview ? preview : image}
                 style={{
                   maxWidth: "300px", // Atur lebar maksimum
                   maxHeight: "250px", // Atur tinggi maksimum
@@ -32,10 +38,8 @@ function ImgInputComponent(props) {
                 alt="Upload preview"
                 className="preview-input-image"
               />
-              <button
-                className="clear-input-button"
-                onClick={props.hClearImage}
-              >
+              {}
+              <button className="clear-input-button" onClick={handleClearImage}>
                 ×
               </button>
             </div>

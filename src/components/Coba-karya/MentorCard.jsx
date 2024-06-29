@@ -17,7 +17,9 @@ export default function MentorCard({
           <p className="score-mentor">{score}</p>
         </div>
         <p className="card-text-mentor fw-bold">Feedback Mentor</p>
-        <p className="feedback">{feedback}</p>
+        <p className="feedback">
+          "{!feedback ? "Belum ada feedback" : feedback}"
+        </p>
 
         <div className="file-link-container">
           <div className="file-icon">

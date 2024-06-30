@@ -121,10 +121,7 @@ export default function MentorCard({ title, score, feedback, pdf, url }) {
           </div>
         ))}
 
-        {console.log(Array.isArray(url) && url.length === 0)}
-        {url.length === 0 ? (
-          ""
-        ) : (
+        {url.length > 1 ? (
           <>
             {url.map((data, index) => (
               <div className="link-section" key={index}>
@@ -181,6 +178,8 @@ export default function MentorCard({ title, score, feedback, pdf, url }) {
               </div>
             ))}
           </>
+        ) : (
+          ""
         )}
         {/* {pdf.length > 0 ? (
           <>

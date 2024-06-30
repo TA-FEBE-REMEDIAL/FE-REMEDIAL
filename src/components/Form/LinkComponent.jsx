@@ -1,22 +1,30 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button, Form, Row, Col } from "react-bootstrap";
 
-function LinkComponent() {
-  const [links, setLinks] = useState([""]);
+function LinkComponent({ data, setData, setIsLinkFilled, isLampiranFilled }) {
+  const [links, setLinks] = useState(data);
+
+  useEffect(() => {
+    const hasLink = links.some((link) => link.trim() !== "");
+    setIsLinkFilled(hasLink);
+  }, [links, setIsLinkFilled]);
 
   const handleAddLink = () => {
     setLinks([...links, ""]);
+    setData([...links, ""]);
   };
 
   const handleRemoveLink = (index) => {
     const newLinks = links.filter((_, i) => i !== index);
     setLinks(newLinks);
+    setData(newLinks);
   };
 
   const handleLinkChange = (index, event) => {
     const newLinks = [...links];
     newLinks[index] = event.target.value;
     setLinks(newLinks);
+    setData(newLinks);
   };
 
   return (
@@ -35,6 +43,7 @@ function LinkComponent() {
                   value={link}
                   onChange={(e) => handleLinkChange(index, e)}
                   className="me-2"
+                  disabled={isLampiranFilled}
                 />
                 {index > 0 && (
                   <Button
@@ -51,6 +60,7 @@ function LinkComponent() {
               variant="link"
               className="text-danger mt-n1" // Adjust the margin-top to move the button up
               onClick={handleAddLink}
+              disabled={isLampiranFilled}
             >
               Tambah Link
             </Button>

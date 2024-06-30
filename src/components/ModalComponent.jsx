@@ -20,6 +20,12 @@ const ModalComponent = (props) => {
   const { getUserData } = useUser();
   const data = getUserData();
   const user = data[0];
+  let userEmail;
+  if (!user) {
+    userEmail = "";
+  } else {
+    userEmail = user.email;
+  }
 
   const [show, setShow] = useState(false);
   const navigate = useNavigate();
@@ -35,23 +41,14 @@ const ModalComponent = (props) => {
   const [feedback, setFeedback] = useState("");
   const [challenge_id, setChallengeId] = useState(id);
   const [deskripsi, setDeskripsi] = useState("");
-  const [email, setEmail] = useState(user.email);
+  const [email, setEmail] = useState(userEmail);
+  const [lampiran, setLampiran] = useState([]);
+  const [link, setLink] = useState([""]);
 
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [currentItem, setCurrentItem] = useState();
+  const [isLinkFilled, setIsLinkFilled] = useState(false);
+  const [isLampiranFilled, setIsLampiranFilled] = useState(false);
 
   const [preview, setPreview] = useState("");
-
-  const openModal = (item) => {
-    setCurrentItem({ ...item });
-    setIsModalOpen(true);
-  };
-
-  // Function to close the modal and reset currentItem
-  const closeModal = () => {
-    setIsModalOpen(false);
-    setCurrentItem(null);
-  };
 
   const [image_url, setImage] = useState("");
   const handleImageChange = (e) => {
@@ -109,7 +106,6 @@ const ModalComponent = (props) => {
   // useEffect(() => {
 
   // })
-
   // add data karya
   const addKarya = async (e) => {
     e.preventDefault();
@@ -124,19 +120,49 @@ const ModalComponent = (props) => {
     formData.append("feedback", feedback);
     formData.append("challenge_id", challenge_id);
     formData.append("email", email);
+    lampiran.forEach((file, index) => {
+      console.log(file);
+      return formData.append(`lampiran`, file);
+    });
+    // formData.append("lampiran", lampiran);
+    formData.append("link", link);
     try {
-      await axios.post("http://localhost:5000/api/karya", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
       Swal.fire({
-        title: "Good Job!",
-        text: " Kamu udah berhasil menyelesaikan challenge proyek ini!",
-        icon: "success",
-      }).then(() => {
-        // window.location.reload();
-        navigate("/karya-siswa");
+        title: "Apakah anda yakin untuk menyelesaikan challenge ini?",
+        text: "Jika sudah submit, Anda tidak bisa mengubah file pendukung!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#d05d5d",
+        cancelButtonColor: "#b0a9a9",
+        confirmButtonText: "Kirim",
+      }).then(async (result) => {
+        try {
+          if (result.isConfirmed) {
+            await axios.post("http://localhost:5000/api/karya", formData, {
+              headers: {
+                "Content-Type": "multipart/form-data",
+              },
+            });
+
+            Swal.fire({
+              title: "Good Job!",
+              text: "Kamu udah berhasil menyelesaikan challenge proyek ini!",
+              icon: "success",
+            }).then(() => {
+              // window.location.reload();
+              navigate("/karya-siswa");
+            });
+          }
+        } catch (error) {
+          console.log(error);
+          Swal.fire({
+            title: "Input Failed",
+            text: `${error.response.data.message}`,
+            icon: "error",
+          }).then(() => {
+            // window.location.reload();
+          });
+        }
       });
     } catch (error) {
       console.log(error);
@@ -145,7 +171,7 @@ const ModalComponent = (props) => {
         text: `${error.response.data.message}`,
         icon: "error",
       }).then(() => {
-        window.location.reload();
+        // window.location.reload();
       });
     }
   };
@@ -231,8 +257,18 @@ const ModalComponent = (props) => {
                 />
                 <div className="Link-form">
                   <h5 className="fw-bold">Link Pendukung</h5>
-                  <LinkComponent />
-                  <LampiranComponent />
+                  <LinkComponent
+                    data={link}
+                    setData={setLink}
+                    setIsLinkFilled={setIsLinkFilled}
+                    isLampiranFilled={isLampiranFilled}
+                  />
+                  <LampiranComponent
+                    data={lampiran}
+                    setData={setLampiran}
+                    setIsLampiranFilled={setIsLampiranFilled}
+                    isLinkFilled={isLinkFilled}
+                  />
                   <div className="text-muted">
                     <FooterComponent
                       label1="Dengan mencentang kotak ini, kamu menyetujui untuk mengirimkan hasil pekerjaan proyek dan menyelesaikan Inovasi Digital Seni ini."

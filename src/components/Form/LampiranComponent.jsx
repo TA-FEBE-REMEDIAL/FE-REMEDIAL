@@ -1,15 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button, Form, Row, Col } from "react-bootstrap";
 
-function LampiranComponent() {
-  const [files, setFiles] = useState([""]);
+function LampiranComponent({
+  data,
+  setData,
+  setIsLampiranFilled,
+  isLinkFilled,
+}) {
+  const [files, setFiles] = useState(data.length ? data : [""]);
   const [showRemoveButtons, setShowRemoveButtons] = useState([false]); // Mengubah nilai awal untuk tombol hapus
+
+  useEffect(() => {
+    const hasFile = files.some((file) => file);
+    setIsLampiranFilled(hasFile);
+  }, [files, setIsLampiranFilled]);
 
   const handleFileChange = (e, index) => {
     const newFiles = Array.from(e.target.files);
     const updatedFiles = files.slice();
     updatedFiles[index] = newFiles[0];
     setFiles(updatedFiles);
+    setData(updatedFiles);
   };
 
   const handleRemoveFile = (indexToRemove) => {
@@ -18,14 +29,15 @@ function LampiranComponent() {
       (_, i) => i !== indexToRemove
     );
     setFiles(newFiles);
+    setData(newFiles);
     setShowRemoveButtons(newShowRemoveButtons);
   };
 
   const handleAddFileInput = () => {
     setFiles([...files, ""]);
+    setData([...files, ""]);
     setShowRemoveButtons([...showRemoveButtons, true]); // Mengubah nilai menjadi true untuk input baru yang ditambahkan
   };
-
   return (
     <div className="container mt-3">
       <Form.Group controlId="formFile" className="mb-3">
@@ -41,6 +53,8 @@ function LampiranComponent() {
                     type="file"
                     onChange={(e) => handleFileChange(e, index)}
                     className="me-2"
+                    name="lampiran"
+                    disabled={isLinkFilled}
                   />
                   {showRemoveButtons[index] && (
                     <Button
@@ -62,6 +76,7 @@ function LampiranComponent() {
               variant="link"
               className="text-danger mt-2"
               onClick={handleAddFileInput}
+              disabled={isLinkFilled}
             >
               Tambah Lampiran
             </Button>

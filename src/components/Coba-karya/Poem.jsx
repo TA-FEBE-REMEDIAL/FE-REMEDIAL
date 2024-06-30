@@ -22,6 +22,8 @@ const Poem = ({ data }) => {
     }
   };
 
+  const lampiranJSON = data.lampiran ? JSON.parse(data.lampiran) : [];
+
   return (
     <div className="poem">
       <div className="container my-5">
@@ -77,8 +79,7 @@ const Poem = ({ data }) => {
               title={data.judul}
               score={data.nilai}
               feedback={data.feedback}
-              documentName="Project Challenge_Puisi.pdf"
-              documentLink="https://via.placeholder.com/100"
+              pdf={lampiranJSON}
             />
           </div>
         </div>

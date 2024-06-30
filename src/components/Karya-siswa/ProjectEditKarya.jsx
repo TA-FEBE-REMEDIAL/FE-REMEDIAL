@@ -10,24 +10,11 @@ import SelectComponent from "../Form/SelectComponent";
 const InputNilaiModal = ({ show, onHide, project, isMentor }) => {
   const karya = project.data;
 
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentItem, setCurrentItem] = useState(karya);
   const [preview, setPreview] = useState("");
 
-  // const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
-  const openModal = (item) => {
-    setCurrentItem({ ...item });
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-    setCurrentItem(null);
-  };
-
+  const [lampiran, setLampiran] = useState([]);
+  const [link, setLink] = useState([""]);
   const [kategori, setKategori] = useState("");
   const [image_url, setImage] = useState("");
   const handleImageChange = (e) => {
@@ -37,6 +24,9 @@ const InputNilaiModal = ({ show, onHide, project, isMentor }) => {
       setPreview(URL.createObjectURL(image));
     }
   };
+
+  const [isLinkFilled, setIsLinkFilled] = useState(false);
+  const [isLampiranFilled, setIsLampiranFilled] = useState(false);
 
   const editKarya = async (e) => {
     e.preventDefault();
@@ -54,6 +44,12 @@ const InputNilaiModal = ({ show, onHide, project, isMentor }) => {
     formData.append("feedback", currentItem.feedback);
     formData.append("challenge_id", currentItem.challenge_id);
     formData.append("email", currentItem.email);
+    // lampiran.forEach((file, index) => {
+    //   console.log(file);
+    //   return formData.append(`lampiran`, file);
+    // });
+    // formData.append("lampiran", lampiran);
+    // formData.append("link", link);
     formData.append("id", currentItem.id);
 
     try {
@@ -78,7 +74,7 @@ const InputNilaiModal = ({ show, onHide, project, isMentor }) => {
         text: `Gagal karena ${error.response.data.message}`,
         icon: "error",
       }).then(() => {
-        window.location.reload();
+        // window.location.reload();
       });
     }
   };
@@ -134,6 +130,9 @@ const InputNilaiModal = ({ show, onHide, project, isMentor }) => {
       text: "Lainnya",
     },
   ];
+
+  const linkSON = karya.link ? JSON.parse(karya.link) : [];
+  const lampiranJSON = karya.lampiran ? JSON.parse(karya.lampiran) : [];
 
   return (
     <Modal show={show} onHide={onHide}>
@@ -297,10 +296,21 @@ const InputNilaiModal = ({ show, onHide, project, isMentor }) => {
               </Form.Group>
 
               <hr />
-              <div className="Link-form">
+              <div className="Link-form d-none">
                 <h5 className="fw-bold">Link Pendukung</h5>
-                <LinkComponent />
-                <LampiranComponent />
+                <LinkComponent
+                  data={linkSON}
+                  setData={setLink}
+                  setIsLinkFilled={setIsLinkFilled}
+                  isLampiranFilled={isLampiranFilled}
+                />
+                <LampiranComponent
+                  data={lampiranJSON}
+                  setData={setLampiran}
+                  isEdit={true}
+                  setIsLampiranFilled={setIsLampiranFilled}
+                  isLinkFilled={isLinkFilled}
+                />
               </div>
             </>
           )}

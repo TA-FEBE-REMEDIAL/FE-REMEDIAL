@@ -55,13 +55,6 @@ function App() {
         <Route
           path="/program/detail-program/:id"
           Component={DetailProgramPage}
-          // element={
-          //   !isAuthenticated() ? (
-          //     <Navigate to={"/login"} />
-          //   ) : (
-          //     <DetailProgramPage />
-          //   )
-          // }
         />
         <Route
           path="/program/detail-program/pilih-challange/:program_id"

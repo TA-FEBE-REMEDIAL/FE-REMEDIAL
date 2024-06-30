@@ -35,6 +35,7 @@ function RegisterComponent() {
         title: "Berhasil Register!",
         text: "Silahkan login terlebih dahulu!",
         icon: "success",
+        confirmButtonColor: "#d05d5d",
       }).then(() => {
         navigate("/login");
         window.location.reload();

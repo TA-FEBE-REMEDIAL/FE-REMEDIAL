@@ -90,6 +90,73 @@
 
 /* END STYLE NAVBAR */
 
+/*--------------------------------------------------------------
+# Breadcrumbs
+--------------------------------------------------------------*/
+.breadcrumbs {
+  padding: 15px 0;
+  background: var(--background-bread);
+  min-height: 40px;
+  margin-top: -60px;
+}
+
+@media (max-width: 992px) {
+  .breadcrumbs {
+    margin-top: 60px;
+  }
+}
+
+.breadcrumbs a {
+  color: var(--secondary-color) !important;
+}
+
+.breadcrumbs h2 {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0 0 10px 0;
+  margin: 0;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.breadcrumbs ol li + li {
+  padding-left: 10px;
+}
+
+.breadcrumbs ol li + li::before {
+  display: inline-block;
+  padding-right: 10px;
+  color: #505a63;
+  content: "/";
+}
+
+@media (max-width: 768px) {
+  .breadcrumbs h2 {
+    font-size: 24px;
+  }
+  .breadcrumbs ol {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  .breadcrumbs h2 {
+    font-size: 20px;
+  }
+  .breadcrumbs ol {
+    font-size: 10px;
+  }
+  .breadcrumbs {
+    padding: 10px 0;
+  }
+}
+
 /* =========== FITUR LOGIN ========== */
 #login {
   margin: auto 6rem;
@@ -1976,73 +2043,6 @@ header {
 }
 
 /* -============== end link karya =============== */
-
-/*--------------------------------------------------------------
-# Breadcrumbs
---------------------------------------------------------------*/
-.breadcrumbs {
-  padding: 15px 0;
-  background: var(--background-bread);
-  min-height: 40px;
-  margin-top: -60px;
-}
-
-@media (max-width: 992px) {
-  .breadcrumbs {
-    margin-top: 60px;
-  }
-}
-
-.breadcrumbs a {
-  color: var(--secondary-color) !important;
-}
-
-.breadcrumbs h2 {
-  font-size: 28px;
-  font-weight: 600;
-}
-
-.breadcrumbs ol {
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  padding: 0 0 10px 0;
-  margin: 0;
-  margin-top: 20px;
-  font-size: 14px;
-}
-
-.breadcrumbs ol li + li {
-  padding-left: 10px;
-}
-
-.breadcrumbs ol li + li::before {
-  display: inline-block;
-  padding-right: 10px;
-  color: #505a63;
-  content: "/";
-}
-
-@media (max-width: 768px) {
-  .breadcrumbs h2 {
-    font-size: 24px;
-  }
-  .breadcrumbs ol {
-    font-size: 12px;
-  }
-}
-
-@media (max-width: 576px) {
-  .breadcrumbs h2 {
-    font-size: 20px;
-  }
-  .breadcrumbs ol {
-    font-size: 10px;
-  }
-  .breadcrumbs {
-    padding: 10px 0;
-  }
-}
 
 /* ------------------------------------------------------------
 # Fundamental

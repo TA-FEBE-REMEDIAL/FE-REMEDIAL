@@ -54,6 +54,7 @@ function LoginComponent() {
         title: "Login Berhasil!",
         html: `Selamat datang ${data[0].name}`,
         icon: "success",
+        confirmButtonColor: "#d05d5d",
       }).then(() => {
         navigate("/");
         window.location.reload();

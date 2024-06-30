@@ -67,6 +67,8 @@ export default function MentorCard({ title, score, feedback, pdf, url }) {
       });
   };
 
+  const filteredUrl = url.filter((item) => item !== "");
+
   return (
     <div className="card text-center pt-4">
       <div className="card-body-mentor">
@@ -121,7 +123,7 @@ export default function MentorCard({ title, score, feedback, pdf, url }) {
           </div>
         ))}
 
-        {url.length > 1 ? (
+        {filteredUrl.length > 0 ? (
           <>
             {url.map((data, index) => (
               <div className="link-section" key={index}>

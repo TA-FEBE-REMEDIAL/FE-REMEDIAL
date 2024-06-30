@@ -15,20 +15,8 @@ export const UserProvider = ({ children }) => {
     return data || {};
   };
 
-  const checkRoleAndNavigate = (allowedRoles, navigate) => {
-    const data = getUserData();
-
-    console.log(data);
-
-    if (!allowedRoles.includes(data.role)) {
-      // console.error("Unauthorized access!");
-      navigate("/login");
-      return false;
-    }
-  };
-
   return (
-    <UserContext.Provider value={{ getUserData, checkRoleAndNavigate }}>
+    <UserContext.Provider value={{ getUserData }}>
       {children}
     </UserContext.Provider>
   );

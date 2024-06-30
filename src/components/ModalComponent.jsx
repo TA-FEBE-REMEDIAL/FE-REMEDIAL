@@ -148,6 +148,7 @@ const ModalComponent = (props) => {
               title: "Good Job!",
               text: "Kamu udah berhasil menyelesaikan challenge proyek ini!",
               icon: "success",
+              confirmButtonColor: "#d05d5d",
             }).then(() => {
               // window.location.reload();
               navigate("/karya-siswa");

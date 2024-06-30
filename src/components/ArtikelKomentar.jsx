@@ -23,7 +23,7 @@ function ArtikelKomentar() {
     getKomentar();
   }, []);
 
-  // add data
+  // add data komentar
   const addKomentar = async (e) => {
     e.preventDefault();
     try {

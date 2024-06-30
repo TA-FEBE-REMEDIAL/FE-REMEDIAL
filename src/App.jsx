@@ -93,7 +93,16 @@ function App() {
           Component={DetailKaryaPage}
         />
         <Route path="/tentang-kami" Component={TentangKamiPage} />
-        <Route path="/forum-diskusi" Component={ForrumDiskusiPage} />
+        <Route
+          path="/forum-diskusi"
+          element={
+            isAuthenticated() ? (
+              <ForrumDiskusiPage />
+            ) : (
+              <Navigate to={"/login"} />
+            )
+          }
+        />
         <Route path="/kelaspage" Component={KelasPage} />
         <Route path="/kelaspage/detail-kelas/:id" Component={DetailKelasPage} />
       </Routes>

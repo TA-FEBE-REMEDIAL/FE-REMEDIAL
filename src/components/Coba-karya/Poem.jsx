@@ -1,11 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import MentorCard from "./MentorCard";
 import ProjectEditKarya from "../Karya-siswa/ProjectEditKarya";
 import { useUser } from "../../context/UserContext";
-import { useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 const Poem = ({ data }) => {
+  const navigate = useNavigate();
+
   const [modalShow, setModalShow] = useState(false);
   const [currentItem, setCurrentItem] = useState(null);
   const { getUserData } = useUser();
@@ -22,7 +27,62 @@ const Poem = ({ data }) => {
     }
   };
 
+  const handleDeleteClick = async (id) => {
+    // try {
+    //   await axios.delete(`http://localhost:5000/api/karya/${id}`);
+    //   alert("Karya deleted successfully");
+    //   // Optionally, you can also navigate or refresh the data
+    // } catch (error) {
+    //   console.error("Error deleting data: ", error);
+    // }
+    try {
+      Swal.fire({
+        title: "Apakah yakin ingin menghapus karya ini?",
+        text: "Jika sudah dihapus, Anda tidak bisa dikembalikan lagi!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#d05d5d",
+        cancelButtonColor: "#b0a9a9",
+        confirmButtonText: "Kirim",
+      }).then(async (result) => {
+        try {
+          if (result.isConfirmed) {
+            await axios.delete(`http://localhost:5000/api/karya/${id}`);
+
+            Swal.fire({
+              title: "Karya Terhapus!",
+              text: "Karya Berhasil di Hapus!",
+              icon: "success",
+            }).then(() => {
+              // window.location.reload();
+              navigate("/karya-siswa");
+            });
+          }
+        } catch (error) {
+          console.log(error);
+          Swal.fire({
+            title: "Failed",
+            text: `${error.response.data.message}`,
+            icon: "error",
+          }).then(() => {
+            // window.location.reload();
+          });
+        }
+      });
+    } catch (error) {
+      console.log(error);
+      Swal.fire({
+        title: "Failed",
+        text: `${error.response.data.message}`,
+        icon: "error",
+      }).then(() => {
+        // window.location.reload();
+      });
+    }
+  };
+
   const lampiranJSON = data.lampiran ? JSON.parse(data.lampiran) : [];
+  const linkJSON = data.link ? JSON.parse(data.link) : [];
 
   return (
     <div className="poem">
@@ -37,26 +97,32 @@ const Poem = ({ data }) => {
                   <p>{data.author}</p>
                 </div>
               </div>
-              {user.role === "mentor" ? (
-                <button
-                  className="btn btn-outline-danger"
-                  onClick={() => handleEditClick(data.id)}
-                >
-                  Input Nilai
-                </button>
-              ) : (
-                ""
-              )}
-              {data.email === user.email ? (
-                <button
-                  className="btn btn-outline-danger"
-                  onClick={() => handleEditClick(data.id)}
-                >
-                  Edit Karya Siswa
-                </button>
-              ) : (
-                ""
-              )}
+              <div>
+                {user.role === "mentor" && (
+                  <div className="d-flex">
+                    <button
+                      className="btn btn-outline-danger me-2"
+                      onClick={() => handleEditClick(data.id)}
+                    >
+                      Input Nilai
+                    </button>
+                    <button
+                      className="btn btn-outline-danger"
+                      onClick={() => handleDeleteClick(data.id)}
+                    >
+                      <FontAwesomeIcon icon={faTrash} />
+                    </button>
+                  </div>
+                )}
+                {data.email === user.email && (
+                  <button
+                    className="btn btn-outline-danger ms-2"
+                    onClick={() => handleEditClick(data.id)}
+                  >
+                    Edit Karya Siswa
+                  </button>
+                )}
+              </div>
             </div>
           </div>
 
@@ -67,6 +133,9 @@ const Poem = ({ data }) => {
                 alt="Preview"
                 className="img-fixed-size"
               />
+              <h6 className="pt-5">
+                <b>Deskripsi</b>
+              </h6>
               <section
                 className="mt-4"
                 dangerouslySetInnerHTML={{ __html: data.deskripsi }}
@@ -80,6 +149,7 @@ const Poem = ({ data }) => {
               score={data.nilai}
               feedback={data.feedback}
               pdf={lampiranJSON}
+              url={linkJSON}
             />
           </div>
         </div>

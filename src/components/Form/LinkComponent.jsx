@@ -43,7 +43,7 @@ function LinkComponent({ data, setData, setIsLinkFilled, isLampiranFilled }) {
                   value={link}
                   onChange={(e) => handleLinkChange(index, e)}
                   className="me-2"
-                  disabled={isLampiranFilled}
+                  // disabled={isLampiranFilled}
                 />
                 {index > 0 && (
                   <Button
@@ -60,7 +60,7 @@ function LinkComponent({ data, setData, setIsLinkFilled, isLampiranFilled }) {
               variant="link"
               className="text-danger mt-n1" // Adjust the margin-top to move the button up
               onClick={handleAddLink}
-              disabled={isLampiranFilled}
+              // disabled={isLampiranFilled}
             >
               Tambah Link
             </Button>

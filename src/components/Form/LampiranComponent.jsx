@@ -54,7 +54,7 @@ function LampiranComponent({
                     onChange={(e) => handleFileChange(e, index)}
                     className="me-2"
                     name="lampiran"
-                    disabled={isLinkFilled}
+                    // disabled={isLinkFilled}
                   />
                   {showRemoveButtons[index] && (
                     <Button
@@ -69,14 +69,14 @@ function LampiranComponent({
               </div>
             ))}
             <Form.Text className="text-muted">
-              pdf, jpg, png, doc, docx, ppt, pptx, xls, xlsx, jpeg (maxsize: 2
+              pdf, jpg, png, doc, docx, ppt, pptx, xls, xlsx, jpeg (maxsize: 5
               MB)
             </Form.Text>
             <Button
               variant="link"
               className="text-danger mt-2"
               onClick={handleAddFileInput}
-              disabled={isLinkFilled}
+              // disabled={isLinkFilled}
             >
               Tambah Lampiran
             </Button>

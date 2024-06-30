@@ -1682,6 +1682,87 @@ header {
   line-height: 24px;
 }
 
+/* ----------- FILE PENDUKUNG ---------- */
+.link-section {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.styled-link {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  border: 1px solid #d1d1d1;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #333;
+  font-family: Arial, sans-serif;
+}
+
+.link-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.link-icon,
+.copy-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.copy-icon {
+  position: relative;
+}
+
+.tooltip {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 5px;
+  background: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 3px;
+  font-size: 12px;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.link-text {
+  font-size: 14px;
+  margin-right: 5px;
+}
+
+.file-link-container {
+  display: flex;
+  align-items: center;
+}
+
+.file-icon {
+  margin-right: 10px;
+}
+
+.file-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.file-name {
+  font-size: 14px;
+  color: #333;
+}
+
+.file-type {
+  font-size: 12px;
+  color: #666;
+}
+
 /* ------ */
 
 .poem .img-fluid {

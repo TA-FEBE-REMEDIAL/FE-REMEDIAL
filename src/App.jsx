@@ -54,13 +54,14 @@ function App() {
         <Route path="/program" Component={ProgramPage} />
         <Route
           path="/program/detail-program/:id"
-          element={
-            !isAuthenticated() ? (
-              <Navigate to={"/login"} />
-            ) : (
-              <DetailProgramPage />
-            )
-          }
+          Component={DetailProgramPage}
+          // element={
+          //   !isAuthenticated() ? (
+          //     <Navigate to={"/login"} />
+          //   ) : (
+          //     <DetailProgramPage />
+          //   )
+          // }
         />
         <Route
           path="/program/detail-program/pilih-challange/:program_id"

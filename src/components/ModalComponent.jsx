@@ -20,6 +20,12 @@ const ModalComponent = (props) => {
   const { getUserData } = useUser();
   const data = getUserData();
   const user = data[0];
+  let userEmail;
+  if (!user) {
+    userEmail = "";
+  } else {
+    userEmail = user.email;
+  }
 
   const [show, setShow] = useState(false);
   const navigate = useNavigate();
@@ -35,7 +41,7 @@ const ModalComponent = (props) => {
   const [feedback, setFeedback] = useState("");
   const [challenge_id, setChallengeId] = useState(id);
   const [deskripsi, setDeskripsi] = useState("");
-  const [email, setEmail] = useState(user.email);
+  const [email, setEmail] = useState(userEmail);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentItem, setCurrentItem] = useState();

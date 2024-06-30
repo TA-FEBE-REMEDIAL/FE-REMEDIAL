@@ -657,8 +657,12 @@ header {
 .carousel-caption {
   padding-bottom: 6rem !important;
   text-align: none !important;
+  left: 12%;
 }
-
+.carousel-caption h5 {
+  text-align: left !important;
+  text-align: justify;
+}
 @media (min-width: 768px) {
   .card-program img {
     height: 11em;

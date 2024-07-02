@@ -13,7 +13,7 @@ const ArtikelPage = () => {
   const [artikelAll, setArtikelAll] = useState([]);
 
   const getArtikel = async () => {
-    const url = `${ENDPOINTS.ARTIKEL}"`;
+    const url = `${ENDPOINTS.ARTIKEL}`;
     const response = await axios.get(url);
 
     setArtikelAll(response.data.data);

@@ -117,7 +117,7 @@ const ModalComponent = (props) => {
     formData.append("tanggal_penerbit", tanggal_penerbit);
     formData.append("image_url", image_url);
     formData.append("deskripsi", deskripsi);
-    formData.append("nilai", nilai);
+    formData.append("nilai", 0);
     formData.append("feedback", feedback);
     formData.append("challenge_id", challenge_id);
     formData.append("email", email);

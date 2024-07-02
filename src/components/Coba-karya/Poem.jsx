@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import Swal from "sweetalert2";
+import ENDPOINTS from "../../utils/constants/endpoint";
 
 const Poem = ({ data }) => {
   const navigate = useNavigate();
@@ -19,7 +20,7 @@ const Poem = ({ data }) => {
 
   const handleEditClick = async (id) => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/karya/${id}`);
+      const response = await axios.get(`${ENDPOINTS.KARYA}/${id}`);
       setCurrentItem(response.data);
       setModalShow(true);
     } catch (error) {

@@ -5,6 +5,7 @@ import "swiper/css";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import ENDPOINTS from "../utils/constants/endpoint";
 
 const Slider = () => {
   const swiper = useSwiper();
@@ -15,7 +16,7 @@ const Slider = () => {
   }, []);
 
   const getProgram = async () => {
-    const url = "http://localhost:5000/api/program";
+    const url = `${ENDPOINTS.PROGRAM}`;
     const response = await axios.get(url);
     setProgram(response.data);
   };

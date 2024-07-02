@@ -8,6 +8,7 @@ import BreadcrumbsComponent from "../components/BreadcrumbsComponent";
 import KelasKontenComponent from "../components/KelasKontenComponent";
 import NavbarComponent from "../components/NavbarComponent";
 import FooterComponent from "../components/FooterComponent";
+import ENDPOINTS from "../utils/constants/endpoint";
 
 function DetailKelasPage() {
   const { id } = useParams();
@@ -16,7 +17,7 @@ function DetailKelasPage() {
   const [kelasLimit, setKelasLimit] = useState([]);
 
   const getdetailKelas = async () => {
-    const url = `http://localhost:5000/api/kelas/${id}`;
+    const url = `${ENDPOINTS.KELAS}/${id}`;
     const response = await axios.get(url);
     setDetailKelas(response.data.data);
     setKelasLimit(response.data.rekomendasi);

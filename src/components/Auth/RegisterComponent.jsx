@@ -8,6 +8,7 @@ import TitleComponent from "../Form/TitleComponent";
 import InputComponent from "../Form/InputComponent";
 import FooterComponent from "../Form/FooterComponent";
 import Button from "react-bootstrap/Button";
+import ENDPOINTS from "../../utils/constants/endpoint";
 
 function RegisterComponent() {
   const navigate = useNavigate();
@@ -22,7 +23,7 @@ function RegisterComponent() {
   const addUsers = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/register", {
+      await axios.post(`${ENDPOINTS.REGISTER}`, {
         // console.log({
         name,
         email,

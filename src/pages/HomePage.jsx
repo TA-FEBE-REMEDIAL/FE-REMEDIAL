@@ -14,6 +14,7 @@ import img2artikel from "../assets/img/artikel/berita-seni/2.jpg";
 import NavbarComponent from "../components/NavbarComponent";
 import FooterComponent from "../components/FooterComponent";
 import ArtikelList from "../components/ArtikelList";
+import ENDPOINTS from "../utils/constants/endpoint";
 
 const HomePage = () => {
   const [kelasLimit, setKelasLimit] = useState([]);
@@ -27,17 +28,17 @@ const HomePage = () => {
   }, []);
 
   const getKelas = async () => {
-    const url = "http://localhost:5000/api/kelas/";
+    const url = `${ENDPOINTS.KELAS}`;
     const response = await axios.get(url);
     setKelasLimit(response.data.limit);
   };
   const getArtikel = async () => {
-    const url = "http://localhost:5000/api/artikel/";
+    const url = `${ENDPOINTS.ARTIKEL}`;
     const response = await axios.get(url);
     setArtikel(response.data.limit);
   };
   const getKarya = async () => {
-    const url = "http://localhost:5000/api/karya/";
+    const url = `${ENDPOINTS.KARYA}`;
     const response = await axios.get(url);
     setKarya(response.data.limit);
   };

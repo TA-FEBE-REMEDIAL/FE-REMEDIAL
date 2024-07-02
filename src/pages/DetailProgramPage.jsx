@@ -9,6 +9,7 @@ import NavbarComponent from "../components/NavbarComponent";
 import FooterComponent from "../components/FooterComponent";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import ENDPOINTS from "../utils/constants/endpoint";
 
 function DetailProgramPage() {
   const { id } = useParams();
@@ -16,7 +17,7 @@ function DetailProgramPage() {
   const [detail_program, setDetailProgram] = useState([]);
 
   const getdetailProgram = async () => {
-    const url = `http://localhost:5000/api/program/${id}`;
+    const url = `${ENDPOINTS.PROGRAM}/${id}`;
     const response = await axios.get(url);
     setDetailProgram(response.data);
   };

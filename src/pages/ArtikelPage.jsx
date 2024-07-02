@@ -5,6 +5,7 @@ import NavbarComponent from "../components/NavbarComponent";
 import FooterComponent from "../components/FooterComponent";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import ENDPOINTS from "../utils/constants/endpoint";
 
 const ArtikelPage = () => {
   const [kategori, setKategori] = useState("semua");
@@ -12,7 +13,7 @@ const ArtikelPage = () => {
   const [artikelAll, setArtikelAll] = useState([]);
 
   const getArtikel = async () => {
-    const url = "http://localhost:5000/api/artikel/";
+    const url = `${ENDPOINTS.ARTIKEL}"`;
     const response = await axios.get(url);
 
     setArtikelAll(response.data.data);
@@ -26,7 +27,7 @@ const ArtikelPage = () => {
   const fetchArticles = async (kategori) => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/artikel/filter/${kategori}`
+        `https://remedial.id.suika.pw/api/artikel/filter/${kategori}`
       );
       setArtikel(response.data.data);
     } catch (error) {

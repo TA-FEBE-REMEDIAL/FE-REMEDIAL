@@ -12,6 +12,7 @@ import axios from "axios";
 import ChallengePilihComponent from "../components/ChallengePilihComponent";
 import NavbarComponent from "../components/NavbarComponent";
 import FooterComponent from "../components/FooterComponent";
+import ENDPOINTS from "../utils/constants/endpoint";
 
 const DetailChallengePage = () => {
   const { id } = useParams();
@@ -32,13 +33,13 @@ const DetailChallengePage = () => {
   }, [idProgram]);
 
   const getChallenge = async () => {
-    const url = `http://localhost:5000/api/challenge/find/${id}`;
+    const url = `${ENDPOINTS.CHALLENGE}/find/${id}`;
     const response = await axios.get(url);
     setChallenge(response.data);
   };
 
   const getProgramId = async () => {
-    const url = `http://localhost:5000/api/program/${idProgram}`;
+    const url = `${ENDPOINTS.PROGRAM}/${idProgram}`;
     const response = await axios.get(url);
     setProgram(response.data);
   };

@@ -10,11 +10,12 @@ import Button from "react-bootstrap/Button";
 // import FooterComponent from "../Form/FooterComponent";
 
 import Swal from "sweetalert2";
+import ENDPOINTS from "../../utils/constants/endpoint";
 
 const authService = {
   login: async (email, password) => {
     try {
-      const response = await axios.post("http://localhost:5000/api/login", {
+      const response = await axios.post(`${ENDPOINTS.LOGIN}`, {
         email,
         password,
       });

@@ -9,7 +9,7 @@ const KaryaPage = () => {
   const [karya, setKarya] = useState([]);
 
   const getKarya = async () => {
-    const url = `${ENDPOINTS.KaryaPage}`;
+    const url = `${ENDPOINTS.KARYA}`;
     const response = await axios.get(url);
     setKarya(response.data.data);
   };

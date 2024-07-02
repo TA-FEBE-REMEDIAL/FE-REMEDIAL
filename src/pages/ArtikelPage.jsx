@@ -27,7 +27,7 @@ const ArtikelPage = () => {
   const fetchArticles = async (kategori) => {
     try {
       const response = await axios.get(
-        `https://remedial.id.suika.pw/api/artikel/filter/${kategori}`
+        `${ENDPOINTS.ARTIKEL}/filter/${kategori}`
       );
       setArtikel(response.data.data);
     } catch (error) {

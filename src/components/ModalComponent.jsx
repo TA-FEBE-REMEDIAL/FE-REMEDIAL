@@ -14,6 +14,7 @@ import LampiranComponent from "./Form/LampiranComponent";
 import FooterComponent from "./Form/FooterComponent";
 import { useNavigate, useParams } from "react-router-dom";
 import { useUser } from "../context/UserContext";
+import ENDPOINTS from "../utils/constants/endpoint";
 
 const ModalComponent = (props) => {
   const { id } = useParams();
@@ -138,15 +139,11 @@ const ModalComponent = (props) => {
       }).then(async (result) => {
         try {
           if (result.isConfirmed) {
-            await axios.post(
-              "http://172.188.112.222:5000/api/karya",
-              formData,
-              {
-                headers: {
-                  "Content-Type": "multipart/form-data",
-                },
-              }
-            );
+            await axios.post(`${ENDPOINTS.KARYA}`, formData, {
+              headers: {
+                "Content-Type": "multipart/form-data",
+              },
+            });
 
             Swal.fire({
               title: "Good Job!",

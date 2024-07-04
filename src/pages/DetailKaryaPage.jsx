@@ -5,6 +5,7 @@ import NavbarComponent from "../components/NavbarComponent";
 import FooterComponent from "../components/FooterComponent";
 import BreadcrumbsComponent from "../components/BreadcrumbsComponent.jsx";
 import Poem from "../components/Coba-karya/Poem.jsx";
+import ENDPOINTS from "../utils/constants/endpoint.js";
 
 function DetailKaryaPage() {
   const { id } = useParams();
@@ -12,7 +13,7 @@ function DetailKaryaPage() {
   const [detailKarya, setDetailKarya] = useState([]);
 
   const getdetailKarya = async () => {
-    const url = `http://172.188.112.222:5000/api/karya/${id}`;
+    const url = `${ENDPOINTS.KARYA}/${id}`;
     const response = await axios.get(url);
     setDetailKarya(response.data.data);
   };

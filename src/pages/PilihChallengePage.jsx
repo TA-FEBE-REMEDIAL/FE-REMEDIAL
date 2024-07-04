@@ -10,6 +10,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import NavbarComponent from "../components/NavbarComponent";
 import FooterComponent from "../components/FooterComponent";
+import ENDPOINTS from "../utils/constants/endpoint";
 
 function PilihChallengePage() {
   const { id } = useParams();
@@ -27,13 +28,13 @@ function PilihChallengePage() {
   }, [challenge]);
 
   const getChallenge = async () => {
-    const url = `http://172.188.112.222:5000/api/challenge/find/${id}`;
+    const url = `${ENDPOINTS.CHALLENGE}/find/${id}`;
     const response = await axios.get(url);
     setChallenge(response.data);
   };
 
   const getChallengeAll = async () => {
-    const url = `http://172.188.112.222:5000/api/challenge/${challenge.program_id}`;
+    const url = `${ENDPOINTS.CHALLENGE}/${challenge.program_id}`;
     const response = await axios.get(url);
     setChallengeAll(response.data);
   };

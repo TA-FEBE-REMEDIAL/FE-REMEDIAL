@@ -6,6 +6,7 @@ import LampiranComponent from "../Form/LampiranComponent";
 import LinkComponent from "../Form/LinkComponent";
 import ImgInputComponent from "../Form/ImgInputComponent";
 import SelectComponent from "../Form/SelectComponent";
+import ENDPOINTS from "../../utils/constants/endpoint";
 
 const InputNilaiModal = ({ show, onHide, project, isMentor }) => {
   const karya = project.data;
@@ -54,7 +55,7 @@ const InputNilaiModal = ({ show, onHide, project, isMentor }) => {
     formData.append("id", currentItem.id);
 
     try {
-      const url = `http://172.188.112.222:5000/api/karya/${currentItem.id}`;
+      const url = `${ENDPOINTS.KARYA}/${currentItem.id}`;
       await axios.put(url, formData, {
         headers: {
           "Content-Type": "multipart/form-data",

@@ -9,6 +9,7 @@ import NavbarComponent from "../components/NavbarComponent";
 import FooterComponent from "../components/FooterComponent";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import ENDPOINTS from "../utils/constants/endpoint";
 
 export default function DetailArtikelPage() {
   const { id } = useParams();
@@ -17,7 +18,7 @@ export default function DetailArtikelPage() {
   const [rekomenArtikel, setRekomenArtikel] = useState([]);
 
   const getdetailArtikel = async () => {
-    const url = `http://172.188.112.222:5000/api/artikel/${id}`;
+    const url = `${ENDPOINTS.ARTIKEL}/${id}`;
     const response = await axios.get(url);
     setDetailArtikel(response.data.data);
     setRekomenArtikel(response.data.rekomendasi);

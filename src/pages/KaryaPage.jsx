@@ -3,12 +3,13 @@ import NavbarComponent from "../components/NavbarComponent";
 import FooterComponent from "../components/FooterComponent";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import ENDPOINTS from "../utils/constants/endpoint";
 
 const KaryaPage = () => {
   const [karya, setKarya] = useState([]);
 
   const getKarya = async () => {
-    const url = "http://172.188.112.222:5000/api/karya/";
+    const url = `${ENDPOINTS.KARYA}`;
     const response = await axios.get(url);
     setKarya(response.data.data);
   };

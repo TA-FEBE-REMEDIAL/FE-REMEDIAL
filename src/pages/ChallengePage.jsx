@@ -7,6 +7,7 @@ import img1program from "../assets/img/program/7.png";
 import BreadcrumbsComponent from "../components/BreadcrumbsComponent";
 import NavbarComponent from "../components/NavbarComponent";
 import FooterComponent from "../components/FooterComponent";
+import ENDPOINTS from "../utils/constants/endpoint";
 
 function ChallengePage() {
   const { program_id } = useParams();
@@ -21,14 +22,14 @@ function ChallengePage() {
   }, []);
 
   const getChallenge = async () => {
-    const url = `http://172.188.112.222:5000/api/challenge/${program_id}`;
+    const url = `${ENDPOINTS.CHALLENGE}/${program_id}`;
     const response = await axios.get(url);
     // console.log(response.data);
     setChallenge(response.data);
   };
 
   const getProgram = async () => {
-    const url = `http://localhost:5000/api/program/${program_id}`;
+    const url = `${ENDPOINTS.PROGRAM}/${program_id}`;
     const response = await axios.get(url);
     setProgram(response.data);
   };

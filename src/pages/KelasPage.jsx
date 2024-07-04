@@ -4,12 +4,13 @@ import KelasComponent from "../components/KelasComponent";
 import BreadcrumbsComponent from "../components/BreadcrumbsComponent";
 import NavbarComponent from "../components/NavbarComponent";
 import FooterComponent from "../components/FooterComponent";
+import ENDPOINTS from "../utils/constants/endpoint";
 
 function KelasPage() {
   const [kelas, setKelas] = useState([]);
 
   const getKelas = async () => {
-    const url = "http://172.188.112.222:5000/api/kelas/";
+    const url = `${ENDPOINTS.KELAS}`;
     const response = await axios.get(url);
     setKelas(response.data.data);
   };

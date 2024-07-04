@@ -5,6 +5,7 @@ import FooterComponent from "../components/FooterComponent";
 import CardComponent from "../components/CardComponent";
 import CardGroup from "react-bootstrap/CardGroup";
 import axios from "axios";
+import ENDPOINTS from "../utils/constants/endpoint";
 
 function ProgramPage() {
   const [activeTab, setActiveTab] = useState("Semua Program");
@@ -19,7 +20,7 @@ function ProgramPage() {
   }, []);
 
   const getProgram = async () => {
-    const url = "http://172.188.112.222:5000/api/program";
+    const url = `${ENDPOINTS.PROGRAM}`;
     const response = await axios.get(url);
     setProgram(response.data);
   };

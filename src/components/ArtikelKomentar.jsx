@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import Swal from "sweetalert2";
+import ENDPOINTS from "../utils/constants/endpoint";
 // import "./ArtikelKomentar.css"; // Import the custom CSS file
 
 function ArtikelKomentar() {
@@ -14,7 +15,7 @@ function ArtikelKomentar() {
   const [email, setEmail] = useState("");
 
   const getKomentar = async () => {
-    const url = `http://172.188.112.222:5000/api/komentar/${id}`;
+    const url = `${ENDPOINTS.KOMENTAR}/${id}`;
     const response = await axios.get(url);
     setListkomentar(response.data);
   };
@@ -28,7 +29,7 @@ function ArtikelKomentar() {
     e.preventDefault();
     try {
       await axios
-        .post(`http://172.188.112.222:5000/api/komentar/${id}`, {
+        .post(`${ENDPOINTS.KOMENTAR}/${id}`, {
           nama,
           komentar,
           email,

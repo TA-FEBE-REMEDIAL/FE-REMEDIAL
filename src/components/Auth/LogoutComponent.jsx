@@ -28,7 +28,7 @@ const LogoutComponent = () => {
           icon: "success",
         }).then(() => {
           window.location.reload();
-          navigate("/");
+          navigate("/login");
         });
       }
     });

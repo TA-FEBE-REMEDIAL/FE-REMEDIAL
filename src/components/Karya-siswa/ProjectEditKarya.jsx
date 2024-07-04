@@ -54,7 +54,7 @@ const InputNilaiModal = ({ show, onHide, project, isMentor }) => {
     formData.append("id", currentItem.id);
 
     try {
-      const url = `http://localhost:5000/api/karya/${currentItem.id}`;
+      const url = `http://172.188.112.222:5000/api/karya/${currentItem.id}`;
       await axios.put(url, formData, {
         headers: {
           "Content-Type": "multipart/form-data",

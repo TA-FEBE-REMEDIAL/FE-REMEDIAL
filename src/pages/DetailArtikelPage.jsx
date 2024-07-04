@@ -17,7 +17,7 @@ export default function DetailArtikelPage() {
   const [rekomenArtikel, setRekomenArtikel] = useState([]);
 
   const getdetailArtikel = async () => {
-    const url = `http://localhost:5000/api/artikel/${id}`;
+    const url = `http://172.188.112.222:5000/api/artikel/${id}`;
     const response = await axios.get(url);
     setDetailArtikel(response.data.data);
     setRekomenArtikel(response.data.rekomendasi);

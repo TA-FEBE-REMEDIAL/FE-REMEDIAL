@@ -14,10 +14,13 @@ import Swal from "sweetalert2";
 const authService = {
   login: async (email, password) => {
     try {
-      const response = await axios.post("http://localhost:5000/api/login", {
-        email,
-        password,
-      });
+      const response = await axios.post(
+        "http://172.188.112.222:5000/api/login",
+        {
+          email,
+          password,
+        }
+      );
 
       return { token: response.data.token, data: response.data.data };
     } catch (error) {

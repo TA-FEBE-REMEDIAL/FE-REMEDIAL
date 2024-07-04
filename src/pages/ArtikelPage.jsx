@@ -12,7 +12,7 @@ const ArtikelPage = () => {
   const [artikelAll, setArtikelAll] = useState([]);
 
   const getArtikel = async () => {
-    const url = "http://localhost:5000/api/artikel/";
+    const url = "http://172.188.112.222:5000/api/artikel/";
     const response = await axios.get(url);
 
     setArtikelAll(response.data.data);
@@ -26,7 +26,7 @@ const ArtikelPage = () => {
   const fetchArticles = async (kategori) => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/artikel/filter/${kategori}`
+        `http://172.188.112.222:5000/api/artikel/filter/${kategori}`
       );
       setArtikel(response.data.data);
     } catch (error) {

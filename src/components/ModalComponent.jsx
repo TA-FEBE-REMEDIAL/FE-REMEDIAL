@@ -116,7 +116,7 @@ const ModalComponent = (props) => {
     formData.append("tanggal_penerbit", tanggal_penerbit);
     formData.append("image_url", image_url);
     formData.append("deskripsi", deskripsi);
-    formData.append("nilai", nilai);
+    formData.append("nilai", 0);
     formData.append("feedback", feedback);
     formData.append("challenge_id", challenge_id);
     formData.append("email", email);
@@ -138,11 +138,15 @@ const ModalComponent = (props) => {
       }).then(async (result) => {
         try {
           if (result.isConfirmed) {
-            await axios.post("http://localhost:5000/api/karya", formData, {
-              headers: {
-                "Content-Type": "multipart/form-data",
-              },
-            });
+            await axios.post(
+              "http://172.188.112.222:5000/api/karya",
+              formData,
+              {
+                headers: {
+                  "Content-Type": "multipart/form-data",
+                },
+              }
+            );
 
             Swal.fire({
               title: "Good Job!",

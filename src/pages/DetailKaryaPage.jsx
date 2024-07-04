@@ -12,7 +12,7 @@ function DetailKaryaPage() {
   const [detailKarya, setDetailKarya] = useState([]);
 
   const getdetailKarya = async () => {
-    const url = `http://localhost:5000/api/karya/${id}`;
+    const url = `http://172.188.112.222:5000/api/karya/${id}`;
     const response = await axios.get(url);
     setDetailKarya(response.data.data);
   };

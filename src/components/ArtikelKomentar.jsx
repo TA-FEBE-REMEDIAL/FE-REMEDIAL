@@ -14,7 +14,7 @@ function ArtikelKomentar() {
   const [email, setEmail] = useState("");
 
   const getKomentar = async () => {
-    const url = `http://localhost:5000/api/komentar/${id}`;
+    const url = `http://172.188.112.222:5000/api/komentar/${id}`;
     const response = await axios.get(url);
     setListkomentar(response.data);
   };
@@ -28,7 +28,7 @@ function ArtikelKomentar() {
     e.preventDefault();
     try {
       await axios
-        .post(`http://localhost:5000/api/komentar/${id}`, {
+        .post(`http://172.188.112.222:5000/api/komentar/${id}`, {
           nama,
           komentar,
           email,

@@ -22,7 +22,7 @@ function RegisterComponent() {
   const addUsers = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/register", {
+      await axios.post("http://172.188.112.222:5000/api/register", {
         // console.log({
         name,
         email,

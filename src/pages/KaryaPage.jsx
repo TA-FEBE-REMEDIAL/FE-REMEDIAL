@@ -8,7 +8,7 @@ const KaryaPage = () => {
   const [karya, setKarya] = useState([]);
 
   const getKarya = async () => {
-    const url = "http://localhost:5000/api/karya/";
+    const url = "http://172.188.112.222:5000/api/karya/";
     const response = await axios.get(url);
     setKarya(response.data.data);
   };

@@ -15,7 +15,7 @@ const Slider = () => {
   }, []);
 
   const getProgram = async () => {
-    const url = "http://localhost:5000/api/program";
+    const url = "http://172.188.112.222:5000/api/program";
     const response = await axios.get(url);
     setProgram(response.data);
   };

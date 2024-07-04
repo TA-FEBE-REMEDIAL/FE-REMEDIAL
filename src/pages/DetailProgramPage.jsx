@@ -16,7 +16,7 @@ function DetailProgramPage() {
   const [detail_program, setDetailProgram] = useState([]);
 
   const getdetailProgram = async () => {
-    const url = `http://localhost:5000/api/program/${id}`;
+    const url = `http://172.188.112.222:5000/api/program/${id}`;
     const response = await axios.get(url);
     setDetailProgram(response.data);
   };

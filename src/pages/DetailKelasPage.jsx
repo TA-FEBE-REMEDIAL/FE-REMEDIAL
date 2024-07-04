@@ -16,7 +16,7 @@ function DetailKelasPage() {
   const [kelasLimit, setKelasLimit] = useState([]);
 
   const getdetailKelas = async () => {
-    const url = `http://localhost:5000/api/kelas/${id}`;
+    const url = `http://172.188.112.222:5000/api/kelas/${id}`;
     const response = await axios.get(url);
     setDetailKelas(response.data.data);
     setKelasLimit(response.data.rekomendasi);

@@ -21,7 +21,7 @@ function ChallengePage() {
   }, []);
 
   const getChallenge = async () => {
-    const url = `http://localhost:5000/api/challenge/${program_id}`;
+    const url = `http://172.188.112.222:5000/api/challenge/${program_id}`;
     const response = await axios.get(url);
     // console.log(response.data);
     setChallenge(response.data);

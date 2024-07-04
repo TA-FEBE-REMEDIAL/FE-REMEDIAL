@@ -27,17 +27,17 @@ const HomePage = () => {
   }, []);
 
   const getKelas = async () => {
-    const url = "http://localhost:5000/api/kelas/";
+    const url = "http://172.188.112.222:5000/api/kelas/";
     const response = await axios.get(url);
     setKelasLimit(response.data.limit);
   };
   const getArtikel = async () => {
-    const url = "http://localhost:5000/api/artikel/";
+    const url = "http://172.188.112.222:5000/api/artikel/";
     const response = await axios.get(url);
     setArtikel(response.data.limit);
   };
   const getKarya = async () => {
-    const url = "http://localhost:5000/api/karya/";
+    const url = "http://172.188.112.222:5000/api/karya/";
     const response = await axios.get(url);
     setKarya(response.data.limit);
   };

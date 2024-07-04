@@ -9,7 +9,7 @@ function KelasPage() {
   const [kelas, setKelas] = useState([]);
 
   const getKelas = async () => {
-    const url = "http://localhost:5000/api/kelas/";
+    const url = "http://172.188.112.222:5000/api/kelas/";
     const response = await axios.get(url);
     setKelas(response.data.data);
   };

@@ -19,7 +19,9 @@ const Poem = ({ data }) => {
 
   const handleEditClick = async (id) => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/karya/${id}`);
+      const response = await axios.get(
+        `http://172.188.112.222:5000/api/karya/${id}`
+      );
       setCurrentItem(response.data);
       setModalShow(true);
     } catch (error) {
@@ -47,7 +49,7 @@ const Poem = ({ data }) => {
       }).then(async (result) => {
         try {
           if (result.isConfirmed) {
-            await axios.delete(`http://localhost:5000/api/karya/${id}`);
+            await axios.delete(`http://172.188.112.222:5000/api/karya/${id}`);
 
             Swal.fire({
               title: "Karya Terhapus!",

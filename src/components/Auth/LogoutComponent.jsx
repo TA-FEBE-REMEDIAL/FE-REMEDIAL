@@ -27,7 +27,7 @@ const LogoutComponent = () => {
           title: "Logout Berhasil!",
           icon: "success",
         }).then(() => {
-          window.location.reload();
+          // window.location.reload();
           navigate("/login");
         });
       }

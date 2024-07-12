@@ -20,28 +20,28 @@ function CategoriesDiskusi() {
       titleSub:
         "Tanya soal Seni Rupa disini. Kita bisa mengekspresikan perasaan dan pemikiran kita secara visual dan kreatif.",
       img: img1diskusi,
-      link: "https://chat.whatsapp.com/link-to-seni-rupa",
+      link: "https://chat.whatsapp.com/FlMEAZqmp7t9FxjoL2NX9Z",
     },
     {
       title: "Melody Mastery: Program Remedial Seni Musik",
       titleSub:
         "Tanya soal Seni Musik disini. Dengan seni musik, kita bisa menyampaikan emosi dan cerita melalui melodi dan ritme.",
       img: img2diskusi,
-      link: "https://chat.whatsapp.com/link-to-seni-musik",
+      link: "https://chat.whatsapp.com/KernVLv36oeBWkIdo6uJ45",
     },
     {
       title: "Literary Forge: Program Remedial Seni Sastra",
       titleSub:
         "Tanya soal Seni Sastra di sini. Dengan seni sastra, kita bisa menggambarkan kehidupan dan pengalaman manusia melalui kata-kata yang indah dan bermakna.",
       img: img3diskusi,
-      link: "https://chat.whatsapp.com/link-to-seni-sastra",
+      link: "https://chat.whatsapp.com/GaogeavgxtKKDV6ySk3Pyd",
     },
     {
       title: "Stagecraft Intensive: Program Remedial Seni Pertunjukan",
       titleSub:
         "Tanya soal Seni Pertunjukan di sini. Dengan seni pertunjukan, kita bisa menghidupkan cerita dan karakter di atas panggung melalui akting, tarian, dan musik.",
       img: img4diskusi,
-      link: "https://chat.whatsapp.com/link-to-seni-pertunjukan",
+      link: "https://chat.whatsapp.com/BW2jUUMucIh4HpFMnPIqeV",
     },
   ];
 

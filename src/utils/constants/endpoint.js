@@ -1,4 +1,4 @@
-const BASE_URL = "https://remedial.id.suika.pw/api";
+const BASE_URL = "https://remedial.my.id/api";
 
 const ENDPOINTS = {
   // Auth,

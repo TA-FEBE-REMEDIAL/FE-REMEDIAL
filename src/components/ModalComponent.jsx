@@ -99,6 +99,10 @@ const ModalComponent = (props) => {
       text: "Komik",
     },
     {
+      value: "art",
+      text: "Art",
+    },
+    {
       value: "lainnya",
       text: "Lainnya",
     },

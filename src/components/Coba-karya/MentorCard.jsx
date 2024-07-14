@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function MentorCard({ title, score, feedback, pdf, url }) {
@@ -12,7 +12,6 @@ export default function MentorCard({ title, score, feedback, pdf, url }) {
     if (fileName.length > maxLength) {
       const truncatedName = fileName.substring(0, maxLength - 3) + ".. ";
       const extension = fileName.substring(fileName.lastIndexOf("."));
-
       return truncatedName + extension;
     }
     return fileName;
@@ -73,7 +72,6 @@ export default function MentorCard({ title, score, feedback, pdf, url }) {
     <div className="card text-center pt-4">
       <div className="card-body-mentor">
         <h5 className="card-title-mentor fw-bold">{title}</h5>
-
         <p className="card-text-mentor">Nilai Mentor</p>
         <div className="circle-mentor">
           <p className="score-mentor">{score}</p>
@@ -172,6 +170,7 @@ export default function MentorCard({ title, score, feedback, pdf, url }) {
                         strokeLinejoin="round"
                       />
                     </svg>
+                    {console.log(copiedStatus[index])}
                     {copiedStatus[index] && (
                       <div className="tooltip">Copied</div>
                     )}
@@ -183,14 +182,6 @@ export default function MentorCard({ title, score, feedback, pdf, url }) {
         ) : (
           ""
         )}
-        {/* {pdf.length > 0 ? (
-          <>
-           
-          </>
-        ) : (
-
-        
-        )} */}
       </div>
     </div>
   );

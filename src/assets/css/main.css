@@ -1770,7 +1770,11 @@ header {
 .link-container {
   display: flex;
   align-items: center;
-  position: relative;
+  justify-content: space-between;
+  background-color: #f8f8f8;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
 }
 
 .link-icon,
@@ -1783,6 +1787,7 @@ header {
 }
 
 .copy-icon {
+  cursor: pointer;
   position: relative;
 }
 
@@ -1802,8 +1807,10 @@ header {
 }
 
 .link-text {
-  font-size: 14px;
-  margin-right: 5px;
+  max-width: 250px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .file-link-container {
@@ -1839,6 +1846,7 @@ header {
 
 .poem .mt-4 {
   margin-top: 1.5rem;
+  text-align: justify;
 }
 
 .poem .my-5 {

@@ -48,12 +48,13 @@ const Poem = ({ data }) => {
       }).then(async (result) => {
         try {
           if (result.isConfirmed) {
-            await axios.delete(`http://172.188.112.222:5000/api/karya/${id}`);
+            await axios.delete(`${ENDPOINTS.KARYA}/${id}`);
 
             Swal.fire({
               title: "Karya Terhapus!",
               text: "Karya Berhasil di Hapus!",
               icon: "success",
+              confirmButtonColor: "#d05d5d",
             }).then(() => {
               // window.location.reload();
               navigate("/karya-siswa");
@@ -138,7 +139,7 @@ const Poem = ({ data }) => {
                 <b>Deskripsi</b>
               </h6>
               <section
-                className="mt-4"
+                className="mt-4 desc_karya"
                 dangerouslySetInnerHTML={{ __html: data.deskripsi }}
               />
             </div>

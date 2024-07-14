@@ -26,9 +26,10 @@ const LogoutComponent = () => {
         Swal.fire({
           title: "Logout Berhasil!",
           icon: "success",
+          confirmButtonColor: "#d05d5d",
         }).then(() => {
-          // window.location.reload();
           navigate("/login");
+          window.location.reload();
         });
       }
     });
